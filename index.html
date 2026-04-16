@@ -21,24 +21,7 @@
   html { scroll-behavior: smooth; }
   body { background: var(--ivory); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 56px; height: 68px;
-    background: rgba(250,248,245,.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--rule);
-  }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: .04em; color: var(--ink); text-decoration: none; }
-  .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 40px; list-style: none; }
-  .nav-links a { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); text-decoration: none; transition: color .2s; position: relative; }
-  .nav-links a::after { content: ''; position: absolute; left: 0; bottom: -3px; width: 0; height: 1px; background: var(--gold); transition: width .25s; }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-cta { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); padding: 9px 20px; transition: all .22s; }
-  .nav-cta:hover { background: var(--ink); color: var(--ivory); }
+  /* nav styles in nav.js */
 
   /* ── HERO ── */
   .hero {
