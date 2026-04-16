@@ -144,10 +144,10 @@
   .finding-val { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; white-space: nowrap; }
   .finding-sev { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .08em; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
   .timer-box { margin-top: 16px; padding: 18px 20px; background: rgba(200,169,110,.06); border: 1px solid rgba(200,169,110,.15); border-radius: 6px; }
-  .timer-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: rgba(250,248,245,.35); margin-bottom: 8px; }
+  .timer-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
   .timer-val { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--gold); line-height: 1; }
-  .timer-val span { font-size: 22px; color: rgba(250,248,245,.35); }
-  .timer-desc { font-size: 12px; color: rgba(250,248,245,.4); margin-top: 8px; line-height: 1.6; }
+  .timer-val span { font-size: 22px; color: var(--ink-3); }
+  .timer-desc { font-size: 12px; color: var(--ink-3); margin-top: 8px; line-height: 1.6; }
 
   /* ── AI SECTION ── */
   .ai-section { padding: 80px 56px; border-top: 1px solid var(--rule); }
@@ -366,42 +366,6 @@
   </div>
 </section>
 
-<!-- ── PROBLEM ── -->
-<section class="problem-section" id="problem">
-  <div class="problem-grid">
-    <div>
-      <div class="section-eyebrow">The Problem</div>
-      <div class="big-quote">"Every engagement starts from scratch. Hours of Excel work before any real analysis begins."</div>
-      <p class="problem-body">Government procurement consultants and agency CPOs are sitting on goldmines of spend data — but the tools to analyze it don't exist at the right level. Enterprise platforms like Coupa and Jaggaer cost millions and take months to deploy. General BI tools have no concept of NIGP taxonomy. So everyone does it manually.</p>
-      <p class="problem-body">The result: the most important procurement intelligence — the kind that could save agencies millions and protect taxpayers — stays buried in spreadsheets.</p>
-    </div>
-    <div>
-      <ul class="pain-list">
-        <li><span class="pain-icon">⏱</span><div><strong>Hours lost to classification</strong>Before a consultant can analyze spend, they spend half a day mapping columns and classifying transactions against NIGP codes manually.</div></li>
-        <li><span class="pain-icon">📊</span><div><strong>No NIGP-native tool exists</strong>Every tool in the market speaks UNSPSC or custom taxonomies. Nothing is built natively around the 18th Edition NIGP code that governs 33 states and thousands of local agencies.</div></li>
-        <li><span class="pain-icon">🔍</span><div><strong>Risk buried in plain sight</strong>Maverick spend, PO splitting, single-source concentration — these compliance risks are present in almost every agency's data. But finding them manually takes days.</div></li>
-        <li><span class="pain-icon">💸</span><div><strong>Enterprise tools aren't built for government</strong>The platforms used by Fortune 500 procurement teams are inaccessible to most government agencies — too expensive, too complex, and not NIGP-aware.</div></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ── FEATURES ── -->
-<section class="features-section" id="features">
-  <div class="section-inner">
-    <div class="section-eyebrow">Core Capabilities</div>
-    <h2 class="section-title">Everything a CPO Needs.<br>Nothing They Don't.</h2>
-    <p class="section-subtitle">Purpose-built for government procurement. Upload a CSV, confirm column mapping, and let the engine work.</p>
-    <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">🏷</div><div class="feature-title">NIGP Classification Engine</div><div class="feature-body">Every transaction classified against the full NIGP 18th Edition — 264 classes, 8,239 subclasses — in seconds. Works on any government CSV export, regardless of column schema. Auto-detects and maps your columns.</div><span class="feature-tag">18th Edition Native</span></div>
-      <div class="feature-card"><div class="feature-icon">⚠️</div><div class="feature-title">Procurement Health Flags</div><div class="feature-body">Six automated compliance and risk checks run on every upload. Maverick spend, PO splitting, single-source concentration, spending spikes, vendor sprawl, and out-of-state compliance — all flagged with dollar exposure and remediation guidance.</div><span class="feature-tag">6 Automated Checks</span></div>
-      <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Vendor Risk Intelligence</div><div class="feature-body">HHI concentration scoring, cumulative spend curves, category dominance tables. Instantly identify which vendors represent monopolistic risk, where competition has broken down, and which categories need market surveys.</div><span class="feature-tag">HHI Scoring</span></div>
-      <div class="feature-card"><div class="feature-icon">🤖</div><div class="feature-title">AI Executive Briefing</div><div class="feature-body">One click generates a board-ready CPO narrative using Claude AI — portfolio overview, risk assessment, and three concrete 90-day strategic opportunities. A first draft in 30 seconds, not a blank page.</div><span class="feature-tag">Powered by Claude AI</span></div>
-      <div class="feature-card"><div class="feature-icon">🧹</div><div class="feature-title">Data Quality Cleanup</div><div class="feature-body">Missing, malformed, and unrecognized NIGP codes are surfaced with suggested corrections. Know exactly how much spend is at risk due to data quality issues before you present to leadership.</div><span class="feature-tag">Code Validation</span></div>
-      <div class="feature-card"><div class="feature-icon">🗺</div><div class="feature-title">10 Analysis Views</div><div class="feature-body">Overview, Concerns, Vendor Risk, Categories, Treemap, Vendors, Departments, Timeline, Full Table, and Data Cleanup — all driven by a single CSV upload. Every view is interactive, filterable, and exportable.</div><span class="feature-tag">10 Interactive Tabs</span></div>
-    </div>
-  </div>
-</section>
 
 <!-- ── FLAGS ── -->
 <section class="flags-section" id="flags">
@@ -437,6 +401,43 @@
         <div class="timer-val">28 <span>seconds</span></div>
         <div class="timer-desc">What previously took hours of Excel work, now takes less than a minute from upload to full procurement intelligence report.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROBLEM ── -->
+<section class="problem-section" id="problem">
+  <div class="problem-grid">
+    <div>
+      <div class="section-eyebrow">The Problem</div>
+      <div class="big-quote">"Every engagement starts from scratch. Hours of Excel work before any real analysis begins."</div>
+      <p class="problem-body">Government procurement consultants and agency CPOs are sitting on goldmines of spend data — but the tools to analyze it don't exist at the right level. Enterprise platforms like Coupa and Jaggaer cost millions and take months to deploy. General BI tools have no concept of NIGP taxonomy. So everyone does it manually.</p>
+      <p class="problem-body">The result: the most important procurement intelligence — the kind that could save agencies millions and protect taxpayers — stays buried in spreadsheets.</p>
+    </div>
+    <div>
+      <ul class="pain-list">
+        <li><span class="pain-icon">⏱</span><div><strong>Hours lost to classification</strong>Before a consultant can analyze spend, they spend half a day mapping columns and classifying transactions against NIGP codes manually.</div></li>
+        <li><span class="pain-icon">📊</span><div><strong>No NIGP-native tool exists</strong>Every tool in the market speaks UNSPSC or custom taxonomies. Nothing is built natively around the 18th Edition NIGP code that governs 33 states and thousands of local agencies.</div></li>
+        <li><span class="pain-icon">🔍</span><div><strong>Risk buried in plain sight</strong>Maverick spend, PO splitting, single-source concentration — these compliance risks are present in almost every agency's data. But finding them manually takes days.</div></li>
+        <li><span class="pain-icon">💸</span><div><strong>Enterprise tools aren't built for government</strong>The platforms used by Fortune 500 procurement teams are inaccessible to most government agencies — too expensive, too complex, and not NIGP-aware.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="features-section" id="features">
+  <div class="section-inner">
+    <div class="section-eyebrow">Core Capabilities</div>
+    <h2 class="section-title">Everything a CPO Needs.<br>Nothing They Don't.</h2>
+    <p class="section-subtitle">Purpose-built for government procurement. Upload a CSV, confirm column mapping, and let the engine work.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🏷</div><div class="feature-title">NIGP Classification Engine</div><div class="feature-body">Every transaction classified against the full NIGP 18th Edition — 264 classes, 8,239 subclasses — in seconds. Works on any government CSV export, regardless of column schema. Auto-detects and maps your columns.</div><span class="feature-tag">18th Edition Native</span></div>
+      <div class="feature-card"><div class="feature-icon">⚠️</div><div class="feature-title">Procurement Health Flags</div><div class="feature-body">Six automated compliance and risk checks run on every upload. Maverick spend, PO splitting, single-source concentration, spending spikes, vendor sprawl, and out-of-state compliance — all flagged with dollar exposure and remediation guidance.</div><span class="feature-tag">6 Automated Checks</span></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Vendor Risk Intelligence</div><div class="feature-body">HHI concentration scoring, cumulative spend curves, category dominance tables. Instantly identify which vendors represent monopolistic risk, where competition has broken down, and which categories need market surveys.</div><span class="feature-tag">HHI Scoring</span></div>
+      <div class="feature-card"><div class="feature-icon">🤖</div><div class="feature-title">AI Executive Briefing</div><div class="feature-body">One click generates a board-ready CPO narrative using Claude AI — portfolio overview, risk assessment, and three concrete 90-day strategic opportunities. A first draft in 30 seconds, not a blank page.</div><span class="feature-tag">Powered by Claude AI</span></div>
+      <div class="feature-card"><div class="feature-icon">🧹</div><div class="feature-title">Data Quality Cleanup</div><div class="feature-body">Missing, malformed, and unrecognized NIGP codes are surfaced with suggested corrections. Know exactly how much spend is at risk due to data quality issues before you present to leadership.</div><span class="feature-tag">Code Validation</span></div>
+      <div class="feature-card"><div class="feature-icon">🗺</div><div class="feature-title">10 Analysis Views</div><div class="feature-body">Overview, Concerns, Vendor Risk, Categories, Treemap, Vendors, Departments, Timeline, Full Table, and Data Cleanup — all driven by a single CSV upload. Every view is interactive, filterable, and exportable.</div><span class="feature-tag">10 Interactive Tabs</span></div>
     </div>
   </div>
 </section>
