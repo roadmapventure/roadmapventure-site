@@ -8,7 +8,7 @@
   const FOOTER_LINKS = [
     { href: 'index.html',          label: 'Home' },
     { href: 'resume.html',         label: 'Resume' },
-    { href: 'nigp-marketing.html', label: 'Data & AI' },
+    { href: 'nigp-marketing.html', label: 'Data Intelligence' },
     { href: 'playbook.html',       label: 'My Product Playbook' },
     { href: 'about.html',          label: 'About' },
   ];
