@@ -366,21 +366,13 @@
     .posts-grid { grid-template-columns: 1fr; }
   }
 </style>
+  <script src="nav.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){initNav("playbook.html");});</script>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a class="nav-logo" href="index.html">RoadMap<span>Venture</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="nigp-marketing.html">Procurement Intelligence</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="playbook.html" class="active">The Playbook</a></li>
-  </ul>
-  <button class="nav-cta" onclick="openpbContact()" style="cursor:pointer;font-family:inherit;background:transparent;">Get in Touch</button>
-</nav>
+
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -624,46 +616,5 @@
 </footer>
 
 
-<!-- Contact Reveal Modal -->
-<div id="pbcontactModal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(26,24,20,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;" onclick="if(event.target===this)closepbContact()">
-  <div style="background:#faf8f5;border:1px solid rgba(200,169,110,.25);padding:48px 52px;max-width:440px;width:90%;position:relative;">
-    <div style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#c8a96e;margin-bottom:20px;display:flex;align-items:center;gap:10px;"><span style="display:block;width:20px;height:1px;background:#c8a96e;"></span>Get in Touch</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#1a1814;margin-bottom:28px;line-height:1.1;">Let's build something<br><em style="color:#c8a96e">worth shipping.</em></div>
-    <div id="pbcPhone" style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);cursor:pointer;" onclick="revpb('phone')" title="Click to reveal">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">Phone</div>
-      <div id="pbpVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1814;" data-val="NTEyLjU4NS44NTEz"><span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">↗ Click to reveal</span></div>
-    </div>
-    <div id="pbcEmail" style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);cursor:pointer;" onclick="revpb('email')" title="Click to reveal">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">Email</div>
-      <div id="pbeVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1814;" data-val="amxlb25hQHlhaG9vLmNvbQ=="><span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">↗ Click to reveal</span></div>
-    </div>
-    <div style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">LinkedIn</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;"><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" style="color:#1a1814;text-decoration:none;">linkedin.com/in/leonardjohn ↗</a></div>
-    </div>
-    <div style="padding:14px 0;">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">Location</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1814;">Austin, Texas</div>
-    </div>
-    <button onclick="closepbContact()" style="position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:#6b6057;cursor:pointer;">×</button>
-  </div>
-</div>
-<script>
-function openpbContact(){document.getElementById('pbcontactModal').style.display='flex';}
-function closepbContact(){document.getElementById('pbcontactModal').style.display='none';}
-function revpb(type){
-  if(type==='phone'){
-    var el=document.getElementById('pbpVal');
-    var val=atob(el.dataset.val);
-    el.innerHTML='<a href="tel:+1'+val.replace(/\./g,'')+'" style="color:#1a1814;text-decoration:none;">'+val+'</a>';
-    document.getElementById('pbcPhone').style.cursor='default';
-  }else{
-    var el=document.getElementById('pbeVal');
-    var val=atob(el.dataset.val);
-    el.innerHTML='<a href="mailto:'+val+'" style="color:#1a1814;text-decoration:none;">'+val+'</a>';
-    document.getElementById('pbcEmail').style.cursor='default';
-  }
-}
-</script>
 </body>
 </html>

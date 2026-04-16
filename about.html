@@ -167,19 +167,12 @@
     footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px; }
   }
 </style>
+  <script src="nav.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){initNav("about.html");});</script>
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html">RoadMap<span>Venture</span></a>
-  <ul class="nav-links">
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="nigp-marketing.html">Procurement Intelligence</a></li>
-    <li><a href="playbook.html">The Product Playbook</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-  </ul>
-  <button class="nav-cta" onclick="toggleContact()" id="contactBtn">Get in Touch</button>
-</nav>
+
 
 <!-- PAGE HEADER with photo -->
 <div class="page-header">
@@ -313,50 +306,5 @@
 </footer>
 
 
-<!-- Contact Reveal Modal -->
-<div id="contactModal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(26,24,20,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;" onclick="if(event.target===this)closeContact()">
-  <div style="background:var(--ivory-2);border:1px solid var(--rule);padding:48px 52px;max-width:440px;width:90%;position:relative;animation:fadeUp .3s ease both;">
-    <div style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;"><span style="display:block;width:20px;height:1px;background:var(--gold);"></span>Get in Touch</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--ink);margin-bottom:28px;line-height:1.1;">Let's build something<br><em style="color:var(--gold)">worth shipping.</em></div>
-    <div id="contactPhone" style="padding:14px 0;border-bottom:1px solid var(--rule);cursor:pointer;" onclick="revealContact('phone')" title="Click to reveal">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Phone</div>
-      <div id="phoneVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);" data-val="NTEyLjU4NS44NTEz">
-        <span class="reveal-hint" style="font-size:12px;color:var(--gold);letter-spacing:.1em;">↗ Click to reveal</span>
-      </div>
-    </div>
-    <div id="contactEmail" style="padding:14px 0;border-bottom:1px solid var(--rule);cursor:pointer;" onclick="revealContact('email')" title="Click to reveal">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Email</div>
-      <div id="emailVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);" data-val="amxlb25hQHlhaG9vLmNvbQ==">
-        <span class="reveal-hint" style="font-size:12px;color:var(--gold);letter-spacing:.1em;">↗ Click to reveal</span>
-      </div>
-    </div>
-    <div style="padding:14px 0;border-bottom:1px solid var(--rule);">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">LinkedIn</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;"><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" style="color:var(--ink);text-decoration:none;">linkedin.com/in/leonardjohn ↗</a></div>
-    </div>
-    <div style="padding:14px 0;">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Location</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);">Austin, Texas</div>
-    </div>
-    <button onclick="closeContact()" style="position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:var(--ink-3);cursor:pointer;line-height:1;">×</button>
-  </div>
-</div>
-<script>
-function toggleContact(){ var m=document.getElementById('contactModal'); m.style.display=m.style.display==='flex'?'none':'flex'; }
-function closeContact(){ document.getElementById('contactModal').style.display='none'; }
-function revealContact(type){
-  if(type==='phone'){
-    var el=document.getElementById('phoneVal');
-    var val=atob(el.dataset.val);
-    el.innerHTML='<a href="tel:+1'+val.replace(/\./g,'')+'" style="color:var(--ink);text-decoration:none;">'+val+'</a>';
-    document.getElementById('contactPhone').style.cursor='default';
-  } else {
-    var el=document.getElementById('emailVal');
-    var val=atob(el.dataset.val);
-    el.innerHTML='<a href="mailto:'+val+'" style="color:var(--ink);text-decoration:none;">'+val+'</a>';
-    document.getElementById('contactEmail').style.cursor='default';
-  }
-}
-</script>
 </body>
 </html>

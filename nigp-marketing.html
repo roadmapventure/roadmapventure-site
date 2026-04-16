@@ -256,20 +256,13 @@
     .features-grid, .roadmap-items, .stats-inner { grid-template-columns: 1fr; }
   }
 </style>
+  <script src="nav.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){initNav("nigp-marketing.html");});</script>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a class="nav-logo" href="index.html">RoadMap<span>Venture</span></a>
-  <ul class="nav-links">
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="nigp-marketing.html" class="active">Procurement Intelligence</a></li>
-    <li><a href="playbook.html">The Product Playbook</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-  <a class="nav-cta" href="https://nigp.roadmapventure.com" target="_blank">Launch App ↗</a>
-</nav>
+
 
 <!-- ── HERO ── -->
 <section class="hero">
@@ -285,6 +278,7 @@
     <div class="hero-ctas">
       <a href="https://nigp.roadmapventure.com" target="_blank" class="btn-primary">Request Early Access</a>
       <a href="#features" class="btn-secondary">See How It Works</a>
+      <a href="https://nigp.roadmapventure.com" target="_blank" class="btn-secondary">Launch App ↗</a>
     </div>
   </div>
   <div class="hero-right">
@@ -529,46 +523,6 @@
 </footer>
 
 
-<!-- Demo / Contact Reveal Modal -->
-<div id="demoModal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(26,24,20,.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;" onclick="if(event.target===this)closeDemoModal()">
-  <div style="background:var(--ivory-2);border:1px solid var(--rule);padding:48px 52px;max-width:440px;width:90%;position:relative;">
-    <div style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Schedule a Demo</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:28px;line-height:1.2;">Reach out directly<br><em style="color:var(--gold)">to schedule a call.</em></div>
-    <div id="demoPhone" style="padding:14px 0;border-bottom:1px solid var(--rule);cursor:pointer;" onclick="revealDemo('phone')" title="Click to reveal">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Phone</div>
-      <div id="demoPhoneVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);" data-val="NTEyLjU4NS44NTEz">
-        <span style="font-size:12px;color:var(--gold);letter-spacing:.1em;">↗ Click to reveal</span>
-      </div>
-    </div>
-    <div id="demoEmail" style="padding:14px 0;border-bottom:1px solid var(--rule);cursor:pointer;" onclick="revealDemo('email')" title="Click to reveal">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Email</div>
-      <div id="demoEmailVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);" data-val="amxlb25hQHlhaG9vLmNvbQ==">
-        <span style="font-size:12px;color:var(--gold);letter-spacing:.1em;">↗ Click to reveal</span>
-      </div>
-    </div>
-    <div style="padding:14px 0;">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">LinkedIn</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;"><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" style="color:var(--ink);text-decoration:none;">linkedin.com/in/leonardjohn ↗</a></div>
-    </div>
-    <button onclick="closeDemoModal()" style="position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:var(--ink-3);cursor:pointer;">×</button>
-  </div>
-</div>
-<script>
-function showDemoContact(){ document.getElementById('demoModal').style.display='flex'; }
-function closeDemoModal(){ document.getElementById('demoModal').style.display='none'; }
-function revealDemo(type){
-  if(type==='phone'){
-    var el=document.getElementById('demoPhoneVal');
-    var val=atob(el.dataset.val);
-    el.innerHTML='<a href="tel:+1'+val.replace(/\./g,'')+'" style="color:var(--ink);text-decoration:none;">'+val+'</a>';
-    document.getElementById('demoPhone').style.cursor='default';
-  } else {
-    var el=document.getElementById('demoEmailVal');
-    var val=atob(el.dataset.val);
-    el.innerHTML='<a href="mailto:'+val+'" style="color:var(--ink);text-decoration:none;">'+val+'</a>';
-    document.getElementById('demoEmail').style.cursor='default';
-  }
-}
-</script>
+
 </body>
 </html>
