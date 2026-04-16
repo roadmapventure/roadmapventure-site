@@ -9,8 +9,8 @@
   // ── NAV STRUCTURE ── edit links/labels here ──────────────────────────────
   const NAV_LINKS = [
     { href: 'resume.html',          label: 'Resume' },
-    { href: 'nigp-marketing.html',  label: 'Procurement Intelligence' },
-    { href: 'playbook.html',        label: 'The Product Playbook' },
+    { href: 'nigp-marketing.html',  label: 'Data & Artificial Intelligence' },
+    { href: 'playbook.html',        label: 'My Product Playbook' },
     { href: 'about.html',           label: 'About' },
   ];
 

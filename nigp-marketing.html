@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Procurement Intelligence — NIGP Spend Analyzer · RoadMapVenture</title>
-<meta name="description" content="The only spend analysis tool built natively on the NIGP 18th Edition taxonomy. Upload any government procurement CSV and get full intelligence in 30 seconds.">
+<title>NIGP Spend Analyzer — Government Procurement Intelligence Tool</title>
+<meta name="description" content="The only spend analysis tool built natively on the NIGP 18th Edition taxonomy. Upload any government procurement CSV and get full intelligence — maverick spend, vendor risk, health flags — in 30 seconds." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -171,10 +171,10 @@
   .ai-action-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); background: rgba(200,169,110,.1); border: 1px solid rgba(200,169,110,.2); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
 
   /* ── AUDIENCE ── */
-  .audience-section { background: var(--ivory-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 80px 56px; }
+  .audience-section { background: var(--ivory); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 80px 56px; }
   .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
   .audience-card { background: var(--ivory-2); padding: 48px 40px; transition: background .2s; }
-  .audience-card:hover { background: var(--ivory); }
+  .audience-card:hover { background: var(--ivory-2); }
   .audience-who { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
   .audience-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--ink); margin-bottom: 18px; }
   .audience-body { font-size: 14px; color: var(--ink-3); line-height: 1.8; margin-bottom: 26px; }
@@ -247,21 +247,21 @@
   }
 </style>
   <script src="nav.js"></script>
-<script>document.addEventListener("DOMContentLoaded",function(){initNav("nigp-marketing.html");});</script>
+<script>document.addEventListener("DOMContentLoaded",function(){initNav("nigp-marketing.html");initFooter();})</script>
 
   <!-- Open Graph / iMessage / Social Preview -->
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="RoadMapVenture" />
   <meta property="og:url"         content="https://roadmapventure.com/nigp-marketing.html" />
-  <meta property="og:title"       content="NIGP Spend Analyzer — Government Procurement Intelligence" />
-  <meta property="og:description" content="The only spend analysis tool built natively on the NIGP 18th Edition taxonomy. Upload any government procurement CSV. Full intelligence in 30 seconds." />
+  <meta property="og:title" content="NIGP Spend Analyzer — Government Procurement Intelligence Tool" />
+  <meta property="og:description" content="The only spend analysis tool built natively on the NIGP 18th Edition taxonomy. Upload any government procurement CSV and get full intelligence — maverick spend, vendor risk, health flags — in 30 seconds." />
   <meta property="og:image"       content="https://roadmapventure.com/og-image.png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <!-- Twitter / X card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="NIGP Spend Analyzer — Government Procurement Intelligence" />
-  <meta name="twitter:description" content="The only spend analysis tool built natively on the NIGP 18th Edition taxonomy. Upload any government procurement CSV. Full intelligence in 30 seconds." />
+  <meta name="twitter:title" content="NIGP Spend Analyzer — Government Procurement Intelligence Tool" />
+  <meta name="twitter:description" content="The only spend analysis tool built natively on the NIGP 18th Edition taxonomy. Upload any government procurement CSV and get full intelligence — maverick spend, vendor risk, health flags — in 30 seconds." />
   <meta name="twitter:image"       content="https://roadmapventure.com/og-image.png" />
   <!-- iOS / Apple -->
   <meta name="apple-mobile-web-app-title" content="RoadMapVenture" />
@@ -271,6 +271,24 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <script src="footer.js"></script>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "NIGP Spend Analyzer",
+  "url": "https://nigp.roadmapventure.com",
+  "applicationCategory": "BusinessApplication",
+  "description": "Government procurement spend analysis tool built natively on the NIGP 18th Edition taxonomy. Upload any CSV and get full intelligence in 30 seconds.",
+  "operatingSystem": "Any (browser-based)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Person", "name": "John Leonard", "url": "https://roadmapventure.com"}
+}
+  </script>
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+  <meta name="keywords" content="NIGP spend analysis, government procurement analytics, NIGP 18th edition, procurement intelligence tool, maverick spend detection, vendor concentration analysis, government eProcurement, CPO spend tool" />
+  <meta name="author" content="John Leonard" />
 </head>
 <body>
 
@@ -344,8 +362,8 @@
       <p class="ai-body">The AI Executive Briefing reads your spend data, health flags, and vendor concentration scores — then writes a complete procurement narrative structured for leadership presentation. Portfolio overview, risk exposure analysis, and three concrete 90-day strategic actions.</p>
       <p class="ai-body">Powered by Claude AI. Built on NIGP methodology. Grounded in your actual data — not generic benchmarks.</p>
       <div class="ai-coming-card">
-        <div class="ai-coming-label">Coming Next: RAG-Powered NIGP Intelligence</div>
-        <div class="ai-coming-body">The next version grounds the AI analysis layer in NIGP's own consulting methodology and best practices — so every recommendation reflects NIGP's standards, not generic procurement advice. A first-of-its-kind NIGP knowledge base powering procurement intelligence.</div>
+        <div class="ai-coming-label">Actionable Procurement Intelligence for Your Next 90 Days</div>
+        <div class="ai-coming-body">What you previously paid an analyst or consultant weeks to produce — a structured spend briefing, risk assessment, and strategic action plan grounded in procurement best practices — is now generated instantly from your own data. No retainer. No waiting. No generic benchmarks. Just board-ready intelligence built on NIGP methodology and your agency's actual spend patterns, delivered in seconds.</div>
       </div>
     </div>
     <div class="ai-briefing-card">
@@ -405,6 +423,24 @@
   </div>
 </section>
 
+<!-- ── FEATURES ── -->
+<section class="features-section" id="features">
+  <div class="section-inner">
+    <div class="section-eyebrow">Core Capabilities</div>
+    <h2 class="section-title">Everything a CPO Needs.<br>Nothing They Don't.</h2>
+    <p class="section-subtitle">Purpose-built for government procurement. Upload a CSV, confirm column mapping, and let the engine work.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🏷</div><div class="feature-title">NIGP Classification Engine</div><div class="feature-body">Every transaction classified against the full NIGP 18th Edition — 264 classes, 8,239 subclasses — in seconds. Works on any government CSV export, regardless of column schema. Auto-detects and maps your columns.</div><span class="feature-tag">18th Edition Native</span></div>
+      <div class="feature-card" onclick="location.href='#flags'" style="cursor:pointer;"><div class="feature-icon">⚠️</div><div class="feature-title">Procurement Health Flags</div><div class="feature-body">Six automated compliance and risk checks run on every upload. Maverick spend, PO splitting, single-source concentration, spending spikes, vendor sprawl, and out-of-state compliance — all flagged with dollar exposure and remediation guidance.</div><span class="feature-tag">6 Automated Checks</span></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Vendor Risk Intelligence</div><div class="feature-body">HHI concentration scoring, cumulative spend curves, category dominance tables. Instantly identify which vendors represent monopolistic risk, where competition has broken down, and which categories need market surveys.</div><span class="feature-tag">HHI Scoring</span></div>
+      <div class="feature-card" onclick="location.href='#ai'" style="cursor:pointer;"><div class="feature-icon">🤖</div><div class="feature-title">AI Executive Briefing</div><div class="feature-body">One click generates a board-ready CPO narrative using Claude AI — portfolio overview, risk assessment, and three concrete 90-day strategic opportunities. A first draft in 30 seconds, not a blank page.</div><span class="feature-tag">Powered by Claude AI</span></div>
+      <div class="feature-card"><div class="feature-icon">🧹</div><div class="feature-title">Data Quality Cleanup</div><div class="feature-body">Missing, malformed, and unrecognized NIGP codes are surfaced with suggested corrections. Know exactly how much spend is at risk due to data quality issues before you present to leadership.</div><span class="feature-tag">Code Validation</span></div>
+      <div class="feature-card"><div class="feature-icon">🗺</div><div class="feature-title">10 Analysis Views</div><div class="feature-body">Overview, Concerns, Vendor Risk, Categories, Treemap, Vendors, Departments, Timeline, Full Table, and Data Cleanup — all driven by a single CSV upload. Every view is interactive, filterable, and exportable.</div><span class="feature-tag">10 Interactive Tabs</span></div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ── PROBLEM ── -->
 <section class="problem-section" id="problem">
   <div class="problem-grid">
@@ -421,23 +457,6 @@
         <li><span class="pain-icon">🔍</span><div><strong>Risk buried in plain sight</strong>Maverick spend, PO splitting, single-source concentration — these compliance risks are present in almost every agency's data. But finding them manually takes days.</div></li>
         <li><span class="pain-icon">💸</span><div><strong>Enterprise tools aren't built for government</strong>The platforms used by Fortune 500 procurement teams are inaccessible to most government agencies — too expensive, too complex, and not NIGP-aware.</div></li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ── FEATURES ── -->
-<section class="features-section" id="features">
-  <div class="section-inner">
-    <div class="section-eyebrow">Core Capabilities</div>
-    <h2 class="section-title">Everything a CPO Needs.<br>Nothing They Don't.</h2>
-    <p class="section-subtitle">Purpose-built for government procurement. Upload a CSV, confirm column mapping, and let the engine work.</p>
-    <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">🏷</div><div class="feature-title">NIGP Classification Engine</div><div class="feature-body">Every transaction classified against the full NIGP 18th Edition — 264 classes, 8,239 subclasses — in seconds. Works on any government CSV export, regardless of column schema. Auto-detects and maps your columns.</div><span class="feature-tag">18th Edition Native</span></div>
-      <div class="feature-card"><div class="feature-icon">⚠️</div><div class="feature-title">Procurement Health Flags</div><div class="feature-body">Six automated compliance and risk checks run on every upload. Maverick spend, PO splitting, single-source concentration, spending spikes, vendor sprawl, and out-of-state compliance — all flagged with dollar exposure and remediation guidance.</div><span class="feature-tag">6 Automated Checks</span></div>
-      <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Vendor Risk Intelligence</div><div class="feature-body">HHI concentration scoring, cumulative spend curves, category dominance tables. Instantly identify which vendors represent monopolistic risk, where competition has broken down, and which categories need market surveys.</div><span class="feature-tag">HHI Scoring</span></div>
-      <div class="feature-card"><div class="feature-icon">🤖</div><div class="feature-title">AI Executive Briefing</div><div class="feature-body">One click generates a board-ready CPO narrative using Claude AI — portfolio overview, risk assessment, and three concrete 90-day strategic opportunities. A first draft in 30 seconds, not a blank page.</div><span class="feature-tag">Powered by Claude AI</span></div>
-      <div class="feature-card"><div class="feature-icon">🧹</div><div class="feature-title">Data Quality Cleanup</div><div class="feature-body">Missing, malformed, and unrecognized NIGP codes are surfaced with suggested corrections. Know exactly how much spend is at risk due to data quality issues before you present to leadership.</div><span class="feature-tag">Code Validation</span></div>
-      <div class="feature-card"><div class="feature-icon">🗺</div><div class="feature-title">10 Analysis Views</div><div class="feature-body">Overview, Concerns, Vendor Risk, Categories, Treemap, Vendors, Departments, Timeline, Full Table, and Data Cleanup — all driven by a single CSV upload. Every view is interactive, filterable, and exportable.</div><span class="feature-tag">10 Interactive Tabs</span></div>
     </div>
   </div>
 </section>
@@ -505,7 +524,7 @@
       <div class="security-point"><div class="sec-icon">🔒</div><div><div class="sec-title">Zero Data Egress</div><div class="sec-body">Your CSV file is parsed and processed entirely in the browser. No upload to a server. No data transmission. The file stays on your machine at all times.</div></div></div>
       <div class="security-point"><div class="sec-icon">⚡</div><div><div class="sec-title">No Backend Infrastructure</div><div class="sec-body">There is no server, no database, no cloud storage. The entire application runs in your browser — which means no infrastructure to breach, audit, or procure.</div></div></div>
       <div class="security-point"><div class="sec-icon">✅</div><div><div class="sec-title">IT-Friendly by Design</div><div class="sec-body">No installation. No admin rights. No data processing agreements on day one. Government IT teams can greenlight this tool without a full security review cycle.</div></div></div>
-      <div class="security-point"><div class="sec-icon">🌐</div><div><div class="sec-title">Works Anywhere</div><div class="sec-body">Any modern browser, any operating system, any device. Share a link — no license keys, no installer, no IT ticket required to get your team started.</div></div></div>
+      <div class="security-point"><div class="sec-icon">🌐</div><div><div class="sec-title">Works Anywhere</div><div class="sec-body">Any modern browser, any operating system, any device, including mobile. Share a link — no license keys, no installer, no IT ticket required to get your team started.</div></div></div>
     </div>
   </div>
 </section>
@@ -524,17 +543,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <a class="footer-logo" href="index.html">RoadMapVenture</a>
-  <span class="footer-copy">© 2025 John Leonard · Austin, TX · Built on NIGP 18th Edition</span>
-  <ul class="footer-links">
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="playbook.html">The Product Playbook</a></li>
-    <li><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank">LinkedIn ↗</a></li>
-  </ul>
-</footer>
 
 
 
