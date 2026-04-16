@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Playbook — John Leonard · RoadMapVenture</title>
+<meta name="description" content="Product, data, AI, transformation, and leadership insights from John Leonard — senior product executive and fractional CPO with 30 years building SaaS companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory:   #faf8f5;
+    --ivory-2: #f3efe9;
+    --ink:     #1a1814;
+    --ink-2:   #3a342c;
+    --ink-3:   #6b6057;
+    --gold:    #c8a96e;
+    --gold-lt: #e8d9bc;
+    --rule:    rgba(200,169,110,.25);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 56px;
+    height: 68px;
+    background: rgba(250,248,245,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: .04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-decoration: none;
+    transition: color .2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -3px;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width .25s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+  .nav-cta {
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    padding: 9px 20px;
+    transition: all .22s;
+  }
+  .nav-cta:hover { background: var(--ink); color: var(--ivory); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: calc(68px + 64px) 56px 60px;
+    background: var(--ivory-2);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+  .page-overline {
+    font-size: 10px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .page-overline::before {
+    content: '';
+    display: block;
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+  .page-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    line-height: .92;
+    color: var(--ink);
+  }
+  .page-header h1 em { font-style: italic; color: var(--ink-2); }
+  .header-right {
+    padding-bottom: 8px;
+  }
+  .header-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink-3);
+    margin-bottom: 28px;
+  }
+  .category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    border: 1px solid var(--rule);
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all .2s;
+    text-decoration: none;
+  }
+  .pill:hover, .pill.active {
+    background: var(--ink);
+    color: var(--ivory);
+    border-color: var(--ink);
+  }
+  .pill-all { border-color: var(--gold); color: var(--gold); }
+  .pill-all:hover, .pill-all.active { background: var(--gold); color: var(--ivory); border-color: var(--gold); }
+
+  /* ── MAIN LAYOUT ── */
+  .playbook-body {
+    padding: 64px 56px 100px;
+  }
+
+  /* ── CATEGORY SECTION ── */
+  .category-block {
+    margin-bottom: 72px;
+  }
+  .category-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .category-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--ink);
+  }
+  .category-name em { font-style: italic; color: var(--ink-2); }
+  .category-count {
+    font-size: 11px;
+    letter-spacing: .15em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* ── POST CARDS GRID ── */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .post-card {
+    background: var(--ivory);
+    padding: 32px 28px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: background .2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .post-card:hover { background: var(--ivory-2); }
+  .post-card.coming-soon { opacity: .55; cursor: default; pointer-events: none; }
+
+  .post-card::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--gold);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform .25s;
+  }
+  .post-card:hover::after { transform: scaleY(1); }
+
+  .post-format {
+    font-size: 9px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .post-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 12px;
+    flex-grow: 1;
+  }
+  .post-excerpt {
+    font-size: 12px;
+    color: var(--ink-3);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .post-read {
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .post-coming {
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-style: italic;
+  }
+  .post-tag {
+    font-size: 10px;
+    letter-spacing: .1em;
+    color: var(--ink-3);
+    background: var(--ivory-2);
+    padding: 3px 8px;
+    border: 1px solid var(--rule);
+  }
+
+  /* ── SUBSCRIBE STRIP ── */
+  .subscribe-strip {
+    background: var(--ink);
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    border-top: 1px solid rgba(200,169,110,.15);
+  }
+  .subscribe-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .subscribe-heading em { font-style: italic; color: rgba(250,248,245,.5); }
+  .subscribe-sub {
+    font-size: 13px;
+    color: rgba(250,248,245,.45);
+    line-height: 1.6;
+  }
+  .subscribe-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .btn-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 13px 24px;
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+  .btn-linkedin:hover { opacity: .85; }
+  .btn-linkedin svg { flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(250,248,245,.35);
+    padding: 32px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(200,169,110,.1);
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--ivory);
+    text-decoration: none;
+    opacity: .8;
+  }
+  .footer-copy { font-size: 11px; letter-spacing: .05em; }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a {
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: rgba(250,248,245,.35);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .page-header { animation: fadeUp .5s ease both; }
+  .category-block { animation: fadeUp .5s .1s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .posts-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 1024px) {
+    nav { padding: 0 28px; }
+    .page-header { grid-template-columns: 1fr; padding: calc(68px + 40px) 28px 40px; gap: 32px; }
+    .page-header h1 { font-size: 52px; }
+    .playbook-body { padding: 40px 28px 60px; }
+    .subscribe-strip { grid-template-columns: 1fr; padding: 40px 28px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px; }
+  }
+  @media (max-width: 700px) {
+    .posts-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">RoadMap<span>Venture</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="nigp-marketing.html">Procurement Intelligence</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="playbook.html" class="active">The Playbook</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openpbContact()" style="cursor:pointer;font-family:inherit;background:transparent;">Get in Touch</button>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div>
+    <div class="page-overline">Thought Leadership · Original Writing</div>
+    <h1>The<br><em>Playbook.</em></h1>
+  </div>
+  <div class="header-right">
+    <p class="header-desc">
+      Thirty years of product leadership distilled into frameworks, opinions, and hard-won lessons. 
+      On building products, scaling data, deploying AI, leading transformation, and developing the 
+      executives who do all of the above. Written for practitioners — not consultants.
+    </p>
+    <div class="category-pills">
+      <a href="#" class="pill pill-all active">All</a>
+      <a href="#product" class="pill">Product</a>
+      <a href="#data" class="pill">Data</a>
+      <a href="#ai" class="pill">AI</a>
+      <a href="#transformation" class="pill">Transformation</a>
+      <a href="#leadership" class="pill">Leadership</a>
+    </div>
+  </div>
+</div>
+
+<!-- PLAYBOOK BODY -->
+<div class="playbook-body">
+
+  <!-- ── PRODUCT ── -->
+  <div class="category-block" id="product">
+    <div class="category-header">
+      <div class="category-name">01 &nbsp;<em>Product</em></div>
+      <div class="category-count">Coming Soon</div>
+    </div>
+    <div class="posts-grid">
+      <a class="post-card" href="playbook-post.html">
+        <div class="post-format">Deep Dive</div>
+        <div class="post-title">Why Your Roadmap Is a Symptom, Not a Strategy</div>
+        <div class="post-excerpt">Most product roadmaps are glorified backlogs. Here's what separates a roadmap that drives outcomes from one that just keeps the team busy.</div>
+        <div class="post-footer">
+          <span class="post-read">Read →</span>
+          <span class="post-tag">Product</span>
+        </div>
+      </a>
+      <div class="post-card coming-soon">
+        <div class="post-format">Framework</div>
+        <div class="post-title">The 0-to-1 Trap: Why Launch Is the Easy Part</div>
+        <div class="post-excerpt">Getting a product to market is celebrated. Building one that survives its first 12 months rarely is. The real work starts after the launch announcement.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Product</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Opinion</div>
+        <div class="post-title">How to Run a Roadmap Review That Actually Means Something</div>
+        <div class="post-excerpt">Most roadmap reviews are theater. Here's the cadence and structure I've used across $75M ARR portfolios to make governance a growth lever.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Product</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DATA ── -->
+  <div class="category-block" id="data">
+    <div class="category-header">
+      <div class="category-name">02 &nbsp;<em>Data</em></div>
+      <div class="category-count">Coming Soon</div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card coming-soon">
+        <div class="post-format">Deep Dive</div>
+        <div class="post-title">You Don't Have a Data Problem. You Have a Data Practice Problem.</div>
+        <div class="post-excerpt">Most companies drowning in data aren't lacking tools — they're lacking the operating model that turns raw data into a decision-making asset.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Data</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Framework</div>
+        <div class="post-title">Building a Data Practice from Zero: The First 90 Days</div>
+        <div class="post-excerpt">I've done this twice at PE-backed SaaS companies. Here's the exact sequence — people, infrastructure, governance — that gets you from zero to trusted data in one quarter.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Data</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Opinion</div>
+        <div class="post-title">Data Monetization Isn't a Strategy. It's a Destination.</div>
+        <div class="post-excerpt">Everyone wants to "monetize their data." Few can explain what that actually means inside their product or business model. Here's how to think about it properly.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Data</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── AI ── -->
+  <div class="category-block" id="ai">
+    <div class="category-header">
+      <div class="category-name">03 &nbsp;<em>AI</em></div>
+      <div class="category-count">Coming Soon</div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card coming-soon">
+        <div class="post-format">Opinion</div>
+        <div class="post-title">AI Features Won't Save a Bad Product. They'll Just Expose It Faster.</div>
+        <div class="post-excerpt">The race to bolt AI onto existing products is producing a lot of mediocre features and very few defensible advantages. Here's when AI actually changes the equation.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">AI</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Framework</div>
+        <div class="post-title">How to Run an AI POC That Stakeholders Actually Trust</div>
+        <div class="post-excerpt">A proof of concept that impresses engineers and confuses executives is not a success. Here's the framework I use to design AI POCs that lead to funded roadmap items.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">AI</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Short Take</div>
+        <div class="post-title">The Real Question Isn't "Should We Use AI?" It's "Who Owns the Output?"</div>
+        <div class="post-excerpt">Governance of AI-generated content, decisions, and recommendations is the product problem nobody is solving cleanly. A short take on ownership and accountability.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TRANSFORMATION ── -->
+  <div class="category-block" id="transformation">
+    <div class="category-header">
+      <div class="category-name">04 &nbsp;<em>Transformation</em></div>
+      <div class="category-count">Coming Soon</div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card coming-soon">
+        <div class="post-format">Deep Dive</div>
+        <div class="post-title">Post-Acquisition Product Integration: The 10 Things Nobody Tells You</div>
+        <div class="post-excerpt">I've led product integration across three acquisitions. The technical debt is rarely the hardest part. The roadmap politics, the customer trust, and the team identity crisis — those are.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Transformation</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Framework</div>
+        <div class="post-title">How to Stabilize a $75M ARR Product Portfolio Without Breaking Everything</div>
+        <div class="post-excerpt">When you inherit a legacy platform with thousands of enterprise customers, the instinct to modernize fast is wrong. Here's the sequencing that actually works.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Transformation</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Opinion</div>
+        <div class="post-title">PE-Backed Doesn't Mean Move Fast. It Means Move Right.</div>
+        <div class="post-excerpt">Private equity ownership changes the product calculus in ways most CPOs aren't prepared for. Here's how to align product strategy with the value creation timeline.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Transformation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LEADERSHIP ── -->
+  <div class="category-block" id="leadership">
+    <div class="category-header">
+      <div class="category-name">05 &nbsp;<em>Leadership</em></div>
+      <div class="category-count">Coming Soon</div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card coming-soon">
+        <div class="post-format">Short Take</div>
+        <div class="post-title">The Fractional CPO Is Not a Consultant. Here's the Difference.</div>
+        <div class="post-excerpt">Consultants give recommendations. Fractional CPOs own outcomes. If you're hiring one to produce a deck, you're wasting your budget.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Leadership</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Framework</div>
+        <div class="post-title">How I Build Product Teams That Ship Without Being Told To</div>
+        <div class="post-excerpt">Velocity without ownership is just noise. Here's the operating model I've used to build teams where delivery discipline and product thinking coexist — across onshore and offshore orgs.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Leadership</span>
+        </div>
+      </div>
+      <div class="post-card coming-soon">
+        <div class="post-format">Opinion</div>
+        <div class="post-title">Stop Hiring for Domain Expertise. Start Hiring for Pattern Recognition.</div>
+        <div class="post-excerpt">The best product people I've hired rarely came from the same industry. What they shared was the ability to spot the underlying pattern faster than anyone else in the room.</div>
+        <div class="post-footer">
+          <span class="post-coming">Coming soon</span>
+          <span class="post-tag">Leadership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SUBSCRIBE / LINKEDIN STRIP -->
+<div class="subscribe-strip">
+  <div>
+    <div class="subscribe-heading">These pieces also live<br>on <em>LinkedIn.</em></div>
+    <p class="subscribe-sub">Follow along for new entries across all five categories — published when the thinking is ready, not on a content calendar.</p>
+  </div>
+  <div class="subscribe-actions">
+    <a class="btn-linkedin" href="https://www.linkedin.com/in/leonardjohn/" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+      Follow on LinkedIn
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="index.html">RoadMapVenture</a>
+  <span class="footer-copy">© 2025 John Leonard · Austin, TX</span>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank">LinkedIn ↗</a></li>
+  </ul>
+</footer>
+
+
+<!-- Contact Reveal Modal -->
+<div id="pbcontactModal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(26,24,20,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;" onclick="if(event.target===this)closepbContact()">
+  <div style="background:#faf8f5;border:1px solid rgba(200,169,110,.25);padding:48px 52px;max-width:440px;width:90%;position:relative;">
+    <div style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#c8a96e;margin-bottom:20px;display:flex;align-items:center;gap:10px;"><span style="display:block;width:20px;height:1px;background:#c8a96e;"></span>Get in Touch</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#1a1814;margin-bottom:28px;line-height:1.1;">Let's build something<br><em style="color:#c8a96e">worth shipping.</em></div>
+    <div id="pbcPhone" style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);cursor:pointer;" onclick="revpb('phone')" title="Click to reveal">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">Phone</div>
+      <div id="pbpVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1814;" data-val="NTEyLjU4NS44NTEz"><span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">↗ Click to reveal</span></div>
+    </div>
+    <div id="pbcEmail" style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);cursor:pointer;" onclick="revpb('email')" title="Click to reveal">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">Email</div>
+      <div id="pbeVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1814;" data-val="amxlb25hQHlhaG9vLmNvbQ=="><span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">↗ Click to reveal</span></div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">LinkedIn</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;"><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" style="color:#1a1814;text-decoration:none;">linkedin.com/in/leonardjohn ↗</a></div>
+    </div>
+    <div style="padding:14px 0;">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">Location</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1814;">Austin, Texas</div>
+    </div>
+    <button onclick="closepbContact()" style="position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:#6b6057;cursor:pointer;">×</button>
+  </div>
+</div>
+<script>
+function openpbContact(){document.getElementById('pbcontactModal').style.display='flex';}
+function closepbContact(){document.getElementById('pbcontactModal').style.display='none';}
+function revpb(type){
+  if(type==='phone'){
+    var el=document.getElementById('pbpVal');
+    var val=atob(el.dataset.val);
+    el.innerHTML='<a href="tel:+1'+val.replace(/\./g,'')+'" style="color:#1a1814;text-decoration:none;">'+val+'</a>';
+    document.getElementById('pbcPhone').style.cursor='default';
+  }else{
+    var el=document.getElementById('pbeVal');
+    var val=atob(el.dataset.val);
+    el.innerHTML='<a href="mailto:'+val+'" style="color:#1a1814;text-decoration:none;">'+val+'</a>';
+    document.getElementById('pbcEmail').style.cursor='default';
+  }
+}
+</script>
+</body>
+</html>
