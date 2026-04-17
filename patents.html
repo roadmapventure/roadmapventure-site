@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patents — John Leonard | RoadMapVenture</title>
+<meta name="description" content="Four U.S. patents co-invented by John Leonard spanning data matching, semantic analysis, fraud detection, and intelligent workflow automation." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<meta property="og:title"       content="Patents — John Leonard" />
+<meta property="og:description" content="Four U.S. patents co-invented by John Leonard spanning data matching, fraud detection, and intelligent workflow automation." />
+<meta property="og:image"       content="https://roadmapventure.com/og-image.png" />
+<meta property="og:url"         content="https://roadmapventure.com/patents.html" />
+<meta property="og:type"        content="website" />
+<link rel="canonical" href="https://roadmapventure.com/patents.html" />
+<style>
+  :root {
+    --ivory:   #faf8f5;
+    --ivory-2: #f3efe9;
+    --ink:     #1a1814;
+    --ink-2:   #3a342c;
+    --ink-3:   #6b6057;
+    --gold:    #c8a96e;
+    --gold-lt: #e8d9bc;
+    --rule:    rgba(200,169,110,.25);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--ivory); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+  /* nav styles in nav.js */
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding-top: 68px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--ivory);
+  }
+  .page-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 56px 72px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: end;
+  }
+  .page-overline {
+    font-size: 10px; letter-spacing: .28em; text-transform: uppercase;
+    color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+  }
+  .page-overline::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: 300; line-height: .95;
+    color: var(--ink); letter-spacing: -.01em;
+  }
+  .page-title em { font-style: italic; color: var(--ink-2); }
+  .page-intro {
+    font-size: 15px; line-height: 1.85; color: var(--ink-3);
+    padding-top: 8px;
+  }
+  .page-intro strong { color: var(--ink-2); font-weight: 500; }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--ivory-2);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 56px;
+  }
+  .stats-bar-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--rule);
+  }
+  .stat-cell {
+    background: var(--ivory-2); padding: 28px 32px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .stat-cell-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300; color: var(--ink); line-height: 1;
+  }
+  .stat-cell-val span { font-size: 18px; color: var(--gold); }
+  .stat-cell-label {
+    font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3);
+  }
+
+  /* ── PATENTS GRID ── */
+  .patents-section {
+    max-width: 1100px; margin: 0 auto;
+    padding: 72px 56px 100px;
+  }
+  .patents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .patent-card {
+    background: var(--ivory);
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: background .2s;
+    position: relative;
+  }
+  .patent-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: transparent;
+    transition: background .25s;
+  }
+  .patent-card:hover { background: var(--ivory-2); }
+  .patent-card:hover::before { background: var(--gold); }
+
+  .patent-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: .14em;
+    color: var(--gold); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .patent-num::before {
+    content: ''; display: block;
+    width: 16px; height: 1px; background: var(--gold);
+  }
+
+  .patent-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; line-height: 1.25;
+    color: var(--ink); margin-bottom: 16px;
+  }
+
+  .patent-desc {
+    font-size: 13px; color: var(--ink-3); line-height: 1.8;
+    flex: 1; margin-bottom: 28px;
+  }
+
+  .patent-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .patent-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: .1em;
+    color: var(--ink-3);
+  }
+  .patent-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: color .2s;
+  }
+  .patent-link:hover { color: var(--ink); }
+  .patent-link::after { content: '↗'; }
+
+  .patent-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 24px;
+  }
+  .patent-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--ink-3); border: 1px solid var(--rule);
+    padding: 3px 8px; border-radius: 2px;
+    background: var(--ivory-2);
+  }
+
+  /* ── CONTEXT SECTION ── */
+  .context-section {
+    border-top: 1px solid var(--rule);
+    background: var(--ivory-2);
+    padding: 72px 56px;
+  }
+  .context-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 2fr; gap: 72px; align-items: start;
+  }
+  .context-label {
+    font-size: 10px; letter-spacing: .28em; text-transform: uppercase;
+    color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  }
+  .context-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+  .context-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300; line-height: 1.1; color: var(--ink);
+  }
+  .context-body {
+    font-size: 14px; color: var(--ink-3); line-height: 1.9; margin-bottom: 16px;
+  }
+  .context-body strong { color: var(--ink-2); font-weight: 500; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .page-header-inner { grid-template-columns: 1fr; gap: 28px; padding: 56px 28px 48px; }
+    .patents-grid { grid-template-columns: 1fr; }
+    .stats-bar-inner { grid-template-columns: 1fr; }
+    .stats-bar, .patents-section, .context-section { padding-left: 28px; padding-right: 28px; }
+    .context-inner { grid-template-columns: 1fr; gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<script src="nav.js"></script>
+<script src="footer.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){initNav("patents.html");initFooter();})</script>
+
+<!-- ── PAGE HEADER ── -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <div class="page-overline">Intellectual Property</div>
+      <h1 class="page-title">Four U.S.<br><em>Patents.</em></h1>
+    </div>
+    <p class="page-intro">
+      Co-invented across eight years of venture-stage product development at Fluid Innovation. 
+      These patents span <strong>data matching, fraud detection, geographic credit analysis, 
+      and intelligent offer automation</strong> — filed and prosecuted before AI became mainstream, 
+      in domains that are now core to modern fintech and data infrastructure.
+    </p>
+  </div>
+</div>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-cell">
+      <div class="stat-cell-val">4</div>
+      <div class="stat-cell-label">Patents Through the Process</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-val">9</div>
+      <div class="stat-cell-label">Total Filings</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-val">2008<span>–16</span></div>
+      <div class="stat-cell-label">Filing Period</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PATENTS GRID ── -->
+<div class="patents-section">
+  <div class="patents-grid">
+
+    <!-- Patent 1 -->
+    <div class="patent-card">
+      <div class="patent-num">US10453129B2</div>
+      <h2 class="patent-title">Systems and Methods for Credit Approval Using Geographic Data</h2>
+      <div class="patent-tags">
+        <span class="patent-tag">Geographic Intelligence</span>
+        <span class="patent-tag">Credit Systems</span>
+        <span class="patent-tag">Data Matching</span>
+      </div>
+      <p class="patent-desc">A method for evaluating credit applications by incorporating location-based data signals — enabling more accurate, context-aware approval decisions beyond traditional credit scoring models.</p>
+      <div class="patent-meta">
+        <span class="patent-date">Issued Oct 22, 2019</span>
+        <a href="https://patents.google.com/patent/US10453129B2/en" target="_blank" class="patent-link">View Patent</a>
+      </div>
+    </div>
+
+    <!-- Patent 2 -->
+    <div class="patent-card">
+      <div class="patent-num">US9311672B2</div>
+      <h2 class="patent-title">Systems and Methods for Fraud Detection Using a Cooperative Data Exchange</h2>
+      <div class="patent-tags">
+        <span class="patent-tag">Fraud Detection</span>
+        <span class="patent-tag">Data Exchange</span>
+        <span class="patent-tag">Risk Intelligence</span>
+      </div>
+      <p class="patent-desc">A cooperative framework for detecting fraudulent activity by enabling secure, cross-institutional data sharing — identifying patterns that no single institution could detect alone.</p>
+      <div class="patent-meta">
+        <span class="patent-date">Issued Apr 12, 2016</span>
+        <a href="https://patents.google.com/patent/US9311672B2/en" target="_blank" class="patent-link">View Patent</a>
+      </div>
+    </div>
+
+    <!-- Patent 3 -->
+    <div class="patent-card">
+      <div class="patent-num">US20120215614A1</div>
+      <h2 class="patent-title">Systems and Methods for Automatically Providing Relevant Offers to Customers</h2>
+      <div class="patent-tags">
+        <span class="patent-tag">Offer Automation</span>
+        <span class="patent-tag">Behavioral Matching</span>
+        <span class="patent-tag">Consumer Intelligence</span>
+      </div>
+      <p class="patent-desc">An intelligent system for matching customers to relevant offers in real time — using behavioral and transactional signals to surface the right offer at the right moment without manual targeting.</p>
+      <div class="patent-meta">
+        <span class="patent-date">Filed Aug 23, 2012</span>
+        <a href="https://patents.google.com/patent/US20120215614A1/en" target="_blank" class="patent-link">View Patent</a>
+      </div>
+    </div>
+
+    <!-- Patent 4 -->
+    <div class="patent-card">
+      <div class="patent-num">US20120158500A1</div>
+      <h2 class="patent-title">Method and System for Matching Sellers with Buyers</h2>
+      <div class="patent-tags">
+        <span class="patent-tag">Marketplace Intelligence</span>
+        <span class="patent-tag">Seller-Buyer Matching</span>
+        <span class="patent-tag">Workflow Automation</span>
+      </div>
+      <p class="patent-desc">A method and system for intelligently connecting sellers with qualified buyers — applying data-driven matching logic to reduce friction and improve conversion across marketplace transactions.</p>
+      <div class="patent-meta">
+        <span class="patent-date">Filed Dec 15, 2010</span>
+        <a href="https://patents.google.com/patent/US20120158500A1/en" target="_blank" class="patent-link">View Patent</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── CONTEXT SECTION ── -->
+<div class="context-section">
+  <div class="context-inner">
+    <div>
+      <div class="context-label">Background</div>
+      <h2 class="context-heading">Built before<br>it was a trend.</h2>
+    </div>
+    <div>
+      <p class="context-body">
+        These patents were developed between 2008 and 2016 at <strong>Fluid Innovation</strong>, 
+        an angel-backed venture studio in Austin. The work spanned five 
+        distinct product ventures — each one exploring a different application of data 
+        intelligence in consumer finance, marketplaces, and IP commercialization.
+      </p>
+      <p class="context-body">
+        The underlying themes — <strong>cooperative data exchange, behavioral matching, 
+        geographic intelligence, and automated workflow</strong> — were ahead of their time. 
+        The same concepts now power modern fraud platforms, recommendation engines, 
+        and fintech credit infrastructure.
+      </p>
+      <p class="context-body">
+        Three of the ventures built on this IP work resulted in successful exits: 
+        <strong>IP Zone</strong> (acquired by American Express), 
+        <strong>idealAsset</strong> (acquired by Dominion Harbor), and <strong>Enlyton</strong> 
+        (integrated into IBM Watson partner solutions).
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

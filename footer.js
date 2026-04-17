@@ -11,6 +11,7 @@
     { href: 'nigp-marketing.html', label: 'Data Intelligence' },
     { href: 'playbook.html',       label: 'My Product Playbook' },
     { href: 'about.html',          label: 'About' },
+    { href: 'patents.html',        label: 'Patents' },
   ];
 
   function buildFooter() {
