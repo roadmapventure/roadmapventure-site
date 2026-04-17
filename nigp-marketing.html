@@ -262,6 +262,12 @@
     .features-grid, .roadmap-items, .stats-inner { grid-template-columns: 1fr; }
   }
   .ext-link::after { content: " ↗"; }
+  .arrow-link {
+    display: flex; align-items: center; gap: 6px;
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .arrow-link::after { content: '↗'; }
 </style>
   <script src="nav.js"></script>
   <script src="footer.js"></script>
@@ -341,7 +347,7 @@
     <div class="hero-ctas">
       <button onclick="openContactModal()" class="btn-primary" style="cursor:pointer;font-family:inherit;">Request Early Access</button>
       <a href="#features" class="btn-secondary">See How It Works</a>
-      <a href="https://nigp.roadmapventure.com" target="_blank" class="btn-secondary ext-link">Launch App</a>
+      <a href="https://nigp.roadmapventure.com" target="_blank" class="btn-secondary arrow-link">Launch App</a>
     </div>
   </div>
   <div class="hero-right">
@@ -580,7 +586,7 @@
     <div class="cta-buttons">
       <button onclick="openContactModal()" class="btn-primary" style="cursor:pointer;font-family:inherit;">Request Early Access</button>
       <button onclick="openContactModal()" class="btn-secondary" style="cursor:pointer;font-family:inherit;">Schedule a Demo</button>
-      <a href="https://nigp.roadmapventure.com" target="_blank" class="btn-secondary ext-link">Launch App</a>
+      <a href="https://nigp.roadmapventure.com" target="_blank" class="btn-secondary arrow-link">Launch App</a>
     </div>
     <div class="cta-footnote">No installation · No IT ticket · Works in any browser · Government data never leaves your machine</div>
   </div>

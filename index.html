@@ -127,6 +127,12 @@
   .stat-box:has(.patent-stat-link) { cursor: pointer; position: relative; border-top: 2px solid transparent; transition: border-color .2s, background .2s; }
   .stat-box:has(.patent-stat-link):hover { background: var(--ivory); border-top-color: var(--gold); }
   .stat-box:has(.patent-stat-link):hover .patent-stat-link { color: var(--gold); }
+  .arrow-link {
+    display: flex; align-items: center; gap: 6px;
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .arrow-link::after { content: '↗'; }
 </style>
   <script src="nav.js"></script>
   <script src="footer.js"></script>
@@ -220,7 +226,7 @@
       </div>
       <div class="stat-box">
         <div class="stat-val">4</div>
-        <a href="patents.html" class="stat-label ext-link">U.S. Patents</a>
+        <a href="patents.html" class="stat-label arrow-link">U.S. Patents</a>
       </div>
       <div class="stat-box">
         <div class="stat-val">5</div>
@@ -258,7 +264,7 @@
     </div>
     <div class="contact-row">
       <span class="contact-lbl">Connect</span>
-      <span class="contact-val"><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" class="ext-link" style="color:var(--gold);">LinkedIn</a></span>
+      <span class="contact-val"><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" class="arrow-link" style="color:var(--gold);">LinkedIn</a></span>
     </div>
   </div>
 </section>
