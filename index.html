@@ -53,7 +53,7 @@
     background: var(--ivory-2);
     position: relative; overflow: hidden;
   }
-  .hero-right::before { content: 'RMV'; position: absolute; right: -10px; bottom: -40px; font-family: 'Cormorant Garamond', serif; font-size: 180px; font-weight: 300; color: rgba(200,169,110,.06); line-height: 1; user-select: none; letter-spacing: -.02em; }
+  .hero-right::before { content: 'R'; position: absolute; right: -20px; bottom: -40px; font-family: 'Cormorant Garamond', serif; font-size: 320px; font-weight: 300; color: rgba(200,169,110,.06); line-height: 1; user-select: none; }
 
   .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 40px; }
   .stat-box { background: var(--ivory-2); padding: 28px 24px; }
@@ -116,6 +116,7 @@
   @media (max-width: 640px) { .nav-links { display: none; } }
 </style>
   <script src="nav.js"></script>
+  <script src="footer.js"></script>
 <script>document.addEventListener("DOMContentLoaded",function(){initNav("index.html");initFooter();})</script>
 
   <!-- Open Graph / iMessage / Social Preview -->
@@ -140,7 +141,6 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <script src="footer.js"></script>
 
   <script type="application/ld+json">
   {
