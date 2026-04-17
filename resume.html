@@ -99,6 +99,7 @@
     .highlights { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px; }
   }
+  .ext-link::after { content: " ↗"; }
 </style>
   <script src="nav.js"></script>
   <script src="footer.js"></script>
@@ -177,7 +178,8 @@
     .reveal-wrap.revealed .reveal-label { display: none; }
     .reveal-wrap.revealed .reveal-val { display: inline; }
     .reveal-wrap.revealed .reveal-val a { color: var(--gold); text-decoration: none; }
-  </style>
+    .ext-link::after { content: " ↗"; }
+</style>
   <script>
     document.querySelectorAll('.reveal-wrap').forEach(function(el) {
       el.addEventListener('click', function() {
@@ -369,7 +371,7 @@
     <div style="padding:28px 0 0;">
       <div class="section-label" style="margin-bottom:16px;">AI Product Demo &amp; Featured Work</div>
       <ul class="exp-bullets">
-        <li>Developed <strong>NIGP Spend Analyzer</strong>: an applied AI product built with Claude, demonstrating 0-to-1 product development, LLM integration, and data monetization strategy. <a href="nigp-marketing.html" style="color:var(--gold);text-decoration:none;-webkit-tap-highlight-color:transparent;">roadmapventure.com/nigp-marketing.html ↗</a></li>
+        <li>Developed <strong>NIGP Spend Analyzer</strong>: an applied AI product built with Claude, demonstrating 0-to-1 product development, LLM integration, and data monetization strategy. <a href="nigp-marketing.html" class="ext-link" style="color:var(--gold);text-decoration:none;">roadmapventure.com/nigp-marketing.html</a></li>
         <li>Experience prior to 2008 — Management Consulting for Business Intelligence and GIS at GeoAnalytics and the City of Kansas City, Missouri — is available upon request.</li>
       </ul>
     </div>

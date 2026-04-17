@@ -117,6 +117,7 @@
     footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px; }
   }
   @media (max-width: 640px) { .nav-links { display: none; } }
+  .ext-link::after { content: " ↗"; }
 </style>
   <script src="nav.js"></script>
   <script src="footer.js"></script>
@@ -248,7 +249,7 @@
     </div>
     <div class="contact-row">
       <span class="contact-lbl">Connect</span>
-      <span class="contact-val"><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" style="color:var(--gold);text-decoration:none;-webkit-tap-highlight-color:transparent;">LinkedIn ↗</a></span>
+      <span class="contact-val"><a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" class="ext-link" style="color:var(--gold);text-decoration:none;">LinkedIn</a></span>
     </div>
   </div>
 </section>

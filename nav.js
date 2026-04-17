@@ -24,6 +24,7 @@
       /* ── GLOBAL iOS TAP FIX ── */
       * { -webkit-tap-highlight-color: transparent; }
       a, button { -webkit-tap-highlight-color: transparent; }
+      .ext-link::after { content: " ↗"; }
 
       /* ── NAV BASE ── */
       nav {
@@ -232,7 +233,7 @@
     <div style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);">
       <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">LinkedIn</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:20px;">
-        <a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" style="color:#1a1814;text-decoration:none;">linkedin.com/in/leonardjohn ↗</a>
+        <a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" style="color:#1a1814;text-decoration:none;" class="ext-link">linkedin.com/in/leonardjohn</a>
       </div>
     </div>
     <div style="padding:14px 0;">
