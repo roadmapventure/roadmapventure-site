@@ -16,7 +16,7 @@
 
   // ── CONTACT DATA (base64 encoded — never plain text) ─────────────────────
   const PHONE_B64 = 'NTEyLjU4NS44NTEz';
-  const EMAIL_B64 = 'amxlb25hQHlhaG9vLmNvbQ==';
+  const EMAIL_B64 = 'am9obi5sZW9uYXJkQHJvYWRtYXB2ZW50dXJlLmNvbQ==';
 
   // ── INJECT STYLES ─────────────────────────────────────────────────────────
   function injectStyles() {
