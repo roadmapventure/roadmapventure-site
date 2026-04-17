@@ -25,7 +25,7 @@
   <span class="footer-copy">© 2025 John Leonard · Austin, TX</span>
   <div class="footer-links">
     ${linksHTML}
-    <a href="https://www.linkedin.com/in/leonardjohn/" target="_blank">LinkedIn ↗</a>
+    <a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" style="-webkit-tap-highlight-color:transparent;">LinkedIn ↗</a>
   </div>
 </footer>`;
 
