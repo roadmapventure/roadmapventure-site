@@ -24,7 +24,11 @@
       /* ── GLOBAL iOS TAP FIX ── */
       * { -webkit-tap-highlight-color: transparent; }
       a, button { -webkit-tap-highlight-color: transparent; }
-      .ext-link::after { content: " ↗"; }
+      .ext-link {
+        display: inline-flex; align-items: center; gap: 5px;
+        text-decoration: none;
+      }
+      .ext-link::after { content: '↗'; font-size: .9em; }
 
       /* ── NAV BASE ── */
       nav {
