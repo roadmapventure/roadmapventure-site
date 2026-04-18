@@ -63,6 +63,7 @@
   .stat-box-link { position: relative; border-top: 2px solid transparent; transition: border-color .2s, background .2s; }
   .stat-box-link:hover { background: var(--ivory); border-top-color: var(--gold); }
   .stat-box-link:hover .stat-label { color: var(--gold); }
+  .patents-cue::after { content: ' ↗'; }
 
   .expertise-list { list-style: none; }
   .expertise-list li { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 13px; letter-spacing: .04em; color: var(--ink-2); }
@@ -226,7 +227,7 @@
       </div>
       <div class="stat-box stat-box-link" onclick="window.location='patents.html'" style="cursor:pointer;">
         <div class="stat-val">4</div>
-        <div class="stat-label">U.S. Patents <span style="pointer-events:none;user-select:none;">↗</span></div>
+        <div class="stat-label patents-cue">U.S. Patents</div>
       </div>
       <div class="stat-box">
         <div class="stat-val">5</div>

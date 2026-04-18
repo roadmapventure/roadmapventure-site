@@ -225,13 +225,13 @@
     <div id="navModalPhone" style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);cursor:pointer;" onclick="revealModalContact('phone')" title="Click to reveal">
       <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">Phone</div>
       <div id="navModalPhoneVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1814;" data-val="${PHONE_B64}">
-        <span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">↗ Tap to reveal</span>
+        <span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">Tap to reveal</span>
       </div>
     </div>
     <div id="navModalEmail" style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);cursor:pointer;" onclick="revealModalContact('email')" title="Click to reveal">
       <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c8a96e;margin-bottom:4px;">Email</div>
       <div id="navModalEmailVal" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1814;" data-val="${EMAIL_B64}">
-        <span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">↗ Tap to reveal</span>
+        <span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">Tap to reveal</span>
       </div>
     </div>
     <div style="padding:14px 0;border-bottom:1px solid rgba(200,169,110,.25);">
@@ -259,8 +259,8 @@
     document.getElementById('siteContactModal').style.display = 'none';
     var pEl = document.getElementById('navModalPhoneVal');
     var eEl = document.getElementById('navModalEmailVal');
-    pEl.innerHTML = '<span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">↗ Tap to reveal</span>';
-    eEl.innerHTML = '<span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">↗ Tap to reveal</span>';
+    pEl.innerHTML = '<span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">Tap to reveal</span>';
+    eEl.innerHTML = '<span style="font-size:12px;color:#c8a96e;letter-spacing:.1em;">Tap to reveal</span>';
     document.getElementById('navModalPhone').style.cursor = 'pointer';
     document.getElementById('navModalEmail').style.cursor = 'pointer';
   };
