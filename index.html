@@ -64,7 +64,15 @@
   .stat-box-link:hover { background: var(--ivory); border-top-color: var(--gold); }
   .stat-box-link:hover .stat-label { color: var(--gold); }
   .stat-box-cover { position: absolute; inset: 0; z-index: 1; }
-  .patents-cue { display: flex; align-items: center; gap: 6px; text-decoration: none; color: inherit; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+  .patents-cue {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: color .2s;
+  }
   .patents-cue::after { content: '↗'; }
 
   .expertise-list { list-style: none; }
@@ -144,20 +152,20 @@
   <!-- Open Graph / iMessage / Social Preview -->
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="RoadMapVenture" />
-  <meta property="og:url"         content="https://roadmapventure.com/" />
+  <meta property="og:url"         content="https://www.roadmapventure.com/" />
   <meta property="og:title" content="John Leonard — Fractional CPO | VP of Product | SaaS Product Executive | Austin TX" />
   <meta property="og:description" content="Senior product executive available for Fractional CPO, VP of Product, and Director of Product engagements. 30+ years in SaaS, PE-backed portfolios, and government technology. Austin, TX. $400M+ in exits." />
-  <meta property="og:image"       content="https://roadmapventure.com/og-image.png" />
+  <meta property="og:image"       content="https://www.roadmapventure.com/og-image.png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <!-- Twitter / X card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title" content="John Leonard — Fractional CPO | VP of Product | SaaS Product Executive | Austin TX" />
   <meta name="twitter:description" content="Senior product executive available for Fractional CPO, VP of Product, and Director of Product engagements. 30+ years in SaaS, PE-backed portfolios, and government technology. Austin, TX. $400M+ in exits." />
-  <meta name="twitter:image"       content="https://roadmapventure.com/og-image.png" />
+  <meta name="twitter:image"       content="https://www.roadmapventure.com/og-image.png" />
   <!-- iOS / Apple -->
   <meta name="apple-mobile-web-app-title" content="RoadMapVenture" />
-  <link rel="canonical" href="https://roadmapventure.com/" />
+  <link rel="canonical" href="https://www.roadmapventure.com/" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -170,7 +178,7 @@
   "@type": "Person",
   "name": "John Leonard",
   "url": "https://roadmapventure.com",
-  "image": "https://roadmapventure.com/og-image.png",
+  "image": "https://www.roadmapventure.com/og-image.png",
   "jobTitle": "Fractional CPO & Product Executive",
   "description": "Senior product executive with 30+ years in SaaS, PE-backed portfolios, and government technology. Available for Fractional CPO, VP of Product, and Director of Product engagements.",
   "worksFor": {"@type": "Organization", "name": "RoadMapVenture", "url": "https://roadmapventure.com"},
@@ -229,7 +237,7 @@
       </div>
       <div class="stat-box stat-box-link">
         <div class="stat-val">4</div>
-        <a href="patents.html" class="stat-label patents-cue">U.S. Patents</a>
+        <a href="https://www.roadmapventure.com/patents.html" class="patents-cue">U.S. Patents</a>
       </div>
       <div class="stat-box">
         <div class="stat-val">5</div>
