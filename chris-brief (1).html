@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>John Leonard — Quick Brief for Chris</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #6b6b6b;
+      --rule: #e0dbd4;
+      --warm: #f5f2ee;
+      --accent: #c8440a;
+      --accent-light: #fdf1eb;
+      --link-bg: #1a1a1a;
+      --link-text: #ffffff;
+      --card-bg: #ffffff;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--warm);
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 0 0 60px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--ink);
+      color: #fff;
+      padding: 48px 24px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.12;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+      margin-bottom: 22px;
+    }
+
+    .hero-intro {
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.88);
+      font-weight: 300;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 22px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 32px 20px 0;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      margin-bottom: 12px;
+      border: 1px solid var(--rule);
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .card-body {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #3a3a3a;
+    }
+
+    .card-body strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ── OPPORTUNITY CARD ── */
+    .card.opportunity {
+      background: var(--accent-light);
+      border-color: rgba(200, 68, 10, 0.18);
+    }
+
+    .opportunity .card-title {
+      color: var(--accent);
+    }
+
+    .opportunity .card-body {
+      color: #4a2a1a;
+    }
+
+    /* ── STRENGTH PILLS ── */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .strength-item {
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 16px 14px;
+    }
+
+    .strength-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .strength-value {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .strength-item.full {
+      grid-column: 1 / -1;
+    }
+
+    /* ── LINKS ── */
+    .link-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.15s, border-color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .link-item:active {
+      background: #f0ece6;
+    }
+
+    .link-icon {
+      width: 38px; height: 38px;
+      border-radius: 9px;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .link-icon svg {
+      width: 18px; height: 18px;
+      fill: #fff;
+    }
+
+    .link-icon.accent-icon {
+      background: var(--accent);
+    }
+
+    .link-text {
+      flex: 1;
+    }
+
+    .link-name {
+      font-size: 15px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .link-desc {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .link-arrow {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* ── JOBS ── */
+    .job-card {
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .job-header {
+      padding: 18px 18px 14px;
+    }
+
+    .job-id {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .job-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .job-team {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .job-why {
+      background: #f9f7f4;
+      border-top: 1px solid var(--rule);
+      padding: 14px 18px;
+    }
+
+    .job-why-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .job-why-text {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #3a3a3a;
+    }
+
+    .job-link {
+      display: block;
+      padding: 12px 18px;
+      border-top: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-align: center;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .job-link:active { background: #fdf1eb; }
+
+    /* ── NOTE ── */
+    .closing-note {
+      margin: 32px 20px 0;
+      padding: 22px 20px;
+      background: var(--ink);
+      border-radius: var(--radius);
+      color: rgba(255,255,255,0.88);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .closing-note span {
+      color: rgba(255,255,255,0.45);
+      font-size: 12px;
+      display: block;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* ── ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero, .section, .closing-note {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.08s; }
+    .section:nth-child(3) { animation-delay: 0.14s; }
+    .section:nth-child(4) { animation-delay: 0.20s; }
+    .section:nth-child(5) { animation-delay: 0.26s; }
+    .closing-note         { animation-delay: 0.32s; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Private · For Chris · May 2026</div>
+    <h1>John Leonard</h1>
+    <div class="hero-sub">Product & Data Executive · Austin, TX</div>
+    <div class="hero-intro">
+      Chris — thanks for making time to help me further my career. Wanted to give you a quick read-ahead so our lunch can go deeper and faster. 
+      This is a 5-minute brief: where I've been, where I want to go, and why I think there might be something worth exploring at Amazon.
+    </div>
+  </div>
+
+  <!-- CATCH UP -->
+  <div class="section">
+    <div class="section-label">Where I've Been</div>
+
+    <div class="card">
+      <div class="card-title">Product & Data at Scale</div>
+      <div class="card-body">
+        Since Fluid Innovation, I've moved through three PE-backed and public-company environments, each time retained through an acquisition to lead the next chapter. Most recently at <strong>Sovra (KKR)</strong> — overseeing $75M ARR across five GovTech platforms and 500K+ users. I built the company's first <strong>AWS lakehouse platform</strong> (14TB across 20+ products), stood up a Tech PMO, and onboarded 100+ offshore contributors.
+      </div>
+    </div>
+
+    <div class="card opportunity">
+      <div class="card-title">My Background Opportunity — Amazon for Government/Public</div>
+      <div class="card-body">
+        Governments spend more than <strong>15% of their budget off-contract</strong> — purchases outside managed systems that are invisible, non-compliant, and often going to Amazon anyway. There are opportunities for Amazon to capture more spend and offer compliance tools.<br><br>
+        A few years back, Amazon was in early discussions with my company <strong>Periscope Holdings</strong> about exactly this opportunity. I built the marketplace product that made Periscope acquisition-ready: $18M in new customer revenue, contributing to a <strong>$200M exit</strong>.<br><br>
+        I never stopped building in this space. I have a <strong>live AI procurement intelligence product</strong> running today — link below.
+      </div>
+    </div>
+  </div>
+
+  <!-- STRENGTHS -->
+  <div class="section">
+    <div class="section-label">Career Strengths</div>
+
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="strength-label">Management</div>
+        <div class="strength-value">Team of 30 with 2 directors. Tech PMO. 100+ offshore. PE Integration and AI Transformation.</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-label">Data Practice</div>
+        <div class="strength-value">Built from zero. AWS DSD & EBA programs. SageMaker, Redshift, Glue, Zero-ETL.</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-label">0 → 1</div>
+        <div class="strength-value">6 major product launches. 3 profitable exits. $75M ARR</div>
+      </div>
+      <div class="strength-item full">
+        <div class="strength-label">Industry Range</div>
+        <div class="strength-value">GovTech, procurement, IP commercialization, background screening, data platforms, content aggregation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="section">
+    <div class="section-label">Quick Links</div>
+
+    <div class="link-stack">
+      <a class="link-item" href="https://nigp.roadmapventure.com">
+        <div class="link-icon accent-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z"/></svg>
+        </div>
+        <div class="link-text">
+          <span class="link-name">NIGP Spend Analyzer</span>
+          <span class="link-desc">Live AI procurement app · better on desktop</span>
+        </div>
+        <span class="link-arrow">›</span>
+      </a>
+
+      <a class="link-item" href="https://www.roadmapventure.com/John_Leonard_Resume_Product_and_Data_Exec.pdf">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h5v1.5H8V16zm0-6h3v1.5H8V10z"/></svg>
+        </div>
+        <div class="link-text">
+          <span class="link-name">Resume</span>
+          <span class="link-desc">John Leonard Resume Product Exec pdf</span>
+        </div>
+        <span class="link-arrow">›</span>
+      </a>
+
+      <a class="link-item" href="https://www.linkedin.com/in/leonardjohn">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.985V9h3.102v1.561h.046c.434-.82 1.492-1.684 3.07-1.684 3.284 0 3.889 2.163 3.889 4.977v6.598zM5.337 7.433a1.8 1.8 0 110-3.598 1.8 1.8 0 010 3.598zM6.962 20.452H3.71V9h3.252v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div class="link-text">
+          <span class="link-name">LinkedIn</span>
+          <span class="link-desc">linkedin.com/in/leonardjohn</span>
+        </div>
+        <span class="link-arrow">›</span>
+      </a>
+
+      <a class="link-item" href="https://www.roadmapventure.com">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <div class="link-text">
+          <span class="link-name">Website</span>
+          <span class="link-desc">roadmapventure.com</span>
+        </div>
+        <span class="link-arrow">›</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- AMAZON ROLES -->
+  <div class="section">
+    <div class="section-label">Roles Worth a Look</div>
+
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-id">Job ID: 10401389</div>
+        <div class="job-title">Specialist Technology Team — Product Leader</div>
+        <div class="job-team">Operations Technology</div>
+      </div>
+      <div class="job-why">
+        <div class="job-why-label">Why I fit</div>
+        <div class="job-why-text">People management at scale, multi-platform technical roadmaps, spatial data, AI product development, and translating complex technical capability into measurable business outcomes.</div>
+      </div>
+      <a class="job-link" href="https://www.amazon.jobs/en/jobs/10401389/specialist-technology-team-product-leader-specialist-technology-team">View on Amazon Jobs →</a>
+    </div>
+
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-id">Job ID: 10404192</div>
+        <div class="job-title">Sr. Manager, Product Management – Technical</div>
+        <div class="job-team">Device Technologies · Operations Infrastructure · Amazon Robotics</div>
+      </div>
+      <div class="job-why">
+        <div class="job-why-label">Why I fit</div>
+        <div class="job-why-text">Management depth, business intelligence and data platform experience, and a track record building multi-year strategy in PE-backed and public environments at scale.</div>
+      </div>
+      <a class="job-link" href="https://www.amazon.jobs/en/jobs/10404192/sr-manager-product-management-technical-device-technologies-operations-infrastructure-services-amazon-robotics">View on Amazon Jobs →</a>
+    </div>
+
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-id">Job ID: 3197266</div>
+        <div class="job-title">Sr. Product Manager, Technical — Global Payments</div>
+        <div class="job-team">GP Tech Product</div>
+      </div>
+      <div class="job-why">
+        <div class="job-why-label">Why I fit</div>
+        <div class="job-why-text">Deep product evangelism, startup-to-scale experience, fluency working directly with engineering, and hands-on BI and analytics tools — plus a fintech-adjacent data background.</div>
+      </div>
+      <a class="job-link" href="https://www.amazon.jobs/en/jobs/3197266/sr-product-manager-technical-sr-product-manager-technical-gp-tech-product">View on Amazon Jobs →</a>
+    </div>
+
+    <div class="card" style="background: #f9f7f4; margin-top: 4px;">
+      <div class="card-body" style="font-size: 13.5px; color: var(--muted);">
+        <strong style="color: var(--ink);">Also worth a look:</strong> A to Z surfaced 3 additional roles that may be a stretch — happy to discuss those at lunch if any of the above spark a direction.
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-note">
+    I appreciate you taking a look — and I'm just as interested in your read on where the market is as I am in any specific role.
+    <span>— John · 512.585.8513 · jleona@yahoo.com</span>
+  </div>
+
+</body>
+</html>
