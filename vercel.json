@@ -3,14 +3,7 @@
     {
       "source": "/(.*)",
       "destination": "https://www.roadmapventure.com/$1",
-      "permanent": true,
-      "has": [
-        {
-          "type": "header",
-          "key": "x-forwarded-proto",
-          "value": "http"
-        }
-      ]
+      "statusCode": 301
     }
   ]
 }
