@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepBench — Build Your Parallel AI Workforce | Roadmap Venture</title>
+<meta name="description" content="DeepBench is an AI agent workforce platform. Build a bench of specialized AI agents, teach them your expertise, assign real work, and manage output through a single dashboard. Stop re-training humans who leave — encode your knowledge permanently." />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="John Leonard" />
+<meta name="keywords" content="AI workforce platform, AI agents, multi-agent orchestration, RAG knowledge base, AI product demo, enterprise AI, agentic AI, AI workforce management, DeepBench, Roadmap Venture, government procurement AI, NIGP spend analysis, AI transparency, human-in-the-loop AI" />
+
+<!-- Open Graph / Social -->
+<meta property="og:type"        content="website" />
+<meta property="og:site_name"   content="Roadmap Venture" />
+<meta property="og:url"         content="https://www.roadmapventure.com/deepbench-marketing.html" />
+<meta property="og:title"       content="DeepBench — Build Your Parallel AI Workforce" />
+<meta property="og:description" content="Build a bench of specialized AI agents trained on your expertise. Assign real work, manage output, and encode institutional knowledge that never walks out the door. Live demo available." />
+<meta property="og:image"       content="https://www.roadmapventure.com/og-image.png" />
+<meta property="og:image:width"  content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:title"       content="DeepBench — Build Your Parallel AI Workforce" />
+<meta name="twitter:description" content="Build a bench of specialized AI agents trained on your expertise. Assign real work, manage output, and encode institutional knowledge that never walks out the door." />
+<meta name="twitter:image"       content="https://www.roadmapventure.com/og-image.png" />
+
+<!-- iOS -->
+<meta name="apple-mobile-web-app-title" content="DeepBench" />
+<link rel="canonical" href="https://www.roadmapventure.com/deepbench-marketing.html" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="sitemap" type="application/xml" href="sitemap.xml" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DeepBench",
+  "url": "https://deepbench.roadmapventure.com",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "AI Workforce Management",
+  "description": "DeepBench is an AI agent workforce platform. Build a bench of specialized AI agents trained on your domain expertise, assign them work tasks, and manage output through a unified dashboard. Features multi-agent orchestration, RAG knowledge bases, live web agents, and full AI transparency.",
+  "operatingSystem": "Any (browser-based)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+  "featureList": [
+    "Multi-agent orchestration",
+    "RAG knowledge base training",
+    "ReAct web agent with persistent memory",
+    "Plan-and-execute task workflow",
+    "NIGP government spend analysis",
+    "AI cost audit and transparency layer",
+    "Human-in-the-loop execution gates",
+    "Per-agent behavioral prompts and guardrails"
+  ],
+  "author": {"@type": "Person", "name": "John Leonard", "url": "https://www.roadmapventure.com"},
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Consultants, business owners, enterprise teams, government agencies, AI product leaders"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="nav.js"></script>
+<script src="footer.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){initNav("deepbench-marketing.html");initFooter();});</script>
+<style>
+  :root {
+    --ivory:   #faf8f5;
+    --ivory-2: #f3efe9;
+    --ink:     #1a1814;
+    --ink-2:   #3a342c;
+    --ink-3:   #6b6057;
+    --gold:    #c8a96e;
+    --gold-lt: #e8d9bc;
+    --rule:    rgba(200,169,110,.25);
+    --teal:    #00c896;
+    --red:     #d94f38;
+    --amber:   #d98232;
+    --blue:    #3a7fc1;
+    --brass:   #b6873a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--ivory); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+  /* ── SHARED ── */
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .section-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px,4vw,54px); font-weight: 300; line-height: 1.05; color: var(--ink); margin-bottom: 14px; }
+  .section-subtitle { font-size: 15px; color: var(--ink-3); line-height: 1.75; max-width: 580px; margin-bottom: 52px; }
+  .btn-primary { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ivory); background: var(--ink); padding: 14px 28px; text-decoration: none; transition: background .22s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
+  .btn-primary:hover { background: var(--ink-2); }
+  .btn-secondary { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--ink); padding: 14px 28px; text-decoration: none; transition: all .22s; display: inline-block; background: transparent; cursor: pointer; font-family: inherit; }
+  .btn-secondary:hover { background: var(--ink); color: var(--ivory); }
+  .live-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse-dot 2s ease-in-out infinite; }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    padding-top: 68px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--ivory);
+  }
+  .hero-left { padding: 80px 64px 80px 56px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); animation: fadeUp .6s ease both; }
+  .hero-eyebrow { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+  .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px,5.5vw,76px); font-weight: 300; line-height: .95; color: var(--ink); margin-bottom: 20px; letter-spacing: -.01em; }
+  .hero-headline em { font-style: italic; color: var(--ink-2); }
+  .hero-subhead { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--gold); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); line-height: 1.4; }
+  .hero-body { font-size: 15px; color: var(--ink-3); line-height: 1.8; max-width: 460px; margin-bottom: 40px; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ── HERO RIGHT — Dashboard Mock ── */
+  .hero-right { background: var(--ivory-2); padding: 40px 48px 40px 52px; display: flex; flex-direction: column; justify-content: center; gap: 16px; overflow: hidden; animation: fadeUp .6s .15s ease both; }
+  .panel-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; }
+  .panel-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+  .panel-divider { height: 1px; background: var(--rule); }
+
+  /* bench card */
+  .bench-panel { background: var(--ink); border: 1px solid rgba(200,169,110,.2); border-radius: 8px; overflow: hidden; box-shadow: 0 12px 32px rgba(26,24,20,.16); }
+  .bench-header { background: var(--ink-2); padding: 11px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(200,169,110,.15); }
+  .bench-title { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(250,248,245,.45); display: flex; align-items: center; gap: 8px; }
+  .bench-stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(200,169,110,.1); border-bottom: 1px solid rgba(200,169,110,.1); }
+  .bench-stat { background: var(--ink); padding: 12px 14px; text-align: center; }
+  .bench-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 2px; }
+  .bench-stat-lbl { font-family: 'DM Mono', monospace; font-size: 7.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(250,248,245,.35); }
+  .agent-list { padding: 8px 14px 4px; }
+  .agent-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(200,169,110,.07); }
+  .agent-row:last-child { border-bottom: none; }
+  .agent-avatar { width: 28px; height: 28px; border-radius: 50%; background: rgba(200,169,110,.15); border: 1px solid rgba(200,169,110,.25); display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; }
+  .agent-info { flex: 1; }
+  .agent-name { font-size: 12px; color: rgba(250,248,245,.85); font-weight: 400; line-height: 1; margin-bottom: 2px; }
+  .agent-role { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(250,248,245,.35); letter-spacing: .06em; }
+  .agent-status { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: .08em; padding: 2px 7px; border-radius: 2px; white-space: nowrap; }
+  .status-working { background: rgba(0,200,150,.1); color: var(--teal); border: 1px solid rgba(0,200,150,.2); }
+  .status-ready   { background: rgba(200,169,110,.1); color: var(--gold); border: 1px solid rgba(200,169,110,.25); }
+  .status-trained { background: rgba(58,127,193,.08); color: var(--blue); border: 1px solid rgba(58,127,193,.2); }
+  .skill-badge { font-family: 'DM Mono', monospace; font-size: 8px; color: var(--gold); background: rgba(200,169,110,.1); border: 1px solid rgba(200,169,110,.2); padding: 1px 6px; border-radius: 2px; }
+
+  /* task mini strip */
+  .task-strip { background: rgba(200,169,110,.06); border: 1px solid rgba(200,169,110,.12); border-radius: 6px; padding: 10px 14px; }
+  .task-strip-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: rgba(200,169,110,.5); margin-bottom: 8px; }
+  .task-mini { display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(250,248,245,.55); padding: 5px 0; }
+  .task-mini-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ── STATS STRIP ── */
+  .stats-strip { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--ivory-2); padding: 0 56px; }
+  .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: var(--rule); }
+  .stat-block { background: var(--ivory-2); padding: 32px 24px; text-align: center; transition: background .2s; }
+  .stat-block:hover { background: var(--ivory); }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+  .stat-num span { font-size: 20px; color: var(--gold); }
+  .stat-desc { font-size: 11px; letter-spacing: .06em; color: var(--ink-3); line-height: 1.5; }
+
+  /* ── PROBLEM ── */
+  .problem-section { border-top: 1px solid var(--rule); background: var(--ivory-2); padding: 80px 56px; }
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; max-width: 1200px; margin: 0 auto; }
+  .big-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px,2.5vw,32px); font-style: italic; line-height: 1.45; color: var(--ink); margin-bottom: 28px; padding-left: 24px; border-left: 3px solid var(--gold); }
+  .problem-body { font-size: 14px; color: var(--ink-3); line-height: 1.85; margin-bottom: 14px; }
+  .pain-list { list-style: none; margin-top: 24px; }
+  .pain-list li { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); font-size: 13.5px; color: var(--ink-3); line-height: 1.65; }
+  .pain-list li:last-child { border-bottom: none; }
+  .pain-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .pain-list strong { display: block; color: var(--ink-2); font-weight: 500; margin-bottom: 3px; font-size: 13px; }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { padding: 80px 56px; border-top: 1px solid var(--rule); }
+  .how-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; margin-top: 0; }
+  .how-step { background: var(--ivory); padding: 48px 36px; position: relative; transition: background .2s; }
+  .how-step:hover { background: var(--ivory-2); }
+  .how-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: transparent; transition: background .25s; }
+  .how-step:hover::before { background: var(--gold); }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: var(--gold-lt); line-height: 1; margin-bottom: 16px; }
+  .step-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--ink); margin-bottom: 12px; }
+  .step-body { font-size: 14px; color: var(--ink-3); line-height: 1.75; }
+  .step-arrow { position: absolute; top: 50%; right: -1px; transform: translateY(-50%); font-family: 'DM Mono', monospace; font-size: 18px; color: var(--gold); background: var(--ivory); padding: 4px 8px; border: 1px solid var(--rule); z-index: 2; }
+  .how-step:last-child .step-arrow { display: none; }
+
+  /* ── PERSONAS ── */
+  .personas-section { background: var(--ivory-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 80px 56px; }
+  .personas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .persona-card { background: var(--ivory); padding: 48px 36px; transition: background .2s; position: relative; }
+  .persona-card:hover { background: var(--ivory-2); }
+  .persona-who { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .persona-pain { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; font-weight: 300; color: var(--ink-2); line-height: 1.4; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+  .persona-solve { font-size: 14px; color: var(--ink-3); line-height: 1.75; }
+  .persona-tag { margin-top: 20px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--rule); padding: 4px 10px; display: inline-block; border-radius: 2px; }
+
+  /* ── CAPABILITIES ── */
+  .capabilities-section { padding: 80px 56px; }
+  .capabilities-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .cap-card { background: var(--ivory); padding: 36px 30px; transition: background .2s; position: relative; overflow: hidden; }
+  .cap-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: transparent; transition: background .25s; }
+  .cap-card:hover { background: var(--ivory-2); }
+  .cap-card:hover::before { background: var(--gold); }
+  .cap-icon { font-size: 26px; margin-bottom: 14px; }
+  .cap-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 10px; }
+  .cap-body { font-size: 13px; color: var(--ink-3); line-height: 1.75; }
+  .cap-tag { display: inline-block; margin-top: 14px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--rule); padding: 3px 8px; border-radius: 2px; }
+
+  /* ── CASE STUDY ── */
+  .case-section { background: var(--ink); padding: 80px 56px; }
+  .case-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; max-width: 1200px; margin: 0 auto; }
+  .case-eyebrow { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .case-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .case-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,3.5vw,48px); font-weight: 300; line-height: 1.05; color: var(--ivory); margin-bottom: 20px; }
+  .case-body { font-size: 14px; color: rgba(250,248,245,.55); line-height: 1.85; margin-bottom: 28px; }
+  .case-cta { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,169,110,.4); padding: 14px 28px; text-decoration: none; transition: all .22s; display: inline-block; }
+  .case-cta:hover { background: rgba(200,169,110,.1); }
+  .case-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(200,169,110,.1); border: 1px solid rgba(200,169,110,.15); border-radius: 8px; overflow: hidden; }
+  .case-metric { background: rgba(255,255,255,.03); padding: 28px 24px; }
+  .case-metric-num { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+  .case-metric-lbl { font-size: 12px; color: rgba(250,248,245,.4); line-height: 1.5; }
+  .case-flags { margin-top: 16px; padding: 16px 18px; background: rgba(200,169,110,.06); border: 1px solid rgba(200,169,110,.12); border-radius: 6px; }
+  .case-flags-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: rgba(200,169,110,.45); margin-bottom: 10px; }
+  .case-flag-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'DM Mono', monospace; font-size: 10px; border-bottom: 1px solid rgba(200,169,110,.06); }
+  .case-flag-row:last-child { border-bottom: none; }
+  .cf-label { color: rgba(250,248,245,.4); }
+  .cf-val { color: rgba(250,248,245,.75); font-weight: 500; }
+  .cf-pill { font-size: 8px; padding: 1px 6px; border-radius: 2px; }
+  .pill-high { background: rgba(217,79,56,.15); color: var(--red); border: 1px solid rgba(217,79,56,.3); }
+  .pill-med  { background: rgba(217,130,50,.15); color: var(--amber); border: 1px solid rgba(217,130,50,.3); }
+  .pill-ok   { background: rgba(0,200,150,.08); color: var(--teal); border: 1px solid rgba(0,200,150,.2); }
+
+  /* ── AGENTS ── */
+  .agents-section { padding: 80px 56px; border-top: 1px solid var(--rule); }
+  .agents-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .agent-card { background: var(--ivory); padding: 28px 24px; transition: background .2s; }
+  .agent-card:hover { background: var(--ivory-2); }
+  .agent-card-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--ivory-2); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; font-size: 16px; margin-bottom: 14px; }
+  .agent-card-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--ink); margin-bottom: 3px; }
+  .agent-card-role { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .agent-card-body { font-size: 12.5px; color: var(--ink-3); line-height: 1.65; margin-bottom: 12px; }
+  .agent-skill-bar { height: 3px; background: var(--rule); border-radius: 2px; overflow: hidden; }
+  .agent-skill-fill { height: 100%; background: var(--gold); border-radius: 2px; transition: width .4s; }
+
+  /* ── AI TRANSPARENCY ── */
+  .ai-section { background: var(--ivory-2); border-top: 1px solid var(--rule); padding: 80px 56px; }
+  .ai-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; max-width: 1200px; margin: 0 auto; }
+  .ai-body { font-size: 14px; color: var(--ink-3); line-height: 1.85; margin-bottom: 20px; }
+  .ai-badge-pill { display: inline-flex; align-items: center; gap: 6px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .1em; color: var(--gold); border: 1px solid rgba(200,169,110,.3); padding: 4px 10px; border-radius: 2px; margin-bottom: 20px; }
+  .ai-panel { background: var(--ink); border: 1px solid rgba(200,169,110,.2); border-radius: 8px; overflow: hidden; box-shadow: 0 20px 56px rgba(26,24,20,.12); }
+  .ai-panel-header { background: var(--ink-2); border-bottom: 1px solid rgba(200,169,110,.15); padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
+  .ai-panel-label { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-style: italic; color: var(--gold); }
+  .ai-panel-badge { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .1em; color: rgba(250,248,245,.45); border: 1px solid rgba(200,169,110,.2); padding: 3px 10px; border-radius: 2px; }
+  .ai-panel-body { padding: 18px 20px; }
+  .ai-step { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(200,169,110,.08); align-items: flex-start; }
+  .ai-step:last-child { border-bottom: none; }
+  .ai-step-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); background: rgba(200,169,110,.1); border: 1px solid rgba(200,169,110,.2); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .ai-step-agent { font-family: 'DM Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); margin-bottom: 3px; }
+  .ai-step-text { font-size: 12px; color: rgba(250,248,245,.5); line-height: 1.65; }
+  .ai-hitl { background: rgba(168,51,25,.12); border: 1px solid rgba(168,51,25,.25); border-radius: 4px; padding: 10px 14px; margin: 6px 0; display: flex; gap: 10px; align-items: center; font-size: 11.5px; color: rgba(250,248,245,.6); }
+  .hitl-flag { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--red); border: 1px solid rgba(217,79,56,.3); padding: 2px 7px; border-radius: 2px; flex-shrink: 0; }
+
+  /* ── CTA ── */
+  .cta-section { padding: 100px 56px; text-align: center; border-top: 1px solid var(--rule); }
+  .cta-inner { max-width: 660px; margin: 0 auto; }
+  .cta-section .section-title { font-size: clamp(44px,5vw,64px); margin-bottom: 16px; }
+  .cta-section .section-subtitle { margin: 0 auto 36px; text-align: center; }
+  .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+  .cta-footnote { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; color: var(--ink-3); }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left, .hero-right { padding: 60px 28px; border-right: none; }
+    .problem-section, .how-section, .personas-section, .capabilities-section,
+    .case-section, .agents-section, .ai-section, .cta-section { padding: 60px 28px; }
+    .stats-strip { padding: 0 28px; }
+    .stats-inner { grid-template-columns: repeat(3,1fr); }
+    .problem-grid, .case-layout, .ai-layout { grid-template-columns: 1fr; gap: 40px; }
+    .how-steps, .personas-grid { grid-template-columns: 1fr; }
+    .capabilities-grid, .agents-grid { grid-template-columns: 1fr 1fr; }
+    .vaporware-grid { grid-template-columns: 1fr !important; }
+    .founder-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  }
+  @media (max-width: 640px) {
+    .capabilities-grid, .agents-grid, .stats-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">AI Workforce Platform</div>
+    <h1 class="hero-headline">
+      Build Your<br>
+      <em>Parallel</em><br>
+      Workforce.
+    </h1>
+    <p class="hero-subhead">Stop re-training humans who leave. Encode your expertise into agents that work 24/7, get smarter with every task, and never forget what you taught them.</p>
+    <p class="hero-body">DeepBench lets you build a bench of specialized AI agents, assign them real work tasks, and manage output through a single dashboard. The long game: train an agent on your own knowledge — so your expertise generates deliverables, briefings, and research even when you're not in the room.</p>
+    <div class="hero-ctas">
+      <a href="https://deepbench.roadmapventure.com/bench/new" class="btn-primary">Build Your Own Agent</a>
+      <a href="https://deepbench.roadmapventure.com/bench" class="btn-secondary">Try a Live Agent</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="panel-label">Your bench — 7 agents, 4 active right now</div>
+    <div class="bench-panel">
+      <div class="bench-header">
+        <div class="bench-title"><span class="live-dot"></span> deepbench · Your Bench</div>
+        <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(200,169,110,.5);">＋ Add a Player</div>
+      </div>
+      <div class="bench-stats-row">
+        <div class="bench-stat"><div class="bench-stat-num">7</div><div class="bench-stat-lbl">Bench Size</div></div>
+        <div class="bench-stat"><div class="bench-stat-num">4</div><div class="bench-stat-lbl">Working Now</div></div>
+        <div class="bench-stat"><div class="bench-stat-num">$1.1<span style="font-size:14px;">M</span></div><div class="bench-stat-lbl">Annual Value</div></div>
+        <div class="bench-stat"><div class="bench-stat-num">24<span style="font-size:14px;">/7</span></div><div class="bench-stat-lbl">Always On</div></div>
+      </div>
+      <div class="agent-list">
+        <div class="agent-row">
+          <div class="agent-avatar">📊</div>
+          <div class="agent-info"><div class="agent-name">Robyn Castellanos</div><div class="agent-role">NIGP Consultant · RAG+Deep</div></div>
+          <span class="agent-status status-working">Working</span>
+        </div>
+        <div class="agent-row">
+          <div class="agent-avatar">🌐</div>
+          <div class="agent-info"><div class="agent-name">Brent Matthews</div><div class="agent-role">Web Agent · ReAct+Memory</div></div>
+          <span class="agent-status status-working">Fetching</span>
+        </div>
+        <div class="agent-row">
+          <div class="agent-avatar">📋</div>
+          <div class="agent-info"><div class="agent-name">Michelle Manning</div><div class="agent-role">Project Planner</div></div>
+          <span class="agent-status status-ready">Ready</span>
+        </div>
+        <div class="agent-row">
+          <div class="agent-avatar">🎯</div>
+          <div class="agent-info"><div class="agent-name">Mike Alvarez</div><div class="agent-role">Senior Analyst · LLM Deep</div></div>
+          <span class="agent-status status-trained">Trained</span>
+        </div>
+      </div>
+    </div>
+    <div class="panel-divider"></div>
+    <div class="task-strip">
+      <div class="task-strip-label">Active work right now</div>
+      <div class="task-mini"><div class="task-mini-dot" style="background:var(--teal)"></div>Robyn — Austin FY2025 Spend Analysis · In progress</div>
+      <div class="task-mini"><div class="task-mini-dot" style="background:var(--teal)"></div>Brent — Maryland Comptroller live data fetch · Running</div>
+      <div class="task-mini"><div class="task-mini-dot" style="background:var(--amber)"></div>Mike — Vendor consolidation briefing · Needs Review</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── STATS STRIP ── -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-block"><div class="stat-num">$372<span>M</span></div><div class="stat-desc">Analyzed in a single live demo task — City of Austin FY2025</div></div>
+    <div class="stat-block"><div class="stat-num">7</div><div class="stat-desc">Specialized agents covering analysis, research, writing, compliance, and web data</div></div>
+    <div class="stat-block"><div class="stat-num">24<span>/7</span></div><div class="stat-desc">Agents work around the clock. No overtime. No re-training when they leave.</div></div>
+    <div class="stat-block"><div class="stat-num">✦ AI</div><div class="stat-desc">Every AI-touched output is transparently labeled — never mistaken for human work</div></div>
+    <div class="stat-block"><div class="stat-num">∞</div><div class="stat-desc">Agents get smarter with every task through structured training and RAG knowledge</div></div>
+  </div>
+</div>
+
+
+<!-- ── PROBLEM ── -->
+<section class="problem-section">
+  <div class="problem-grid">
+    <div>
+      <div class="section-eyebrow">The Problem</div>
+      <div class="big-quote">"I can't take on more clients without cloning myself."</div>
+      <p class="problem-body">Every enterprise AI deployment shares the same invisible failure mode: <strong style="font-weight:500;color:var(--ink-2);">the model forgets.</strong> AI Amnesia — the inability to carry institutional knowledge, reasoning history, and domain context forward — means organizations re-inject identical context on every call while compounding value is left untouched.</p>
+      <p class="problem-body">Every consultant, business owner, and enterprise team faces the same ceiling beneath that. Capacity is capped by the number of skilled humans on the team. Those humans leave — taking years of knowledge with them. The result: hire, train, lose, repeat. The expertise never compounds.</p>
+
+      <div style="margin-top:24px;border:1px solid var(--rule);border-radius:6px;overflow:hidden;">
+        <div style="padding:10px 16px;background:var(--ivory-2);border-bottom:1px solid var(--rule);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">The Five Layers of Enterprise AI</div>
+        <div style="display:flex;flex-direction:column;gap:1px;background:var(--rule);">
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--ivory);"><div style="width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;"></div><div style="flex:1;font-size:12.5px;color:var(--ink-2);font-weight:500;">LLM <span style="font-weight:300;color:var(--ink-3);"> — Base reasoning engine</span></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);background:rgba(0,200,150,.08);border:1px solid rgba(0,200,150,.2);padding:2px 8px;border-radius:2px;">Solved</div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--ivory);"><div style="width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;"></div><div style="flex:1;font-size:12.5px;color:var(--ink-2);font-weight:500;">Prompt <span style="font-weight:300;color:var(--ink-3);"> — Instructions given at call time</span></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);background:rgba(0,200,150,.08);border:1px solid rgba(0,200,150,.2);padding:2px 8px;border-radius:2px;">Solved</div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--ivory);"><div style="width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0;"></div><div style="flex:1;font-size:12.5px;color:var(--ink-2);font-weight:500;">Memory <span style="font-weight:300;color:var(--ink-3);"> — What the agent retains across sessions</span></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--red);background:rgba(217,79,56,.08);border:1px solid rgba(217,79,56,.2);padding:2px 8px;border-radius:2px;">Unsolved</div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--ivory);"><div style="width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0;"></div><div style="flex:1;font-size:12.5px;color:var(--ink-2);font-weight:500;">Reasoning <span style="font-weight:300;color:var(--ink-3);"> — Domain-tuned logic and judgment</span></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--red);background:rgba(217,79,56,.08);border:1px solid rgba(217,79,56,.2);padding:2px 8px;border-radius:2px;">Unsolved</div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--ivory);"><div style="width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0;"></div><div style="flex:1;font-size:12.5px;color:var(--ink-2);font-weight:500;">Deliverable <span style="font-weight:300;color:var(--ink-3);"> — Structured, governed, auditable output</span></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--amber);background:rgba(217,130,50,.08);border:1px solid rgba(217,130,50,.2);padding:2px 8px;border-radius:2px;">Partial</div></div>
+        </div>
+        <div style="padding:9px 16px;background:var(--ivory-2);font-size:11px;color:var(--ink-3);font-style:italic;line-height:1.55;">Memory and Reasoning are the unsolved layers — and the highest-value ones. DeepBench is architected to solve for all five.</div>
+      </div>
+    </div>
+    <div>
+      <ul class="pain-list">
+        <li><span class="pain-icon">👤</span><div><strong>You're the bottleneck</strong>Every critical task routes through one or two people. Growth means either burning them out or hiring — and hoping the new person sticks.</div></li>
+        <li><span class="pain-icon">🔁</span><div><strong>Training is permanent overhead</strong>Every new hire costs months of ramp time. When they leave, the knowledge walks out the door. You start over.</div></li>
+        <li><span class="pain-icon">⏱</span><div><strong>Your value is in analysis, not data wrangling</strong>The most skilled people on your team spend their best hours on prep work — cleaning data, mapping columns, running reports — instead of insight that moves the needle.</div></li>
+        <li><span class="pain-icon">🏢</span><div><strong>Enterprise AI isn't built for you</strong>The platforms built for Fortune 500 teams cost millions and take months to deploy. They don't fit consultants, mid-market firms, or government agencies with real deadlines.</div></li>
+        <li><span class="pain-icon">🧠</span><div><strong>Your expertise isn't transferable</strong>The most valuable thing in your organization is what your best people know. There's no way to capture it, scale it, or keep it when they leave. Until now.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section" id="how">
+  <div class="section-inner">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-title">Three Steps.<br>Your Parallel Workforce.</h2>
+    <p class="section-subtitle">Build once. Assign forever. Every task makes your agents better.</p>
+    <div class="how-steps" style="margin-top:52px;">
+      <div class="how-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Build Your Agent</div>
+        <p class="step-body">Choose a domain — analysis, research, writing, compliance. Name your agent, define their specialty, set their skill level. In minutes you have a permanent member of your bench with a full personnel file.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Teach Your Agent</div>
+        <p class="step-body">Upload documents, training materials, and past work. Your agents build a RAG knowledge base from everything you teach them — grounding every future response in your methodology, not generic AI defaults. Depth is measurable: agents move from General → Trained → Expert → Proprietary as you invest in their knowledge base. Deeper capability means higher-quality output — and a compounding asset you own.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Assign the Work</div>
+        <p class="step-body">Describe the task. Your planning agent generates a step-by-step execution plan, assigns the right agents to each step, and flags where human judgment is required. Approve the plan, and let them work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PERSONAS ── -->
+<section class="personas-section" id="personas">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who It's For</div>
+    <h2 class="section-title">Three Ceilings.<br>One Solution.</h2>
+    <p class="section-subtitle" style="margin-bottom: 52px;">DeepBench meets you where your capacity actually breaks down.</p>
+    <div class="personas-grid">
+      <div class="persona-card">
+        <div class="persona-who">Solo Consultant</div>
+        <div class="persona-pain">"I can't take on more clients without cloning myself."</div>
+        <p class="persona-solve">Build an AI bench that handles the analytical heavy lifting for every engagement. Upload client data, assign the analysis to your agents, and arrive to kickoffs with findings already in hand. More engagements. Same you.</p>
+        <span class="persona-tag">Scale Without Hiring</span>
+      </div>
+      <div class="persona-card">
+        <div class="persona-who">Business Owner</div>
+        <div class="persona-pain">"I'm tired of re-training people who leave."</div>
+        <p class="persona-solve">Encode your standard operating procedures, best practices, and institutional knowledge into agents that never forget and never quit. Every new team member inherits the full depth of your organization's expertise on day one.</p>
+        <span class="persona-tag">Encode Your Expertise</span>
+      </div>
+      <div class="persona-card">
+        <div class="persona-who">Enterprise / Association</div>
+        <div class="persona-pain">"Our practice can't scale to every member."</div>
+        <p class="persona-solve">Deploy a bench of specialist agents trained on your methodology, standards, and knowledge base. Give every member — or every client — access to the same quality of expert guidance you currently reserve for your largest accounts.</p>
+        <span class="persona-tag">Methodology at Scale</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CASE STUDY ── -->
+<section class="case-section">
+  <div class="case-layout">
+    <div>
+      <div class="case-eyebrow">Live Demo — City of Austin, FY2025</div>
+      <h2 class="case-title">$372M Analyzed.<br>11,711 Transactions.<br>28 Seconds.</h2>
+      <p class="case-body">The City of Austin's full fiscal year procurement dataset — loaded, classified, flagged, and briefed by DeepBench's NIGP Consultant agent (Robyn Castellanos) in under a minute. What used to take a consultant half a day of Excel work is now a live task result you can share via URL.</p>
+      <a href="https://deepbench.roadmapventure.com/work/1/analyze" class="case-cta">View Live Demo Task ↗</a>
+    </div>
+    <div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-num">$372M</div><div class="case-metric-lbl">Total procurement spend analyzed</div></div>
+        <div class="case-metric"><div class="case-metric-num">11,711</div><div class="case-metric-lbl">Individual transactions classified</div></div>
+        <div class="case-metric"><div class="case-metric-num">$33.6M</div><div class="case-metric-lbl">Maverick spend surfaced — 9% of total</div></div>
+        <div class="case-metric"><div class="case-metric-num">28s</div><div class="case-metric-lbl">Upload to full analysis report</div></div>
+      </div>
+      <div class="case-flags">
+        <div class="case-flags-label">✦ AI Flags Detected</div>
+        <div class="case-flag-row"><span class="cf-label">Maverick Spend</span><span class="cf-val">$33,600,000</span><span class="cf-pill pill-high">HIGH</span></div>
+        <div class="case-flag-row"><span class="cf-label">Oct Spending Spike</span><span class="cf-val">$60,400,000 · 2.1×</span><span class="cf-pill pill-med">MED</span></div>
+        <div class="case-flag-row"><span class="cf-label">Top Vendor (Motorola)</span><span class="cf-val">$29,200,000 · 7.8%</span><span class="cf-pill pill-med">MED</span></div>
+        <div class="case-flag-row"><span class="cf-label">Vendor HHI Score</span><span class="cf-val">~850 Competitive</span><span class="cf-pill pill-ok">OK</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ORIGIN STORY ── -->
+<section class="problem-section" id="origin" style="background:var(--ivory);">
+  <div class="problem-grid">
+    <div>
+      <div class="section-eyebrow">Origin</div>
+      <div class="big-quote">"We didn't start with a platform idea. We started with a real government procurement problem."</div>
+      <p class="problem-body">DeepBench grew out of the NIGP Spend Analyzer — a production tool built for government chief procurement officers and consultants that classifies transactions against the NIGP taxonomy, surfaces compliance risks, and generates AI executive briefings in under a minute.</p>
+      <p class="problem-body">That tool is still live. It analyzed $372M in City of Austin procurement spend as a single DeepBench task. It's not a demo — it's the proof that domain-specific AI agents, grounded in real methodology, produce results that generic AI tools can't.</p>
+      <p class="problem-body">DeepBench is the platform generalization of that concept. The NIGP Analyzer became the first agent on the bench. The architecture that made it work — deterministic logic as the analytical foundation, LLMs as the intelligence layer on top — became the design identity for everything that followed.</p>
+    </div>
+    <div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="padding:28px 30px;background:var(--ivory-2);border:1px solid var(--rule);border-radius:6px;">
+          <div class="section-eyebrow" style="margin-bottom:12px;">The Design Identity</div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px;"></div>
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--ink-2);margin-bottom:3px;">Deterministic + Generative Hybrid</div><div style="font-size:13px;color:var(--ink-3);line-height:1.65;">Domain logic runs the analysis. LLMs interpret the findings. Never the other way around. The numbers are always right — the AI adds the narrative.</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px;"></div>
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--ink-2);margin-bottom:3px;">Multi-Agent Orchestration</div><div style="font-size:13px;color:var(--ink-3);line-height:1.65;">A planning agent (Michelle) coordinates specialist agents across every task. Each agent has a distinct role, a trainable knowledge base, and a composable place in any workflow.</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px;"></div>
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--ink-2);margin-bottom:3px;">Self-Improving Web Agent</div><div style="font-size:13px;color:var(--ink-3);line-height:1.65;">Brent's ReAct loop — browser perception → AI decision → Playwright action → knowledge write-back — gets better at every portal it visits. No retraining required.</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px;"></div>
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--ink-2);margin-bottom:3px;">Human-in-the-Loop by Design</div><div style="font-size:13px;color:var(--ink-3);line-height:1.65;">HITL gates are built into the task planning layer — not bolted on. Every consequential decision has a natural pause point for human judgment before proceeding.</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:20px 24px;background:var(--ivory-2);border:1px solid var(--rule);border-radius:6px;display:flex;gap:16px;align-items:center;">
+          <div style="font-family:'DM Mono',monospace;font-size:28px;color:var(--gold);flex-shrink:0;">↗</div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--ink-2);margin-bottom:4px;">The original NIGP Analyzer is still live</div>
+            <div style="font-size:12.5px;color:var(--ink-3);line-height:1.6;">Government CPOs and NIGP consultants use it today. It's the production proof of concept that DeepBench was built on top of.</div>
+            <a href="https://nigp.roadmapventure.com" target="_blank" style="display:inline-block;margin-top:10px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;">nigp.roadmapventure.com ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CAPABILITIES ── -->
+<section class="capabilities-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Platform Capabilities</div>
+    <h2 class="section-title">Everything Your Bench Needs.<br>Nothing They Don't.</h2>
+    <p class="section-subtitle">Purpose-built for knowledge work. Every capability in service of getting real analysis done faster.</p>
+    <div class="capabilities-grid">
+      <div class="cap-card">
+        <div class="cap-icon">🧠</div>
+        <div class="cap-title">RAG Knowledge Base</div>
+        <p class="cap-body">Train agents on your documents, methodology, and past work. Every agent response is grounded in what you've taught them — not generic AI defaults. Knowledge compounds with every training session.</p>
+        <span class="cap-tag">Trainable Agents</span>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">📋</div>
+        <div class="cap-title">Plan-and-Execute Tasks</div>
+        <p class="cap-body">Describe work in plain language. Your planning agent generates a step-by-step execution plan, assigns the right specialist agents, and flags human-in-the-loop gates automatically. You approve; they execute.</p>
+        <span class="cap-tag">AI Task Planning</span>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🌐</div>
+        <div class="cap-title">Live Web Agent</div>
+        <p class="cap-body">Brent Matthews is a Playwright-powered web agent who navigates real government portals, fetches live procurement data, and builds memory from every successful run. Self-improving with every task.</p>
+        <span class="cap-tag">ReAct + Memory</span>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">📊</div>
+        <div class="cap-title">NIGP Spend Analysis</div>
+        <p class="cap-body">The full NIGP classification engine lives inside DeepBench as a first-class task type. Upload any government procurement CSV — classification, health flags, vendor HHI, and AI executive briefing in under a minute.</p>
+        <span class="cap-tag">NIGP Native</span>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">💬</div>
+        <div class="cap-title">Agent Chat Panel</div>
+        <p class="cap-body">Chat directly with any agent on your bench. Intelligent routing suggests the right agent for your question. Every response shows its knowledge provenance — Trained, Informed, or General. Save any answer as a task assignment.</p>
+        <span class="cap-tag">Consultative AI</span>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">✦</div>
+        <div class="cap-title">Full AI Transparency</div>
+        <p class="cap-body">Every AI-touched element is labeled with a ✦ AI badge. A live activity panel shows cost, latency, and call type for every AI operation. You always know exactly where AI is being used and what it's doing.</p>
+        <span class="cap-tag">AI Audit Layer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── NO VAPORWARE ── -->
+<section style="padding:80px 56px;border-top:1px solid var(--rule);background:var(--ivory-2);">
+  <div class="section-inner">
+    <div class="section-eyebrow">No Vaporware</div>
+    <h2 class="section-title">Every Claim.<br>Verified Live.</h2>
+    <p class="section-subtitle">The AI industry is full of demos that don't survive contact with reality. Here's what's actually running in production today — and what's designed but not yet shipped.</p>
+    <div class="vaporware-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;">
+      <div style="background:var(--ivory);padding:28px 32px;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal);"></span>Live in Production</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">RAG + Vector Embeddings</div><div style="font-size:11px;color:var(--ink-3);">pgvector · Supabase · OpenAI embeddings — live at query time</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);white-space:nowrap;margin-top:2px;">✅ Live</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">ReAct Agent Loop</div><div style="font-size:11px;color:var(--ink-3);">Brent — Railway/Playwright — reason, act, observe cycles</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);white-space:nowrap;margin-top:2px;">✅ Live</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Per-Agent Guardrails</div><div style="font-size:11px;color:var(--ink-3);">Always/never rules stored in Supabase, enforced on every call</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);white-space:nowrap;margin-top:2px;">✅ Live</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">AI Cost Audit</div><div style="font-size:11px;color:var(--ink-3);">Per-call: model, tokens, cost, latency → Supabase log</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);white-space:nowrap;margin-top:2px;">✅ Live</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Self-Learning / Knowledge Reinforcement</div><div style="font-size:11px;color:var(--ink-3);">Brent writes fetch results back as training entries automatically</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);white-space:nowrap;margin-top:2px;">✅ Live</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Structured Tool Use</div><div style="font-size:11px;color:var(--ink-3);">Claude tool use throughout — no free-text JSON parsing anywhere</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);white-space:nowrap;margin-top:2px;">✅ Live</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Prompt Caching</div><div style="font-size:11px;color:var(--ink-3);">Anthropic caching on system prompts — up to 90% cost reduction</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);white-space:nowrap;margin-top:2px;">✅ Live</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Multi-Agent Orchestration</div><div style="font-size:11px;color:var(--ink-3);">Michelle plans, assigns, and coordinates specialist agents per task</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--teal);white-space:nowrap;margin-top:2px;">✅ Live</div></div>
+        </div>
+      </div>
+      <div style="background:var(--ivory);padding:28px 32px;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);"></span>Designed — Shipping Next</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Capability Depth Spectrum (1–4)</div><div style="font-size:11px;color:var(--ink-3);">General → Trained → Expert → Proprietary — priced by depth</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--gold);white-space:nowrap;margin-top:2px;">🔶 Designed</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Human-in-the-Loop Execution Gates</div><div style="font-size:11px;color:var(--ink-3);">Step execution pauses for human review before proceeding</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--gold);white-space:nowrap;margin-top:2px;">🔶 Designed</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Multi-Tenancy + Auth</div><div style="font-size:11px;color:var(--ink-3);">tenant_id on every table today — Clerk auth wraps in v6</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--gold);white-space:nowrap;margin-top:2px;">🔶 v6</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">Agent Marketplace</div><div style="font-size:11px;color:var(--ink-3);">Build, train, and publish agents — earn revenue share</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--gold);white-space:nowrap;margin-top:2px;">🔶 v6</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">BYOK + Per-Agent LLM Assignment</div><div style="font-size:11px;color:var(--ink-3);">Tenant API keys, per-agent model selection</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--gold);white-space:nowrap;margin-top:2px;">🔶 v7</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);gap:12px;"><div><div style="font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:2px;">MCP — Agent Integration</div><div style="font-size:11px;color:var(--ink-3);">DeepBench agents callable from Claude Desktop, Cursor, any MCP environment</div></div><div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--gold);white-space:nowrap;margin-top:2px;">🔶 v7</div></div>
+        </div>
+        <div style="margin-top:14px;padding:12px 14px;background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.2);border-radius:4px;font-size:11.5px;color:var(--ink-3);line-height:1.65;">MCP means a trained DeepBench procurement agent becomes callable from any AI tool — Claude Desktop, Cursor, or any MCP-compatible environment. Distribution without the UI.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── AGENT ROSTER ── -->
+<section class="agents-section" id="agents">
+  <div class="section-inner">
+    <div class="section-eyebrow">Your Starter Bench</div>
+    <h2 class="section-title">Eight Specialists.<br>Ready to Work Today.</h2>
+    <p class="section-subtitle" style="margin-bottom: 52px;">Every DeepBench account starts with a pre-built bench of specialist agents. Trainable, extensible, and ready to be assigned real work the moment you log in.</p>
+    <div class="agents-grid">
+      <div class="agent-card">
+        <div class="agent-card-icon">📊</div>
+        <div class="agent-card-name">Robyn Castellanos</div>
+        <div class="agent-card-role">NIGP Consultant</div>
+        <p class="agent-card-body">RAG + deep reasoning. The specialist for government procurement spend analysis and NIGP taxonomy work. Trained on procurement methodology.</p>
+        <div class="agent-skill-bar"><div class="agent-skill-fill" style="width:89%"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">🌐</div>
+        <div class="agent-card-name">Brent Matthews</div>
+        <div class="agent-card-role">Web Agent</div>
+        <p class="agent-card-body">Playwright-powered ReAct loop with persistent memory. Navigates government portals, fetches live data, and self-improves from every run.</p>
+        <div class="agent-skill-bar"><div class="agent-skill-fill" style="width:74%"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">📋</div>
+        <div class="agent-card-name">Michelle Manning</div>
+        <div class="agent-card-role">Project Planner</div>
+        <p class="agent-card-body">Generates step-by-step execution plans, assigns the right agents, and flags human-in-the-loop gates. The conductor of every multi-step task.</p>
+        <div class="agent-skill-bar"><div class="agent-skill-fill" style="width:82%"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">🔍</div>
+        <div class="agent-card-name">Bob Whitfield</div>
+        <div class="agent-card-role">Professional Analyst</div>
+        <p class="agent-card-body">RAG-augmented professional-grade analysis. Deep knowledge base queries, structured output, and briefing-quality deliverables.</p>
+        <div class="agent-skill-bar"><div class="agent-skill-fill" style="width:78%"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">📈</div>
+        <div class="agent-card-name">Mike Alvarez</div>
+        <div class="agent-card-role">Senior Analyst</div>
+        <p class="agent-card-body">Deep LLM reasoning for complex analytical tasks. Executive-quality structured output. The go-to for nuanced interpretation and strategy drafts.</p>
+        <div class="agent-skill-bar"><div class="agent-skill-fill" style="width:67%"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">🎨</div>
+        <div class="agent-card-name">Christy Park</div>
+        <div class="agent-card-role">Marketing Designer</div>
+        <p class="agent-card-body">Formatting and presentation specialist. Transforms raw analysis into polished client-facing deliverables. Pitch decks, one-pagers, executive summaries.</p>
+        <div class="agent-skill-bar"><div class="agent-skill-fill" style="width:55%"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">📝</div>
+        <div class="agent-card-name">Chloe Okafor</div>
+        <div class="agent-card-role">Junior Analyst</div>
+        <p class="agent-card-body">Fast, lightweight classification and routing tasks. Perfect for first-pass triage, categorization, and routing decisions before senior agents take over.</p>
+        <div class="agent-skill-bar"><div class="agent-skill-fill" style="width:42%"></div></div>
+      </div>
+      <div class="agent-card" style="background:var(--ivory-2);border:2px dashed var(--rule);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;">
+        <div style="font-size:28px;color:var(--gold);">＋</div>
+        <div class="agent-card-name" style="font-size:16px;">Add Your Own</div>
+        <p style="font-size:12.5px;color:var(--ink-3);line-height:1.65;">Build a specialist agent trained on your domain, your methodology, your knowledge base. Your bench, your rules.</p>
+        <a href="https://deepbench.roadmapventure.com/bench/new" class="btn-secondary" style="font-size:10px;padding:8px 18px;margin-top:4px;">Build Your First Agent</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── AI TRANSPARENCY ── -->
+<section class="ai-section">
+  <div class="ai-layout">
+    <div>
+      <div class="section-eyebrow">AI You Can Trust</div>
+      <h2 class="section-title">Every AI Decision.<br>Visible.</h2>
+      <div class="ai-badge-pill">✦ AI Transparency Layer — Built In</div>
+      <p class="ai-body">DeepBench doesn't hide where AI is being used. Every output generated by an AI agent carries a ✦ AI badge. A live activity panel shows exactly which model ran, what it cost, and how long it took — for every operation in the session.</p>
+      <p class="ai-body">Human-in-the-loop gates are flagged automatically in every task plan. When a step requires your judgment before proceeding, it stops. No AI agent makes a consequential decision without the opportunity for human review.</p>
+      <p class="ai-body">Deterministic algorithms — procurement health flags, HHI scoring — carry no AI badge. You always know the difference between a rule-based calculation and a model-generated insight.</p>
+    </div>
+    <div class="ai-panel">
+      <div class="ai-panel-header">
+        <div class="ai-panel-label">✦ Task Plan — Spend Analysis Engagement</div>
+        <div class="ai-panel-badge">Michelle Manning · Planner</div>
+      </div>
+      <div class="ai-panel-body">
+        <div class="ai-step">
+          <div class="ai-step-num">1</div>
+          <div>
+            <div class="ai-step-agent">Brent Matthews · Web Agent</div>
+            <div class="ai-step-text">Fetch Maryland Comptroller FY2025 procurement data via live portal agent. Playwright navigation with memory recall from prior runs.</div>
+          </div>
+        </div>
+        <div class="ai-hitl">
+          <span class="hitl-flag">⚑ HITL</span>
+          <span>Review fetched dataset before proceeding — confirm date range and column mapping is correct.</span>
+        </div>
+        <div class="ai-step">
+          <div class="ai-step-num">2</div>
+          <div>
+            <div class="ai-step-agent">Robyn Castellanos · NIGP Consultant</div>
+            <div class="ai-step-text">Run full NIGP classification, 6 procurement health flags, vendor HHI scoring, and AI executive briefing on confirmed dataset.</div>
+          </div>
+        </div>
+        <div class="ai-step">
+          <div class="ai-step-num">3</div>
+          <div>
+            <div class="ai-step-agent">Christy Park · Marketing Designer</div>
+            <div class="ai-step-text">Format health flag findings and AI briefing into a client-ready executive summary deck for the CPO presentation.</div>
+          </div>
+        </div>
+        <div class="ai-hitl">
+          <span class="hitl-flag">⚑ HITL</span>
+          <span>Review final deliverable before sharing with client — confirm key findings are accurate and recommendations are appropriately scoped.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SELF REPLICATION VISION ── -->
+<section class="problem-section" style="background:var(--ink);border-top:none;">
+  <div class="problem-grid" style="max-width:1200px;margin:0 auto;">
+    <div>
+      <div class="section-eyebrow" style="color:var(--gold);">The Long Game</div>
+      <div class="big-quote" style="color:var(--ivory);border-left-color:var(--gold);">"The end goal isn't just automating tasks. It's training an agent that represents your knowledge — and works on your behalf."</div>
+      <p class="problem-body" style="color:rgba(250,248,245,.55);">Every expert has a body of knowledge that took years to build. Methodologies, judgment calls, pattern recognition, institutional memory. Right now, that expertise exists only in one place: inside one person's head.</p>
+      <p class="problem-body" style="color:rgba(250,248,245,.55);">DeepBench's training layer is designed for this. Upload your documents, your frameworks, your past work. Teach your agents how you think. Over time, you build an AI that doesn't just do tasks — it does tasks the way you would do them.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="padding:28px 30px;background:rgba(200,169,110,.06);border:1px solid rgba(200,169,110,.15);border-radius:6px;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,169,110,.5);margin-bottom:18px;">What this looks like in practice</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);flex-shrink:0;margin-top:2px;">01</div>
+            <div style="font-size:13px;color:rgba(250,248,245,.55);line-height:1.7;">A consultant uploads every engagement deliverable they've produced over 10 years. Their agents now draft using that methodology — not generic AI defaults.</div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);flex-shrink:0;margin-top:2px;">02</div>
+            <div style="font-size:13px;color:rgba(250,248,245,.55);line-height:1.7;">A business owner encodes their standard operating procedures. New hires inherit the full institutional playbook on day one — agents answer questions the same way their founder would.</div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);flex-shrink:0;margin-top:2px;">03</div>
+            <div style="font-size:13px;color:rgba(250,248,245,.55);line-height:1.7;">An association trains agents on their published standards and best practices. Every member gets access to expert-level guidance that previously required a direct consulting engagement.</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:16px 20px;background:rgba(200,169,110,.06);border:1px solid rgba(200,169,110,.12);border-radius:6px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;color:rgba(200,169,110,.6);line-height:1.8;">
+        Your expertise · Encoded · Permanently on your bench
+      </div>
+      <div style="padding:16px 20px;background:rgba(200,169,110,.06);border:1px solid rgba(200,169,110,.15);border-radius:6px;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,169,110,.5);margin-bottom:8px;">The Compounding Moat</div>
+        <div style="font-size:13px;color:rgba(250,248,245,.6);line-height:1.7;">A deeply trained agent built over 12 months is not easily replaced. The more you invest in training, the more you own — and the less you'd ever want to leave. Switching cost is the compounding advantage.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOUNDER ── -->
+<section style="padding:80px 56px;border-top:1px solid var(--rule);background:var(--ivory-2);">
+  <div class="founder-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
+    <div>
+      <div class="section-eyebrow">Built By</div>
+      <h2 class="section-title">A Product Leader.<br><em>Not an Engineer.</em></h2>
+      <p style="font-size:15px;color:var(--ink-3);line-height:1.8;margin-bottom:20px;">Every line of code in DeepBench was written through AI-assisted development. Every architecture decision, design principle, product priority, and session rule was mine.</p>
+      <p style="font-size:15px;color:var(--ink-3);line-height:1.8;margin-bottom:20px;">DeepBench is the artifact that proves what a product leader can build when they combine deep domain knowledge, strong architectural thinking, and the discipline to apply both consistently across 50+ documented build sessions.</p>
+      <p style="font-size:15px;color:var(--ink-3);line-height:1.8;">I've spent my career at the intersection of enterprise technology, business strategy, and applied AI — with deep roots in government procurement intelligence. NIGP standards, vendor concentration risk, spend analysis, and compliance flags aren't features I designed abstractly — they're problems I've worked from the inside.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="padding:28px 30px;background:var(--ivory);border:1px solid var(--rule);border-radius:6px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--rule);">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;flex-shrink:0;">JL</div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);margin-bottom:2px;">John Leonard</div>
+            <div style="font-size:11px;color:var(--ink-3);">Product Leader · AI Systems Architect · Principal, Roadmap Venture</div>
+            <div style="display:flex;gap:14px;margin-top:6px;">
+              <a href="https://www.roadmapventure.com" target="_blank" style="font-family:'DM Mono',monospace;font-size:9px;color:var(--gold);text-decoration:none;letter-spacing:.08em;">roadmapventure.com ↗</a>
+              <a href="https://www.linkedin.com/in/leonardjohn" target="_blank" style="font-family:'DM Mono',monospace;font-size:9px;color:var(--gold);text-decoration:none;letter-spacing:.08em;">linkedin ↗</a>
+            </div>
+          </div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--ink-2);line-height:1.5;margin-bottom:16px;">"My ultimate goal: build an agent that approaches answers the way I do — same diagnostic process, same reasoning arc, same domain priorities. At minimum, outputs equivalent to mine. Ultimately: faster and smarter than I could alone."</div>
+        <div style="font-size:12px;color:var(--ink-3);line-height:1.7;">If I had the strength of a company behind this, it would be in market today. This is the proof the bones are there — and that I know exactly what to build when the team arrives.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;">
+        <div style="background:var(--ivory);padding:18px 16px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:4px;">37</div><div style="font-size:10px;color:var(--ink-3);letter-spacing:.04em;">Source files</div></div>
+        <div style="background:var(--ivory);padding:18px 16px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:4px;">~18K</div><div style="font-size:10px;color:var(--ink-3);letter-spacing:.04em;">Lines of code</div></div>
+        <div style="background:var(--ivory);padding:18px 16px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:4px;">17</div><div style="font-size:10px;color:var(--ink-3);letter-spacing:.04em;">Written kickoff specs</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-eyebrow" style="justify-content:center;">Get Started</div>
+    <h2 class="section-title">Your Bench Is<br><em style="font-style:italic;color:var(--gold)">Ready to Work.</em></h2>
+    <p class="section-subtitle">Build your first agent in minutes, or try a live demo task loaded with real government procurement data.</p>
+    <div class="cta-buttons">
+      <a href="https://deepbench.roadmapventure.com/bench/new" class="btn-primary">Build Your First Agent</a>
+      <a href="https://deepbench.roadmapventure.com/work/1/analyze" class="btn-secondary">Try Live Demo Task</a>
+    </div>
+    <div class="cta-footnote">No login required for demo · City of Austin FY2025 pre-loaded · Full analysis ready in seconds</div>
+  </div>
+</section>
+
+
+</body>
+</html>

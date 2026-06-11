@@ -8,7 +8,7 @@
   const FOOTER_LINKS = [
     { href: 'index.html',          label: 'Home' },
     { href: 'resume.html',         label: 'Resume' },
-    { href: 'nigp-marketing.html', label: 'Data Intelligence' },
+    { href: 'deepbench-marketing.html', label: 'AI Product Demo' },
     { href: 'playbook.html',       label: 'My Product Playbook' },
     { href: 'about.html',          label: 'About' },
     { href: 'patents.html',        label: 'Patents' },
@@ -22,7 +22,7 @@
     const footerHTML = `
 <footer id="siteFooter">
   <a class="footer-logo" href="index.html">RoadMap<span>Venture</span></a>
-  <span class="footer-copy">© 2025 John Leonard · Austin, TX</span>
+  <span class="footer-copy">© 2026 John Leonard · Austin, TX</span>
   <div class="footer-links">
     ${linksHTML}
     <a href="https://www.linkedin.com/in/leonardjohn/" target="_blank" class="arrow-link">LinkedIn</a>
