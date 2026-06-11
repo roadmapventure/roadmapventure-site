@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Leonard — Director of Product Management, SIGGA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0f1117;
+      --ink-mid:   #3a3f4b;
+      --ink-light: #6b7180;
+      --rule:      #dde0e8;
+      --bg:        #f7f8fa;
+      --white:     #ffffff;
+      --accent:    #1a56db;
+      --accent-lt: #e8effe;
+      --mono:      'DM Mono', monospace;
+      --serif:     'DM Serif Display', Georgia, serif;
+      --sans:      'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP NAV ─────────────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 64px;
+    }
+
+    .nav-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .nav-photo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--rule);
+      background: var(--rule);
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .nav-role {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+
+    .nav-tabs {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      flex: 1;
+      height: 100%;
+      margin-left: 8px;
+    }
+
+    .tab-btn {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-light);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 0 16px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .tab-btn:hover { color: var(--ink); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-mid);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      padding: 5px 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .nav-link svg { flex-shrink: 0; }
+
+    .nav-divider { width: 1px; height: 20px; background: var(--rule); }
+
+    /* ── MAIN LAYOUT ─────────────────────────────────────── */
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .page-header {
+      margin-bottom: 40px;
+    }
+
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .page-title {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    /* ── PANELS ──────────────────────────────────────────── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ── Q&A SECTIONS ────────────────────────────────────── */
+    .question-block {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 32px 36px;
+      margin-bottom: 28px;
+    }
+
+    .question-label {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .question-text {
+      font-style: italic;
+      color: var(--ink-mid);
+      font-size: 14px;
+      line-height: 1.6;
+      padding-left: 16px;
+      border-left: 3px solid var(--rule);
+      margin-bottom: 24px;
+    }
+
+    .answer-text {
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .answer-text p + p { margin-top: 16px; }
+
+    /* ── PRODUCT TABLE PANEL ─────────────────────────────── */
+    .product-era {
+      margin-bottom: 40px;
+    }
+
+    .era-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--ink);
+    }
+
+    .era-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--ink);
+    }
+
+    .era-context {
+      font-size: 12px;
+      color: var(--ink-light);
+      font-weight: 400;
+    }
+
+    .era-note {
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      padding: 12px 16px;
+      background: var(--accent-lt);
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+
+    thead th {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    tbody tr { border-bottom: 1px solid var(--rule); }
+    tbody tr:last-child { border-bottom: none; }
+
+    tbody td {
+      padding: 12px 12px;
+      vertical-align: top;
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+
+    tbody td:first-child {
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+      width: 160px;
+    }
+
+    tbody td:last-child {
+      font-size: 12px;
+      color: var(--ink-light);
+      width: 200px;
+    }
+
+    .table-wrap {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .nav-role, .era-context { display: none; }
+      .tab-btn { padding: 0 10px; font-size: 12px; }
+      .nav-links { gap: 10px; }
+      .question-block { padding: 22px 20px; }
+      tbody td:first-child { width: auto; white-space: normal; }
+      tbody td:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-identity">
+      <img
+        class="nav-photo"
+        src="https://www.roadmapventure.com/john-leonard-headshot.jpeg"
+        onerror="this.style.background='#1a56db';this.style.content='';this.alt='JL'"
+        alt="John Leonard"
+      />
+      <div>
+        <div class="nav-name">John Leonard</div>
+        <div class="nav-role">Director of Product Management — SIGGA</div>
+      </div>
+    </div>
+
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="showTab('tab-saas', this)">SaaS Managed Products</button>
+      <button class="tab-btn" onclick="showTab('tab-ai', this)">AI Managed Products</button>
+      <button class="tab-btn" onclick="showTab('tab-sap', this)">SAP / EAM Solutions</button>
+    </div>
+
+    <div class="nav-links">
+      <a class="nav-link" href="https://www.roadmapventure.com/John_Leonard_SIGGA_Questions.pdf" target="_blank">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        All Questions
+      </a>
+      <div class="nav-divider"></div>
+      <a class="nav-link" href="https://www.roadmapventure.com/John_Leonard_Resume_Product_and_Data_Exec.pdf" target="_blank">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Resume
+      </a>
+      <div class="nav-divider"></div>
+      <a class="nav-link" href="https://www.linkedin.com/in/leonardjohn" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <div class="nav-divider"></div>
+      <a class="nav-link" href="https://www.roadmapventure.com" target="_blank">roadmapventure.com</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ── TAB 1: SaaS Managed Products ───────────────────── -->
+  <div id="tab-saas" class="panel active">
+    <div class="page-header">
+      <div class="page-eyebrow">Question 1 of 3</div>
+      <h1 class="page-title">SaaS Products Managed</h1>
+    </div>
+
+    <div class="question-block">
+      <div class="question-label">Recruiter Question</div>
+      <div class="question-text">Can you describe the SaaS products you have managed and your role in defining product strategy, roadmap prioritization, and customer adoption? What business outcomes were you responsible for?</div>
+      <div class="answer-text">
+        <p>I've spent the last eight years leading product strategy across a GovTech procurement platform that competed directly with SAP Ariba in the public sector — serving large state and local government agencies operating under strict regulatory and compliance requirements. The platform suite included eProcurement, contract lifecycle management, supplier marketplace, cooperative contract reconciliation, and bid management products serving 500,000+ users and over one million suppliers across North America.</p>
+        <p>At Periscope Holdings, I owned the full strategy-to-launch cycle for three net-new products. A transaction-based cooperative contract reconciliation platform that enabled $18M in new customer revenue. A supplier portal rebuild that expanded subscriptions 17%. And a government-first enterprise contract-sharing marketplace built and launched in nine months. I also owned the SAP integration for our eProcurement product — a critical enterprise integration for agencies running procurement workflows inside SAP environments.</p>
+        <p>When Periscope was acquired by mdf Commerce and later rebranded as SOVRA, I was retained and expanded into a portfolio leadership role. I built and led a team of 30 — including Product Owners, UX/UI, Data Platform, Scrum Masters, and Tech Writers — and hired two Directors to lead the PMO and data practice. I also established the company's first Tech PMO, onboarding 100+ globally distributed offshore contributors and creating the operating model that aligned delivery to executive priorities, AI strategy, and customer commitments. Across that period I governed roadmap and delivery across five platforms and 20+ products, led a $10M capital improvement program spanning 50+ initiatives, and maintained stability across $75M ARR while integrating AI capabilities into the product line.</p>
+        <p>Across all of it I was accountable for business outcomes: ARR retention, customer adoption, release velocity, and cross-functional alignment across product, engineering, sales, and customer success.</p>
+      </div>
+    </div>
+
+    <!-- Product inventory -->
+    <div class="product-era">
+      <div class="era-header">
+        <span class="era-name">SOVRA / mdf Commerce / Periscope Holdings</span>
+        <span class="era-context">2018 – 2026 · GovTech Procurement · Austin / Montreal</span>
+      </div>
+      <div class="era-note">Eight years across the same product family as the company evolved through two acquisitions. Direct SAP Ariba competitor in the public sector. Served large state agency procurement programs operating under strict regulatory compliance requirements.</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Purpose</th>
+              <th>Scope / Users</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ePRO</td>
+              <td>End-to-end eProcurement / procure-to-pay automation for government buyers. Included a lightweight asset management module and SAP integration — John owned the SAP integration as a product.</td>
+              <td>State &amp; local government agencies; part of 500K+ user base</td>
+            </tr>
+            <tr>
+              <td>Marketplace</td>
+              <td>Public-sector ecommerce platform — government buyers shop co-op contracts, open market catalogs, and supplier catalogs. First-of-kind consumer shopping experience built for public sector compliance.</td>
+              <td>7,000+ government buyers; 1M+ suppliers across North America</td>
+            </tr>
+            <tr>
+              <td>Reconciler</td>
+              <td>Automates cooperative contract fee collection — replaces manual, error-prone reconciliation workflows. Transaction-based revenue model.</td>
+              <td>Supported $5M ARR; enabled $18M new customer revenue</td>
+            </tr>
+            <tr>
+              <td>CLM</td>
+              <td>Contract Lifecycle Management — full contract authoring, execution, and post-award tracking integrated into procurement workflow.</td>
+              <td>Government procurement and legal teams</td>
+            </tr>
+            <tr>
+              <td>Bidnet Direct</td>
+              <td>eSourcing for smaller public sector agencies; access to 500K+ supplier database and electronic bidding. 100K+ government bids distributed monthly.</td>
+              <td>Small-to-mid government agencies across North America</td>
+            </tr>
+            <tr>
+              <td>S2G (Supplier-to-Gov)</td>
+              <td>Supplier-facing portal and bid aggregation — largest government bid database in North America. Subscription model for private sector suppliers seeking government contracts.</td>
+              <td>John's rebuild expanded subscriptions +17%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-era">
+      <div class="era-header">
+        <span class="era-name">Deverus</span>
+        <span class="era-context">2017 – 2018 · SaaS Background Screening · Austin</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Product</th><th>Purpose</th><th>Scope / Users</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Verocity</td>
+              <td>Core cloud-based background check workflow automation platform — the legacy primary product John modernized, transitioning to API-driven architecture.</td>
+              <td>43K business customers; 4.1M annual hires processed</td>
+            </tr>
+            <tr>
+              <td>Verocity Integration Manager</td>
+              <td>Self-service integration platform replacing custom integrations. John replaced a custom platform supporting 40 HRIS vendors with MuleSoft.</td>
+              <td>40+ HRIS vendor integrations (ADP, iCIMS, etc.)</td>
+            </tr>
+            <tr>
+              <td>SwiftHire Mobile</td>
+              <td>Mobile background screening app — applicants complete forms, digital signatures, and status tracking from mobile device. Gig workforce onboarding use case.</td>
+              <td>John launched this product — delivered $90K under budget</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-era">
+      <div class="era-header">
+        <span class="era-name">Fluid Innovation Ventures</span>
+        <span class="era-context">2008 – 2016 · Venture Studio · Austin</span>
+      </div>
+      <div class="era-note">Five startups designed, directed, and launched. Three successful exits exceeding $200M combined.</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Product</th><th>Purpose</th><th>Outcome</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>IP Zone</td>
+              <td>IP commercialization workflow platform — patent holders manage licensing, enforcement, and monetization workflows.</td>
+              <td>Acquired by American Express</td>
+            </tr>
+            <tr>
+              <td>idealAsset</td>
+              <td>Intellectual property marketplace — connecting IP buyers and sellers.</td>
+              <td>Acquired by Dominion Harbor Group</td>
+            </tr>
+            <tr>
+              <td>Enlyton</td>
+              <td>Pre-AI semantic search and research engine — early natural language processing for enterprise research workflows.</td>
+              <td>Integrated into IBM Watson partner solutions</td>
+            </tr>
+            <tr>
+              <td>Techson IP</td>
+              <td>B2B patent intelligence and research platform.</td>
+              <td>Continued as sustainable small business post-engagement</td>
+            </tr>
+            <tr>
+              <td>Solcharge</td>
+              <td>B2C ML-enabled mobile SaaS platform — early machine learning application.</td>
+              <td>Consumer mobile launch</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-era">
+      <div class="era-header">
+        <span class="era-name">DeepBench / Roadmap Venture</span>
+        <span class="era-context">2024 – Present · AI Platform · Austin</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Product</th><th>Purpose</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>NIGP Spend Analyzer</td>
+              <td>Government procurement spend analysis tool using NIGP commodity codes. Origin product that evolved into DeepBench.</td>
+              <td>Live at nigp.roadmapventure.com</td>
+            </tr>
+            <tr>
+              <td>DeepBench</td>
+              <td>Production multi-agent AI workforce platform — multi-agent orchestration, RAG pipeline, ReAct autonomous web agent, LLM evaluation framework.</td>
+              <td>Live at deepbench.roadmapventure.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TAB 2: AI Managed Products ─────────────────────── -->
+  <div id="tab-ai" class="panel">
+    <div class="page-header">
+      <div class="page-eyebrow">Question 2 of 3</div>
+      <h1 class="page-title">AI&#8209;Enabled Products</h1>
+    </div>
+
+    <div class="question-block">
+      <div class="question-label">Recruiter Question</div>
+      <div class="question-text">Have you led the development of AI-enabled products or features? Please describe the solutions you helped create, your role in defining the strategy and execution, and the business value or outcomes these initiatives delivered.</div>
+      <div class="answer-text">
+        <p>Yes — and this is an area I've invested in deeply, both in my day job and through independent applied research.</p>
+        <p>At SOVRA, I led AI feature integration across the portfolio as part of our $10M capital improvement program. One concrete example: I introduced LLM-assisted requirements and design generation into our product development workflow, compressing the design-to-engineering handoff from weeks to days. I also architected the strategy for a lakehouse data platform — unifying 14TB of product and user data — specifically to enable AI-driven product capabilities and future data monetization. AI wasn't a feature we bolted on; it was a deliberate architectural layer I planned from the data foundation up.</p>
+        <p>Beyond my corporate roles, I designed and directed the build of DeepBench — a production multi-agent AI workforce platform — as a non-coder product executive. It is live and continuously shipping. The system includes multi-agent orchestration with specialized domain analyst agents, a RAG pipeline with semantic vector retrieval, a ReAct autonomous web agent that perceives, decides, acts, and writes knowledge back to a database — self-improving without retraining — and an LLM evaluation framework with per-step confidence scoring and full agent run logs for auditability.</p>
+        <p>The reason I built it: I believe the next generation of enterprise software — including industrial asset management — will be built around AI agents performing complex domain work. I wanted to be able to architect and direct that, not just describe it. DeepBench is the proof. For a company like SIGGA, where the opportunity is embedding AI into SAP-native maintenance and field workforce workflows, that combination of enterprise product leadership and hands-on AI architecture fluency is the direct value I'd bring.</p>
+        <p>The platform is live at <a href="https://deepbench.roadmapventure.com" target="_blank" style="color:var(--accent);">deepbench.roadmapventure.com</a>.</p>
+      </div>
+    </div>
+
+    <div class="product-era">
+      <div class="era-header">
+        <span class="era-name">DeepBench — Architecture Overview</span>
+        <span class="era-context">Production multi-agent AI platform</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Capability</th><th>Description</th><th>Role Requirement Matched</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Multi-agent orchestration</td>
+              <td>7-agent bench — Michelle (planner), domain analysts, web agent, each with distinct roles, trainable via RAG, composable into task workflows.</td>
+              <td>Build multi-agent systems / complex LLM orchestration</td>
+            </tr>
+            <tr>
+              <td>RAG pipeline</td>
+              <td>pgvector semantic retrieval — domain knowledge stored as embeddings, retrieved at runtime and injected into agent prompts.</td>
+              <td>LLM apps: RAG, tool use, agent orchestration</td>
+            </tr>
+            <tr>
+              <td>ReAct autonomous agent</td>
+              <td>Browser perception → Claude decision → Playwright action → knowledge write-back to Supabase. Self-improving without retraining.</td>
+              <td>Ship products that drive real business impact</td>
+            </tr>
+            <tr>
+              <td>LLM evaluation framework</td>
+              <td>AI Audit screen with per-step confidence scoring and full agent run logs. Monitors production accuracy and drives prompt iteration cycles.</td>
+              <td>Build evaluation frameworks for LLM outputs</td>
+            </tr>
+            <tr>
+              <td>Human-in-the-loop design</td>
+              <td>Step gate logic — humans approve or intervene at defined checkpoints before agents proceed.</td>
+              <td>Consider how tools affect existing workflows end-to-end</td>
+            </tr>
+            <tr>
+              <td>Deterministic + generative hybrid</td>
+              <td>Domain logic as primary analytical layer, LLM as intelligence layer over pre-computed findings. Deliberate differentiator from pure LLM products.</td>
+              <td>Identify where AI creates leverage vs. noise</td>
+            </tr>
+            <tr>
+              <td>Full-stack delivery</td>
+              <td>Supabase → Railway → React frontend. Designed and directed end-to-end as a non-coder product executive.</td>
+              <td>Full-stack: data pipelines through user interfaces</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-era">
+      <div class="era-header">
+        <span class="era-name">AI at SOVRA / mdf Commerce</span>
+        <span class="era-context">2021 – 2026 · Enterprise SaaS portfolio</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Initiative</th><th>What It Was</th><th>Outcome</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>LLM-assisted requirements</td>
+              <td>Introduced LLM-generated requirements and design specifications into the product development workflow across 5 platforms.</td>
+              <td>Compressed design-to-engineering handoff from weeks to days</td>
+            </tr>
+            <tr>
+              <td>GenAI product feature integration</td>
+              <td>Led AI feature delivery across the $10M capital improvement program — 50+ initiatives including GenAI feature rollouts.</td>
+              <td>AI capabilities shipped across 20+ products</td>
+            </tr>
+            <tr>
+              <td>Lakehouse AI strategy</td>
+              <td>Architected the data platform strategy unifying 14TB of product and user data to enable AI-driven capabilities and future data monetization.</td>
+              <td>Foundation for AI product features and data revenue layer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TAB 3: SAP / EAM Solutions ─────────────────────── -->
+  <div id="tab-sap" class="panel">
+    <div class="page-header">
+      <div class="page-eyebrow">Question 3 of 3</div>
+      <h1 class="page-title">SAP &amp; EAM Experience</h1>
+    </div>
+
+    <div class="question-block">
+      <div class="question-label">Recruiter Question</div>
+      <div class="question-text">Have you had direct, hands-on experience with SAP, Enterprise Asset Management (EAM) solutions, or industrial environments, rather than just exposure to these areas? If so, please describe your role and the industries or customers you supported.</div>
+      <div class="answer-text">
+        <p>My honest answer is that my SAP and EAM experience is adjacent rather than deep — and I'd rather be direct about that than oversell it.</p>
+        <p>On the SAP side: I owned the SAP integration for our eProcurement platform at Periscope, which required understanding how government agencies ran procurement workflows inside SAP environments and how our product needed to connect to and complement that infrastructure. SAP Ariba was our primary enterprise competitor, so I spent years understanding that ecosystem from a product and customer displacement perspective.</p>
+        <p>On the asset management side: earlier in my career, before moving into SaaS product leadership, I was a GIS systems consultant implementing municipal technology for the City of Kansas City. That work included implementing and integrating Intergraph's MGE platform — one of the early enterprise asset management systems used for municipal infrastructure — as well as Accela, an ERP and permitting platform for city operations, for which I wrote the GIS integration layer. Those were hands-on implementations in regulated government operational environments.</p>
+        <p>What I don't have is direct experience inside mining, energy, utilities, or manufacturing — the industrial verticals SIGGA serves. I want to name that clearly. What I do bring is 20+ years of building software for complex operational workflows in highly regulated environments, a track record of rapidly entering new domains and delivering outcomes, and the AI architecture depth to help SIGGA build the next generation of intelligent maintenance capabilities — which based on the job description appears to be a core part of what this role is meant to drive.</p>
+        <p>I'm a fast domain learner — my track record across GovTech, procurement, IP commercialization, background screening, and AI platforms reflects that consistently. I'm confident the SAP and industrial context would come quickly, and I'd bring immediate value on the product strategy, AI roadmap, and team leadership dimensions from day one.</p>
+      </div>
+    </div>
+
+    <div class="product-era">
+      <div class="era-header">
+        <span class="era-name">SAP &amp; EAM-Adjacent Experience</span>
+        <span class="era-context">Across career — direct and adjacent touchpoints</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Platform / System</th><th>Role &amp; Context</th><th>Era</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>SAP Integration (ePRO)</td>
+              <td>Product owner of the SAP integration for Periscope's eProcurement platform. Designed how government agencies running SAP connected to and transacted through the procurement suite.</td>
+              <td>2018 – 2021</td>
+            </tr>
+            <tr>
+              <td>SAP Ariba (competitor)</td>
+              <td>8 years of product strategy directly competing with SAP Ariba in the public sector. Deep understanding of the SAP procurement ecosystem from a product differentiation and customer displacement perspective.</td>
+              <td>2018 – 2026</td>
+            </tr>
+            <tr>
+              <td>Intergraph MGE</td>
+              <td>Implemented and integrated Intergraph's MGE platform — one of the earliest enterprise asset management systems — for municipal infrastructure asset tracking at the City of Kansas City.</td>
+              <td>Pre-2008</td>
+            </tr>
+            <tr>
+              <td>Accela (formerly KIVA)</td>
+              <td>Implemented Accela as an ERP and permitting platform for city government operations. Authored the GIS integration layer connecting Accela to spatial data systems.</td>
+              <td>Pre-2008</td>
+            </tr>
+            <tr>
+              <td>ESRI ArcGIS</td>
+              <td>Sold and implemented ESRI's enterprise GIS platform for municipal and government clients — spatial data analysis, infrastructure mapping, and field operations.</td>
+              <td>Pre-2008</td>
+            </tr>
+            <tr>
+              <td>SAS</td>
+              <td>Sold and implemented SAS enterprise analytics and business intelligence platform for government and enterprise clients.</td>
+              <td>Pre-2008</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
