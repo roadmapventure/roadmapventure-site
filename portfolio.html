@@ -31,15 +31,19 @@
 
   /* nav styles in nav.js */
 
-  /* ── PAGE HEADER ────────────────────────────────────────── */
+  /* ── SLIM PAGE HEADER ───────────────────────────────────── */
   .page-header {
-    padding: calc(68px + 72px) 56px 64px;
+    margin-top: 68px; /* nav height */
+    padding: 28px 56px 24px;
     background: var(--ivory-2);
     border-bottom: 1px solid var(--rule);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: end;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .header-left {
+    flex-shrink: 0;
   }
 
   .page-overline {
@@ -49,51 +53,46 @@
     color: var(--gold);
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 10px;
+    margin-bottom: 6px;
   }
   .page-overline::before {
     content: '';
     display: block;
-    width: 28px; height: 1px;
+    width: 22px; height: 1px;
     background: var(--gold);
   }
 
   .page-header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 72px;
+    font-size: 42px;
     font-weight: 300;
-    line-height: .92;
+    line-height: 1;
     color: var(--ink);
     letter-spacing: -.01em;
+    white-space: nowrap;
   }
   .page-header h1 em { font-style: italic; color: var(--ink-2); }
 
-  .header-desc {
-    font-size: 15px;
-    line-height: 1.8;
-    color: var(--ink-3);
-    margin-bottom: 28px;
-  }
-
   .header-stats {
     display: flex;
-    gap: 32px;
+    gap: 36px;
     flex-wrap: wrap;
+    margin-left: auto;
+    flex-shrink: 0;
   }
-
   .stat-item {}
   .stat-val {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 300;
     color: var(--ink);
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   .stat-label {
-    font-size: 10px;
-    letter-spacing: .18em;
+    font-size: 9px;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--ink-3);
   }
@@ -102,45 +101,88 @@
   .content-wrap {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 64px 56px 100px;
+    padding: 40px 56px 100px;
   }
 
-  /* ── CAREER SUMMARY ─────────────────────────────────────── */
+  /* ── BACKGROUND / INTRO ─────────────────────────────────── */
   .career-summary {
-    max-width: 780px;
-    margin-bottom: 72px;
-    padding-bottom: 56px;
+    margin-bottom: 48px;
+    padding-bottom: 36px;
     border-bottom: 1px solid var(--rule);
+  }
+
+  .summary-visible {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
   .section-overline {
     font-size: 10px;
-    letter-spacing: .28em;
+    letter-spacing: .22em;
     text-transform: uppercase;
     color: var(--gold);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  .section-overline::before {
-    content: '';
-    display: block;
-    width: 22px; height: 1px;
-    background: var(--gold);
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
-  .career-summary p {
-    font-size: 15px;
-    line-height: 1.85;
+  .summary-para-1 {
+    font-size: 14px;
+    line-height: 1.8;
     color: var(--ink-2);
-    margin-bottom: 18px;
+    font-weight: 300;
   }
-  .career-summary p:last-child { margin-bottom: 0; }
+
+  /* "More" button inline */
+  .more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    cursor: pointer;
+    padding: 0 0 1px;
+    margin-left: 6px;
+    transition: color .2s, border-color .2s;
+    vertical-align: baseline;
+  }
+  .more-btn:hover { color: var(--ink); border-color: var(--ink); }
+  .more-btn .chevron {
+    display: inline-block;
+    transition: transform .25s;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 1;
+  }
+  .more-btn.open .chevron { transform: rotate(180deg); }
+
+  /* Expanded paragraphs */
+  .summary-expanded {
+    display: none;
+    margin-top: 16px;
+  }
+  .summary-expanded.open { display: block; }
+
+  .summary-expanded p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--ink-2);
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .summary-expanded p:last-child { margin-bottom: 0; }
 
   /* ── PRODUCT ERAS ───────────────────────────────────────── */
   .product-era {
-    margin-bottom: 56px;
+    margin-bottom: 52px;
   }
 
   .era-header {
@@ -148,20 +190,20 @@
     align-items: baseline;
     gap: 16px;
     margin-bottom: 12px;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
     border-bottom: 1px solid var(--rule-solid);
   }
 
   .era-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 400;
     color: var(--ink);
   }
 
   .era-context {
     font-size: 11px;
-    letter-spacing: .08em;
+    letter-spacing: .07em;
     color: var(--ink-3);
     font-weight: 300;
   }
@@ -170,9 +212,9 @@
     font-size: 13px;
     font-weight: 300;
     color: var(--ink-2);
-    line-height: 1.7;
-    margin-bottom: 14px;
-    padding: 14px 20px;
+    line-height: 1.65;
+    margin-bottom: 12px;
+    padding: 12px 18px;
     background: var(--ivory-2);
     border-left: 2px solid var(--gold);
   }
@@ -197,7 +239,7 @@
     text-transform: uppercase;
     color: var(--ink-3);
     text-align: left;
-    padding: 10px 16px;
+    padding: 9px 14px;
     border-bottom: 1px solid var(--rule);
     background: var(--ivory-2);
   }
@@ -206,7 +248,7 @@
   tbody tr:last-child { border-bottom: none; }
 
   tbody td {
-    padding: 14px 16px;
+    padding: 13px 14px;
     vertical-align: top;
     color: var(--ink-2);
     line-height: 1.6;
@@ -228,21 +270,16 @@
 
   /* ── RESPONSIVE ─────────────────────────────────────────── */
   @media (max-width: 900px) {
-    .page-header {
-      grid-template-columns: 1fr;
-      gap: 32px;
-      padding: calc(68px + 48px) 28px 48px;
-    }
-    .page-header h1 { font-size: 52px; }
-    .content-wrap { padding: 48px 28px 80px; }
+    .page-header { flex-wrap: wrap; padding: 22px 24px 20px; gap: 16px; }
+    .header-stats { margin-left: 0; gap: 20px; }
+    .content-wrap { padding: 32px 24px 80px; }
     .era-context { display: none; }
   }
 
   @media (max-width: 600px) {
-    .page-header h1 { font-size: 40px; }
+    .page-header h1 { font-size: 32px; }
     tbody td:first-child { white-space: normal; width: auto; }
     tbody td:last-child { display: none; }
-    .header-stats { gap: 20px; }
   }
 </style>
 </head>
@@ -250,33 +287,28 @@
 
 <!-- nav injected by nav.js -->
 
-<!-- ── PAGE HEADER ────────────────────────────────────────── -->
+<!-- ── SLIM PAGE HEADER ────────────────────────────────────── -->
 <header class="page-header">
-  <div>
+  <div class="header-left">
     <div class="page-overline">Product Leadership</div>
-    <h1>Product<br><em>Portfolio</em></h1>
+    <h1>Product <em>Portfolio</em></h1>
   </div>
-  <div>
-    <p class="header-desc">
-      A full inventory of the SaaS products, platforms, and ventures I've led across GovTech procurement, background screening, venture studio, and AI platform work — spanning 20+ years of product strategy, launch, and delivery.
-    </p>
-    <div class="header-stats">
-      <div class="stat-item">
-        <div class="stat-val">20+</div>
-        <div class="stat-label">Products Shipped</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-val">$75M</div>
-        <div class="stat-label">ARR Governed</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-val">500K+</div>
-        <div class="stat-label">End Users</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-val">3</div>
-        <div class="stat-label">Successful Exits</div>
-      </div>
+  <div class="header-stats">
+    <div class="stat-item">
+      <div class="stat-val">20+</div>
+      <div class="stat-label">Products Shipped</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">$75M</div>
+      <div class="stat-label">ARR Governed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">500K+</div>
+      <div class="stat-label">End Users</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">3</div>
+      <div class="stat-label">Successful Exits</div>
     </div>
   </div>
 </header>
@@ -284,13 +316,17 @@
 <!-- ── MAIN CONTENT ───────────────────────────────────────── -->
 <div class="content-wrap">
 
-  <!-- Career Summary -->
+  <!-- Career Summary — first para visible, rest expandable -->
   <div class="career-summary">
-    <div class="section-overline">Background</div>
-    <p>I've spent the last eight years leading a product strategy across a portfolio for GovTech procurement platforms that competed directly with SAP Ariba in the public sector — serving large state and local government agencies operating under strict regulatory and compliance requirements. The platform suite included eProcurement, contract lifecycle management, supplier marketplace, cooperative contract reconciliation, and bid management products serving 500,000+ users.</p>
-    <p>At Periscope Holdings, I owned the full strategy-to-launch cycle for three net-new products. A transaction-based cooperative contract reconciliation platform that enabled $18M in new customer revenue. A supplier portal rebuild that expanded subscriptions 17%. And a government-first enterprise contract-sharing marketplace built and launched in nine months. I also owned the SAP integration for our eProcurement product — a critical enterprise integration for agencies running procurement workflows inside SAP environments.</p>
-    <p>When Periscope was acquired by mdf Commerce and later rebranded as SOVRA, I was retained and expanded into a portfolio leadership role. I built and led a team of 30 — including Product Owners, UX/UI, Data Platform, Scrum Masters, and Tech Writers — and hired two Directors to established the company's first Tech PMO, onboarding 100+ globally distributed offshore contributors and creating the operating model that aligned delivery to executive priorities, AI strategy, and customer commitments. Across that period I governed roadmap and delivery across five platforms and 20+ products, led a $10M capital improvement program spanning 50+ initiatives, and maintained stability across $75M ARR while integrating AI capabilities into the product line.</p>
-    <p>Across all of it I was accountable for business outcomes: ARR retention, customer adoption, release velocity, and cross-functional alignment across product, engineering, sales, and customer success.</p>
+    <div class="summary-visible">
+      <span class="section-overline">Background</span>
+      <span class="summary-para-1">I've spent the last eight years leading a product strategy across a portfolio for GovTech procurement platforms that competed directly with SAP Ariba in the public sector — serving large state and local government agencies operating under strict regulatory and compliance requirements. The platform suite included eProcurement, contract lifecycle management, supplier marketplace, cooperative contract reconciliation, and bid management products serving 500,000+ users.<button class="more-btn" id="moreBtn" onclick="toggleSummary()">More <span class="chevron">&#8964;</span></button></span>
+    </div>
+    <div class="summary-expanded" id="summaryExpanded">
+      <p>At Periscope Holdings, I owned the full strategy-to-launch cycle for three net-new products. A transaction-based cooperative contract reconciliation platform that enabled $18M in new customer revenue. A supplier portal rebuild that expanded subscriptions 17%. And a government-first enterprise contract-sharing marketplace built and launched in nine months. I also owned the SAP integration for our eProcurement product — a critical enterprise integration for agencies running procurement workflows inside SAP environments.</p>
+      <p>When Periscope was acquired by mdf Commerce and later rebranded as SOVRA, I was retained and expanded into a portfolio leadership role. I built and led a team of 30 — including Product Owners, UX/UI, Data Platform, Scrum Masters, and Tech Writers — and hired two Directors to established the company's first Tech PMO, onboarding 100+ globally distributed offshore contributors and creating the operating model that aligned delivery to executive priorities, AI strategy, and customer commitments. Across that period I governed roadmap and delivery across five platforms and 20+ products, led a $10M capital improvement program spanning 50+ initiatives, and maintained stability across $75M ARR while integrating AI capabilities into the product line.</p>
+      <p>Across all of it I was accountable for business outcomes: ARR retention, customer adoption, release velocity, and cross-functional alignment across product, engineering, sales, and customer success.</p>
+    </div>
   </div>
 
   <!-- ── SOVRA / Periscope ── -->
@@ -302,9 +338,7 @@
     <div class="era-note">Eight years across the same product family as the company evolved through two acquisitions. Direct SAP Ariba competitor in the public sector. Served large state agency procurement programs operating under strict regulatory compliance requirements. Two successful exits exceeding $400M combined.</div>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Product</th><th>Purpose</th><th>Scope / Users</th></tr>
-        </thead>
+        <thead><tr><th>Product</th><th>Purpose</th><th>Scope / Users</th></tr></thead>
         <tbody>
           <tr>
             <td>ePRO</td>
@@ -447,6 +481,26 @@
 
 <script src="nav.js"></script>
 <script src="footer.js"></script>
-<script>document.addEventListener("DOMContentLoaded",function(){ initNav("portfolio.html"); initFooter(); });</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    initNav("portfolio.html");
+    initFooter();
+  });
+
+  function toggleSummary() {
+    var btn = document.getElementById('moreBtn');
+    var expanded = document.getElementById('summaryExpanded');
+    var isOpen = expanded.classList.contains('open');
+    if (isOpen) {
+      expanded.classList.remove('open');
+      btn.classList.remove('open');
+      btn.innerHTML = 'More <span class="chevron">&#8964;</span>';
+    } else {
+      expanded.classList.add('open');
+      btn.classList.add('open');
+      btn.innerHTML = 'Less <span class="chevron" style="transform:rotate(180deg);display:inline-block;">&#8964;</span>';
+    }
+  }
+</script>
 </body>
 </html>
