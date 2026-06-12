@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Portfolio — John Leonard</title>
+<meta name="description" content="A full inventory of the SaaS products, platforms, and ventures John Leonard has led across GovTech, background screening, venture studio, and AI platform work." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory:   #faf8f5;
+    --ivory-2: #f3efe9;
+    --ink:     #1a1814;
+    --ink-2:   #3a342c;
+    --ink-3:   #6b6057;
+    --gold:    #c8a96e;
+    --gold-lt: #e8d9bc;
+    --rule:    rgba(200,169,110,.25);
+    --rule-solid: #ddd6c8;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* nav styles in nav.js */
+
+  /* ── PAGE HEADER ────────────────────────────────────────── */
+  .page-header {
+    padding: calc(68px + 72px) 56px 64px;
+    background: var(--ivory-2);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+
+  .page-overline {
+    font-size: 10px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .page-overline::before {
+    content: '';
+    display: block;
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+
+  .page-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    line-height: .92;
+    color: var(--ink);
+    letter-spacing: -.01em;
+  }
+  .page-header h1 em { font-style: italic; color: var(--ink-2); }
+
+  .header-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink-3);
+    margin-bottom: 28px;
+  }
+
+  .header-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {}
+  .stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* ── MAIN CONTENT ───────────────────────────────────────── */
+  .content-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 56px 100px;
+  }
+
+  /* ── CAREER SUMMARY ─────────────────────────────────────── */
+  .career-summary {
+    max-width: 780px;
+    margin-bottom: 72px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-overline {
+    font-size: 10px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-overline::before {
+    content: '';
+    display: block;
+    width: 22px; height: 1px;
+    background: var(--gold);
+  }
+
+  .career-summary p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink-2);
+    margin-bottom: 18px;
+  }
+  .career-summary p:last-child { margin-bottom: 0; }
+
+  /* ── PRODUCT ERAS ───────────────────────────────────────── */
+  .product-era {
+    margin-bottom: 56px;
+  }
+
+  .era-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule-solid);
+  }
+
+  .era-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .era-context {
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--ink-3);
+    font-weight: 300;
+  }
+
+  .era-note {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-2);
+    line-height: 1.7;
+    margin-bottom: 14px;
+    padding: 14px 20px;
+    background: var(--ivory-2);
+    border-left: 2px solid var(--gold);
+  }
+
+  /* ── TABLES ─────────────────────────────────────────────── */
+  .table-wrap {
+    background: var(--ivory);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+
+  thead th {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-align: left;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--ivory-2);
+  }
+
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody tr:last-child { border-bottom: none; }
+
+  tbody td {
+    padding: 14px 16px;
+    vertical-align: top;
+    color: var(--ink-2);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  tbody td:first-child {
+    font-weight: 400;
+    color: var(--ink);
+    white-space: nowrap;
+    width: 180px;
+  }
+
+  tbody td:last-child {
+    font-size: 12px;
+    color: var(--ink-3);
+    width: 220px;
+  }
+
+  /* ── RESPONSIVE ─────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .page-header {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: calc(68px + 48px) 28px 48px;
+    }
+    .page-header h1 { font-size: 52px; }
+    .content-wrap { padding: 48px 28px 80px; }
+    .era-context { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: 40px; }
+    tbody td:first-child { white-space: normal; width: auto; }
+    tbody td:last-child { display: none; }
+    .header-stats { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- nav injected by nav.js -->
+
+<!-- ── PAGE HEADER ────────────────────────────────────────── -->
+<header class="page-header">
+  <div>
+    <div class="page-overline">Product Leadership</div>
+    <h1>Product<br><em>Portfolio</em></h1>
+  </div>
+  <div>
+    <p class="header-desc">
+      A full inventory of the SaaS products, platforms, and ventures I've led across GovTech procurement, background screening, venture studio, and AI platform work — spanning 20+ years of product strategy, launch, and delivery.
+    </p>
+    <div class="header-stats">
+      <div class="stat-item">
+        <div class="stat-val">20+</div>
+        <div class="stat-label">Products Shipped</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">$75M</div>
+        <div class="stat-label">ARR Governed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">500K+</div>
+        <div class="stat-label">End Users</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">3</div>
+        <div class="stat-label">Successful Exits</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── MAIN CONTENT ───────────────────────────────────────── -->
+<div class="content-wrap">
+
+  <!-- Career Summary -->
+  <div class="career-summary">
+    <div class="section-overline">Background</div>
+    <p>I've spent the last eight years leading a product strategy across a portfolio for GovTech procurement platforms that competed directly with SAP Ariba in the public sector — serving large state and local government agencies operating under strict regulatory and compliance requirements. The platform suite included eProcurement, contract lifecycle management, supplier marketplace, cooperative contract reconciliation, and bid management products serving 500,000+ users.</p>
+    <p>At Periscope Holdings, I owned the full strategy-to-launch cycle for three net-new products. A transaction-based cooperative contract reconciliation platform that enabled $18M in new customer revenue. A supplier portal rebuild that expanded subscriptions 17%. And a government-first enterprise contract-sharing marketplace built and launched in nine months. I also owned the SAP integration for our eProcurement product — a critical enterprise integration for agencies running procurement workflows inside SAP environments.</p>
+    <p>When Periscope was acquired by mdf Commerce and later rebranded as SOVRA, I was retained and expanded into a portfolio leadership role. I built and led a team of 30 — including Product Owners, UX/UI, Data Platform, Scrum Masters, and Tech Writers — and hired two Directors to established the company's first Tech PMO, onboarding 100+ globally distributed offshore contributors and creating the operating model that aligned delivery to executive priorities, AI strategy, and customer commitments. Across that period I governed roadmap and delivery across five platforms and 20+ products, led a $10M capital improvement program spanning 50+ initiatives, and maintained stability across $75M ARR while integrating AI capabilities into the product line.</p>
+    <p>Across all of it I was accountable for business outcomes: ARR retention, customer adoption, release velocity, and cross-functional alignment across product, engineering, sales, and customer success.</p>
+  </div>
+
+  <!-- ── SOVRA / Periscope ── -->
+  <div class="product-era">
+    <div class="era-header">
+      <span class="era-name">SOVRA / mdf Commerce / Periscope Holdings</span>
+      <span class="era-context">2018 – 2026 · GovTech Procurement · Austin / Montreal</span>
+    </div>
+    <div class="era-note">Eight years across the same product family as the company evolved through two acquisitions. Direct SAP Ariba competitor in the public sector. Served large state agency procurement programs operating under strict regulatory compliance requirements. Two successful exits exceeding $400M combined.</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Product</th><th>Purpose</th><th>Scope / Users</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ePRO</td>
+            <td>End-to-end eProcurement / procure-to-pay automation for government buyers. Included a lightweight asset management module and SAP integration — owned the SAP integration as a product.</td>
+            <td>State &amp; local government agencies; part of 500K+ user base</td>
+          </tr>
+          <tr>
+            <td>Marketplace</td>
+            <td>Public-sector ecommerce platform — government buyers shop co-op contracts, open market catalogs, and supplier catalogs. First-of-kind consumer shopping experience built for public sector compliance.</td>
+            <td>7,000+ government buyers</td>
+          </tr>
+          <tr>
+            <td>Reconciler</td>
+            <td>Automates cooperative contract fee collection — replaces manual, error-prone reconciliation workflows. Transaction-based revenue model.</td>
+            <td>Supported $5M ARR; enabled $18M new customer revenue</td>
+          </tr>
+          <tr>
+            <td>CLM</td>
+            <td>Contract Lifecycle Management — full contract authoring, execution, and post-award tracking integrated into procurement workflow.</td>
+            <td>Government procurement and legal teams</td>
+          </tr>
+          <tr>
+            <td>Bidnet Direct</td>
+            <td>eSourcing for smaller public sector agencies; access to 500K+ supplier database and electronic bidding. 100K+ government bids distributed monthly.</td>
+            <td>Small-to-mid government agencies across North America</td>
+          </tr>
+          <tr>
+            <td>S2G (Supplier-to-Gov)</td>
+            <td>Supplier-facing portal and bid aggregation — largest government bid database in North America. Subscription model for private sector suppliers seeking government contracts.</td>
+            <td>My rebuild guidance expanded subscriptions +17%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── Deverus ── -->
+  <div class="product-era">
+    <div class="era-header">
+      <span class="era-name">Deverus</span>
+      <span class="era-context">2017 – 2018 · SaaS Background Screening · Austin</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Product</th><th>Purpose</th><th>Scope / Users</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Verocity</td>
+            <td>Core cloud-based background check workflow automation platform — the legacy primary product I led the modernization, transitioning to API-driven architecture.</td>
+            <td>43K business customers; 4.1M annual hires processed</td>
+          </tr>
+          <tr>
+            <td>Verocity Integration Manager</td>
+            <td>Self-service integration platform replacing custom integrations. Led the replacement of a custom platform supporting 40 HRIS vendors with MuleSoft.</td>
+            <td>40+ HRIS vendor integrations (ADP, iCIMS, etc.)</td>
+          </tr>
+          <tr>
+            <td>SwiftHire Mobile</td>
+            <td>Mobile background screening app — applicants complete forms, digital signatures, and status tracking from mobile device. Gig workforce onboarding use case.</td>
+            <td>Led the launch of this product — delivered $90K under budget</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── Fluid Innovation ── -->
+  <div class="product-era">
+    <div class="era-header">
+      <span class="era-name">Fluid Innovation Ventures</span>
+      <span class="era-context">2008 – 2016 · Venture Studio · Austin</span>
+    </div>
+    <div class="era-note">Five startups designed, directed, and launched. Three successful exits.</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Product</th><th>Purpose</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>IP Zone</td>
+            <td>IP commercialization workflow platform — patent holders manage licensing, enforcement, and monetization workflows.</td>
+            <td>Acquired by American Express</td>
+          </tr>
+          <tr>
+            <td>idealAsset</td>
+            <td>Intellectual property marketplace — connecting IP buyers and sellers.</td>
+            <td>Acquired by Dominion Harbor Group</td>
+          </tr>
+          <tr>
+            <td>Enlyton</td>
+            <td>Pre-AI semantic search and research engine — early natural language processing for enterprise research workflows.</td>
+            <td>Integrated into IBM Watson partner solutions</td>
+          </tr>
+          <tr>
+            <td>FranchiseProcess</td>
+            <td>Online course and learning center for franchise companies.</td>
+            <td>Dissolved</td>
+          </tr>
+          <tr>
+            <td>Pay You First</td>
+            <td>Online directive to assist the under-banked.</td>
+            <td>Dissolved</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── DeepBench ── -->
+  <div class="product-era">
+    <div class="era-header">
+      <span class="era-name">DeepBench / Roadmap Venture</span>
+      <span class="era-context">2018 – Present · AI Platform · Austin</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Product</th><th>Purpose</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>DeepBench</td>
+            <td>Production multi-agent AI workforce platform — multi-agent orchestration, RAG pipeline, ReAct autonomous web agent, LLM evaluation framework.</td>
+            <td>Live at deepbench.roadmapventure.com</td>
+          </tr>
+          <tr>
+            <td>Techson IP</td>
+            <td>B2B patent intelligence and research platform.</td>
+            <td>Continued as sustainable small business post-engagement</td>
+          </tr>
+          <tr>
+            <td>Solcharge</td>
+            <td>B2C ML-enabled mobile SaaS platform — early machine learning application.</td>
+            <td>Consumer mobile launch</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+<!-- /content-wrap -->
+
+<script src="nav.js"></script>
+<script src="footer.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){ initNav("portfolio.html"); initFooter(); });</script>
+</body>
+</html>
