@@ -98,6 +98,13 @@
   .syn-item { padding: 10px 0; border-top: 1px solid var(--rule); }
   .syn-item .card-k { margin-bottom: 4px; }
   .syn-item .card-t { margin-bottom: 0; font-size: 19px; }
+  .panel-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,2.2vw,28px); font-weight: 300; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+  .syn-label em { font-style: italic; text-transform: none; letter-spacing: .06em; }
+  .dlist.tree { grid-auto-rows: auto; }
+  .dlist.tree li { padding: 5px 14px; }
+  .dlist.tree li.par { background: var(--ivory-2); font-weight: 500; color: var(--ink); font-size: 13px; }
+  .dlist.tree li.kid { padding-left: 34px; position: relative; }
+  .dlist.tree li.kid::before { content: ''; position: absolute; left: 18px; top: 50%; width: 8px; height: 1px; background: var(--gold); }
   .syn-end { border: 1px solid var(--rule); border-radius: 8px; background: #7a5c2e; color: var(--ivory); padding: 24px 24px; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
   .syn-end ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .syn-end li { font-family: 'Cormorant Garamond', serif; font-size: 16.5px; font-weight: 400; line-height: 1.2; color: var(--ivory); padding-left: 18px; position: relative; }
@@ -271,27 +278,53 @@
 <!-- ── 02 SERVICES (new) ── -->
 <section class="panel" id="panel-consulting">
   <div class="panel-inner">
-    <div class="two-col">
+    <p class="panel-sub">A GovTech approach to Procurement Focused Management Consulting</p>
+    <div class="synergy">
       <div class="syn-col">
-        <div class="syn-label">Procurement Management Consulting</div>
-        <ol class="dlist">
-          <li><b>01</b>Tech Systems and Software</li>
-          <li><b>02</b>Data</li>
-          <li><b>03</b>Database</li>
-          <li><b>04</b>KPI and Metrics</li>
-          <li><b>05</b>Organizational Management</li>
-          <li><b>06</b>Development Processes</li>
-        </ol>
+        <div class="syn-label">Procurement Tech Topics (<em>the what</em>)</div>
+        <ul class="dlist tree">
+          <li class="par">Tech</li>
+          <li class="kid">Systems &amp; Software</li>
+          <li class="kid">AI</li>
+          <li class="par">Data</li>
+          <li class="kid">Data Integrity</li>
+          <li class="kid">Database</li>
+          <li class="par">Process</li>
+          <li class="kid">KPI</li>
+          <li class="kid">Metrics</li>
+          <li class="kid">Reporting</li>
+          <li class="kid">Product &amp; Services Delivery</li>
+          <li class="par">People</li>
+          <li class="kid">Organizational Management</li>
+          <li class="kid">Succession Planning</li>
+        </ul>
       </div>
+      <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
       <div class="syn-col">
-        <div class="syn-label">Methodology &amp; Approach</div>
-        <ol class="dlist">
-          <li><b>01</b>Program &amp; Project Management</li>
-          <li><b>02</b>Interview Sessions</li>
-          <li><b>03</b>Data Analysis</li>
-          <li><b>04</b>Findings to Data Dashboard Conversions</li>
-          <li><b>05</b>Reports and Presentations</li>
-        </ol>
+        <div class="syn-label">Methodology (<em>the how</em>)</div>
+        <ul class="dlist tree">
+          <li class="par">Strategic Analysis</li>
+          <li class="kid">Interview Sessions</li>
+          <li class="kid">Requirements Gathering</li>
+          <li class="kid">Usage Inventory</li>
+          <li class="kid">Data Cleansing &amp; Analysis</li>
+          <li class="par">Executive Strategy</li>
+          <li class="kid">Measurable Performance</li>
+          <li class="kid">Roadmapping</li>
+          <li class="kid">Reports and Presentations</li>
+          <li class="par">Project Implementation</li>
+          <li class="kid">Program &amp; Project Management</li>
+          <li class="kid">Roadmap Execution</li>
+        </ul>
+      </div>
+      <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
+      <div class="syn-col">
+        <div class="syn-label">Deliverables</div>
+        <ul class="dlist tree">
+          <li class="par">Observations to Actionable Visual Data</li>
+          <li class="par">Reports &amp; Presentations</li>
+          <li class="par">Strategy Execution</li>
+        </ul>
       </div>
     </div>
     <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('synergy')">← Project Synergy</button><button class="pn primary" onclick="goTab('revenue')">Next · Revenue →</button></div>
