@@ -99,7 +99,9 @@
   .syn-item .card-k { margin-bottom: 4px; }
   .syn-item .card-t { margin-bottom: 0; font-size: 19px; }
   .panel-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,2.2vw,28px); font-weight: 300; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
-  .syn-label em { font-style: italic; text-transform: none; letter-spacing: .06em; }
+  .syn-label em { font-style: italic; font-weight: 400; text-transform: none; letter-spacing: .06em; }
+  .dlist.tree a.lnk { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--gold); }
+  .dlist.tree a.lnk:hover { color: var(--ink); }
   .dlist.tree { grid-auto-rows: auto; }
   .dlist.tree li { padding: 5px 14px; }
   .dlist.tree li.par { background: var(--ivory-2); font-weight: 500; color: var(--ink); font-size: 13px; }
@@ -285,14 +287,12 @@
         <ul class="dlist tree">
           <li class="par">Tech</li>
           <li class="kid">Systems &amp; Software</li>
-          <li class="kid">AI</li>
+          <li class="kid">AI Implementation &amp; Transformation</li>
           <li class="par">Data</li>
           <li class="kid">Data Integrity</li>
-          <li class="kid">Database</li>
+          <li class="kid">Database Maturity Levels</li>
           <li class="par">Process</li>
-          <li class="kid">KPI</li>
-          <li class="kid">Metrics</li>
-          <li class="kid">Reporting</li>
+          <li class="kid">Reporting, KPI and Metrics</li>
           <li class="kid">Product &amp; Services Delivery</li>
           <li class="par">People</li>
           <li class="kid">Organizational Management</li>
@@ -307,11 +307,11 @@
           <li class="kid">Interview Sessions</li>
           <li class="kid">Requirements Gathering</li>
           <li class="kid">Usage Inventory</li>
-          <li class="kid">Data Cleansing &amp; Analysis</li>
-          <li class="par">Executive Strategy</li>
+          <li class="kid">Data Assessment and Cleansing</li>
+          <li class="par">Strategy Definition</li>
           <li class="kid">Measurable Performance</li>
           <li class="kid">Roadmapping</li>
-          <li class="kid">Reports and Presentations</li>
+          <li class="kid">Assessment Documentation</li>
           <li class="par">Project Implementation</li>
           <li class="kid">Program &amp; Project Management</li>
           <li class="kid">Roadmap Execution</li>
@@ -319,11 +319,15 @@
       </div>
       <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
       <div class="syn-col">
-        <div class="syn-label">Deliverables</div>
+        <div class="syn-label">Delivery</div>
         <ul class="dlist tree">
-          <li class="par">Observations to Actionable Visual Data</li>
-          <li class="par">Reports &amp; Presentations</li>
-          <li class="par">Strategy Execution</li>
+          <li class="par">Executive Strategy</li>
+          <li class="kid">Reports &amp; Presentations</li>
+          <li class="kid">Organization Transformation</li>
+          <li class="par">Living Strategy Report</li>
+          <li class="kid">Observations to Actionable Visual Data</li>
+          <li class="kid">Continuous Assessment and Tracking</li>
+          <li class="kid"><a class="lnk" href="#products" onclick="goTab('products');return false">Your Strategy as a tangible product... →</a></li>
         </ul>
       </div>
     </div>
