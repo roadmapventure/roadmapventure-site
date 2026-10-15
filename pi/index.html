@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Procurement Intelligence — RoadMapVenture</title>
+<meta name="description" content="Procurement Intelligence: a partnership proposal for NIGP Consulting. Services, products and a client portal proven on a county-wide procurement assessment." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory:   #faf8f5;
+    --ivory-2: #f3efe9;
+    --ink:     #1a1814;
+    --ink-2:   #3a342c;
+    --ink-3:   #6b6057;
+    --gold:    #c8a96e;
+    --gold-lt: #e8d9bc;
+    --rule:    rgba(200,169,110,.25);
+    --teal:    #00c896;
+    --amber:   #d98232;
+    --blue:    #3a7fc1;
+    --nav-h:   68px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--ivory); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+  /* ── HEADER: logo + tab nav ── */
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(250,248,245,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
+  .hdr { max-width: 1200px; margin: 0 auto; padding: 0 56px; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: .04em; color: var(--ink); flex-shrink: 0; cursor: default; user-select: none; }
+  .logo span { color: var(--gold); }
+  .tabs { display: flex; gap: 2px; height: var(--nav-h); align-items: stretch; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; padding: 0 13px; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; transition: color .2s, border-color .2s; }
+  .tab .n { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); }
+  .tab:hover { color: var(--ink); }
+  .tab.active { color: var(--ink); border-bottom-color: var(--gold); }
+
+  /* ── HERO (slim) ── */
+  .hero { padding: calc(var(--nav-h) + 18px) 56px 12px; border-bottom: 1px solid var(--rule); }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px,3.6vw,48px); font-weight: 300; line-height: 1; letter-spacing: -.01em; color: var(--ink); white-space: nowrap; }
+  .hero-side { font-size: 13.5px; color: var(--ink-3); line-height: 1.65; border-left: 1px solid var(--rule); padding-left: 28px; }
+  .hero-side strong { color: var(--ink-2); font-weight: 500; }
+
+  /* ── PANELS ── */
+  .panel { display: none; padding: 26px 56px 28px; }
+  .panel.active { display: block; }
+  .panel-inner { max-width: 1200px; margin: 0 auto; }
+  .panel-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 18px; }
+  .panel-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px,3.2vw,44px); font-weight: 300; line-height: 1.05; color: var(--ink); }
+  .panel-title em { font-style: italic; color: var(--gold); }
+  .panel-lead { font-size: 14px; color: var(--ink-3); line-height: 1.75; }
+
+  .grid { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .g3 { grid-template-columns: repeat(3,1fr); }
+  .g4 { grid-template-columns: repeat(4,1fr); }
+  .card { background: var(--ivory); padding: 18px 20px; position: relative; transition: background .2s; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: transparent; transition: background .25s; }
+  .card:hover { background: var(--ivory-2); }
+  .card:hover::before { background: var(--gold); }
+  .card-k { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .card-t { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 8px; }
+  .card-b { font-size: 12px; color: var(--ink-3); line-height: 1.6; }
+  .card-tag { display: inline-block; margin-top: 10px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--rule); padding: 3px 8px; border-radius: 2px; }
+  .card.dark { background: var(--ink); }
+  .card.dark .card-t { color: var(--ivory); }
+  .card.dark .card-b { color: rgba(250,248,245,.6); }
+  .card.dark:hover { background: var(--ink-2); }
+
+  .pill { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 7px; border-radius: 2px; border: 1px solid; }
+  .pill-live   { color: #0a8a67; border-color: rgba(0,200,150,.35); background: rgba(0,200,150,.08); }
+  .pill-part   { color: var(--blue); border-color: rgba(58,127,193,.35); background: rgba(58,127,193,.08); }
+  .pill-proto  { color: var(--amber); border-color: rgba(217,130,50,.35); background: rgba(217,130,50,.08); }
+  .pill-concept{ color: var(--ink-3); border-color: var(--rule); background: var(--ivory-2); }
+
+  /* ── TAB 1: synergy ── */
+  .quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px,1.65vw,19.5px); font-style: italic; line-height: 1.4; color: var(--ink); padding-left: 20px; border-left: 3px solid var(--gold); margin-bottom: 22px; max-width: 980px; }
+  .quote small { display: block; font-family: 'DM Mono', monospace; font-style: normal; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .two-col .dlist li { padding: 11px 16px; font-size: 14px; }
+  .synergy { display: grid; grid-template-columns: 1fr 72px 1fr 72px 1fr; gap: 0; align-items: stretch; }
+  .syn-col { display: flex; flex-direction: column; }
+  .syn-arrow { display: flex; align-items: center; justify-content: center; }
+  .syn-arrow svg { width: 44px; height: 44px; fill: var(--gold); display: block; }
+  .syn-label { font-family: 'DM Mono', monospace; font-size: 11.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .dlist { list-style: none; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--rule); display: grid; gap: 1px; flex: 1; grid-auto-rows: 1fr; }
+  .dlist li { background: var(--ivory); padding: 7px 14px; font-size: 12.5px; color: var(--ink-2); display: flex; gap: 12px; align-items: center; }
+  .dlist li b { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; color: var(--gold); width: 18px; }
+  .syn-mid { border: 1px solid var(--rule); border-radius: 8px; background: var(--ivory-2); padding: 20px 22px; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+  .syn-mid p { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; }
+  .syn-mid p em { font-style: italic; color: var(--ink); font-weight: 400; }
+  .syn-stack { display: flex; flex-direction: column; gap: 10px; }
+  .syn-item { padding: 10px 0; border-top: 1px solid var(--rule); }
+  .syn-item .card-k { margin-bottom: 4px; }
+  .syn-item .card-t { margin-bottom: 0; font-size: 19px; }
+  .syn-end { border: 1px solid var(--rule); border-radius: 8px; background: #7a5c2e; color: var(--ivory); padding: 24px 24px; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+  .syn-end ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .syn-end li { font-family: 'Cormorant Garamond', serif; font-size: 16.5px; font-weight: 400; line-height: 1.2; color: var(--ivory); padding-left: 18px; position: relative; }
+  .syn-end li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-lt); }
+  .syn-end p { font-size: 13px; line-height: 1.7; color: rgba(250,248,245,.85); border-top: 1px solid rgba(250,248,245,.25); padding-top: 14px; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  .stat { background: var(--ivory-2); padding: 14px 16px; }
+  .stat-n { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; line-height: 1; color: var(--ink); margin-bottom: 4px; }
+  .stat-n span { font-size: 20px; color: var(--gold); }
+  .stat-d { font-size: 11px; letter-spacing: .04em; color: var(--ink-3); line-height: 1.5; }
+
+  /* compact table */
+  table.tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .tbl th { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); font-weight: 500; }
+  .tbl td { padding: 6px 10px; border-bottom: 1px solid var(--rule); color: var(--ink-3); line-height: 1.5; vertical-align: top; }
+  .tbl td:first-child { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); width: 28px; }
+  .tbl td:nth-child(2) { color: var(--ink-2); font-weight: 400; }
+  .tbl tr:last-child td { border-bottom: none; }
+
+  /* framework chain */
+  .chain { display: grid; grid-template-columns: repeat(6,1fr); gap: 10px; margin-bottom: 18px; }
+  .link { background: var(--ivory-2); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 14px; position: relative; }
+  .link + .link::before { content: '→'; position: absolute; left: -11px; top: 16px; color: var(--gold); font-size: 13px; }
+  .link-n { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .16em; color: var(--gold); margin-bottom: 6px; }
+  .link-t { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--ink); line-height: 1.1; margin-bottom: 6px; }
+  .link-b { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; }
+  .row-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 8px; }
+  .steps { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .step { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 20px; padding: 6px 12px; background: var(--ivory); }
+  .step b { font-family: 'DM Mono', monospace; font-weight: 500; color: var(--gold); margin-right: 6px; }
+  .maturity { display: grid; grid-template-columns: repeat(5,1fr); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+  .m { padding: 10px 12px; font-size: 11px; color: var(--ink-3); border-right: 1px solid var(--rule); background: linear-gradient(90deg, var(--ivory), var(--ivory-2)); }
+  .m:last-child { border-right: none; }
+  .m b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--ink); margin-bottom: 2px; }
+
+  /* options */
+  .card.reco { outline: 2px solid var(--gold); outline-offset: -2px; }
+  .kv { font-size: 12.5px; color: var(--ink-3); line-height: 1.6; margin-top: 8px; }
+  .kv b { color: var(--ink-2); font-weight: 500; }
+  .next-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+  .next { background: var(--ivory-2); border: 1px solid var(--rule); border-radius: 6px; padding: 10px 14px; font-size: 12.5px; color: var(--ink-2); line-height: 1.5; display: flex; gap: 12px; align-items: flex-start; }
+  .next b { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--gold); line-height: 1; }
+
+  /* panel footer nav */
+  .panel-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--rule); }
+  .pn { background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); transition: color .2s; }
+  .pn:hover { color: var(--ink); }
+  .pn.primary { color: var(--ink); border: 1px solid var(--ink); padding: 10px 18px; }
+  .pn.primary:hover { background: var(--ink); color: var(--ivory); }
+
+  /* ── FOOTER (no links) ── */
+  footer { border-top: 1px solid var(--rule); padding: 28px 56px; display: flex; align-items: center; gap: 24px; max-width: 1312px; margin: 24px auto 0; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 11px; letter-spacing: .06em; color: var(--ink-3); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hdr { padding: 0 28px; }
+    .hero { padding: calc(var(--nav-h) + 22px) 28px 16px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 12px; }
+    .hero h1 { white-space: normal; }
+    .hero-side { border-left: none; padding-left: 0; }
+    .panel { padding: 22px 28px 28px; }
+    .panel-head { grid-template-columns: 1fr; gap: 10px; margin-bottom: 16px; }
+    .g3, .g4 { grid-template-columns: 1fr 1fr; }
+    .synergy { grid-template-columns: 1fr; gap: 14px; }
+    .two-col { grid-template-columns: 1fr; gap: 20px; }
+    .syn-arrow { transform: rotate(90deg); height: 44px; }
+    .chain { grid-template-columns: repeat(3,1fr); }
+    .link + .link::before { display: none; }
+    .next-row { grid-template-columns: 1fr 1fr; }
+    footer { padding: 24px 28px; }
+  }
+  @media (max-width: 640px) {
+    :root { --nav-h: 100px; }
+    .hdr { flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; padding: 0 0 0 20px; }
+    .logo { height: 44px; display: flex; align-items: center; }
+    .tabs { height: 56px; width: 100%; padding-right: 20px; }
+    .tab { padding: 0 11px; font-size: 10px; }
+    .hero { padding: calc(var(--nav-h) + 18px) 20px 14px; }
+    .hero h1 { font-size: 32px; }
+    .panel { padding: 20px 20px 26px; }
+    .g3, .g4 { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .chain { grid-template-columns: 1fr 1fr; }
+    .maturity { grid-template-columns: 1fr; }
+    .m { border-right: none; border-bottom: 1px solid var(--rule); }
+    .m:last-child { border-bottom: none; }
+    .next-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <span class="logo">RoadMap<span>Venture</span></span>
+    <nav class="tabs" role="tablist" id="tabs" aria-label="Sections">
+      <button class="tab active" role="tab" data-tab="synergy"><span class="n">01</span>Project Synergy</button>
+      <button class="tab" role="tab" data-tab="consulting"><span class="n">02</span>Services</button>
+      <button class="tab" role="tab" data-tab="revenue"><span class="n">03</span>Revenue</button>
+      <button class="tab" role="tab" data-tab="proof"><span class="n">04</span>Proof</button>
+      <button class="tab" role="tab" data-tab="framework"><span class="n">05</span>Framework</button>
+      <button class="tab" role="tab" data-tab="services"><span class="n">06</span>Services (old)</button>
+      <button class="tab" role="tab" data-tab="products"><span class="n">07</span>Products</button>
+      <button class="tab" role="tab" data-tab="partnership"><span class="n">08</span>Partnership</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Procurement Intelligence</h1>
+    <div class="hero-side"><strong>What this is.</strong> Consulting Services automated into actual web Products used to create visual metrics of your findings, help drive content assembly, and a new deliverable for the customer. Transforms interview notes, spend extracts, and assessment drafts into validated KPIs, Tech Diagrams, Visual Insights, and a client Web Portal.</div>
+  </div>
+</section>
+
+<!-- ── 01 PROJECT SYNERGY ── -->
+<section class="panel active" id="panel-synergy">
+  <div class="panel-inner">
+    <div class="quote">"Help us understand what we are counting, how it helps us tell the story, and how we transform data into actionable intelligence."<small>– Maricopa County RFP</small></div>
+    <div class="synergy">
+      <div class="syn-col">
+        <div class="syn-label">Typical Assessment Deliverables</div>
+        <ol class="dlist">
+          <li><b>01</b>Interview Findings</li>
+          <li><b>02</b>Peer Benchmarks</li>
+          <li><b>03</b>Current State Assessment Report</li>
+          <li><b>04</b>Risk and Compliance</li>
+          <li><b>05</b>Technology Review</li>
+          <li><b>06</b>Data Review</li>
+          <li><b>07</b>Performance &amp; Metrics</li>
+          <li><b>08</b>Strategic Recommendations</li>
+          <li><b>09</b>Implementation Roadmap</li>
+          <li><b>10</b>Executive Presentation</li>
+        </ol>
+      </div>
+      <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
+      <div class="syn-col">
+        <div class="syn-label">Consulting Automation</div>
+        <div class="syn-mid">
+          <p>RMV has built: <em>Consulting Automation</em>. We believe 60% of your assessments' information is reusable for all govtech engagements.</p>
+          <div class="syn-stack">
+            <div class="syn-item"><div class="card-k">Speed</div><div class="card-t">Fieldwork to findings in days, not weeks</div></div>
+            <div class="syn-item"><div class="card-k">Margin</div><div class="card-t">The analysis phases cost less every time</div></div>
+            <div class="syn-item"><div class="card-k">Differentiation</div><div class="card-t">A client portal no competitor is offering- all findings converted into intelligent dashboards</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
+      <div class="syn-col">
+        <div class="syn-label">Packaged Procurement Intelligence</div>
+        <div class="syn-end">
+          <ul>
+            <li>Performance and KPI needs don't go away.</li>
+            <li>The roadmap has to be executed.</li>
+          </ul>
+          <p>A central portal where all project deliverables are available to the client, as a living, breathing repository even after project end.<br><br>All content and dashboards available 24x7 with AI as its information assistant, ready to be re-reviewed, enhanced, and shared.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel-nav" style="border-top:none"><span></span><button class="pn primary" onclick="goTab('consulting')">Next · Services →</button></div>
+  </div>
+</section>
+
+<!-- ── 02 SERVICES (new) ── -->
+<section class="panel" id="panel-consulting">
+  <div class="panel-inner">
+    <div class="two-col">
+      <div class="syn-col">
+        <div class="syn-label">Procurement Management Consulting</div>
+        <ol class="dlist">
+          <li><b>01</b>Tech Systems and Software</li>
+          <li><b>02</b>Data</li>
+          <li><b>03</b>Database</li>
+          <li><b>04</b>KPI and Metrics</li>
+          <li><b>05</b>Organizational Management</li>
+          <li><b>06</b>Development Processes</li>
+        </ol>
+      </div>
+      <div class="syn-col">
+        <div class="syn-label">Methodology &amp; Approach</div>
+        <ol class="dlist">
+          <li><b>01</b>Program &amp; Project Management</li>
+          <li><b>02</b>Interview Sessions</li>
+          <li><b>03</b>Data Analysis</li>
+          <li><b>04</b>Findings to Data Dashboard Conversions</li>
+          <li><b>05</b>Reports and Presentations</li>
+        </ol>
+      </div>
+    </div>
+    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('synergy')">← Project Synergy</button><button class="pn primary" onclick="goTab('revenue')">Next · Revenue →</button></div>
+  </div>
+</section>
+
+<!-- ── 03 REVENUE ── -->
+<section class="panel" id="panel-revenue">
+  <div class="panel-inner">
+    <div class="panel-head">
+      <h2 class="panel-title">Four ways this <em>raises revenue</em> for NIGP.</h2>
+      <p class="panel-lead">Three of the four exist today in some form on the current engagement. The fourth is the product path. None of them requires NIGP Consulting to hire a data team.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="card-k">01 · Price the data deliverables</div><div class="card-t">Dashboards and baseline metrics as a line item</div><div class="card-b">Deliverable 2 in the current scope (performance dashboard, baseline metrics, KPI framework) is a priced, repeatable work product, not a by-product of the report. Every assessment carries it.</div><span class="card-tag">Per engagement</span></div>
+      <div class="card"><div class="card-k">02 · Add the portal to every proposal</div><div class="card-t">A deliverable competitors cannot match</div><div class="card-b">The client portal becomes a standard offer in NIGP Consulting responses. It raises win rate on assessments and justifies a higher fee on the analysis phases.</div><span class="card-tag">Win rate + fee</span></div>
+      <div class="card"><div class="card-k">03 · Keep the client after the report</div><div class="card-t">Annual portal licence per client</div><div class="card-b">The client's team reloads new spend extracts, new interviews and new drafts, and the portal rebuilds with history. NIGP Consulting earns a recurring licence after the engagement ends.</div><span class="card-tag">Recurring</span></div>
+      <div class="card"><div class="card-k">04 · A lighter product for members</div><div class="card-t">Maturity assessment as a stand-alone offer</div><div class="card-b">The Procurement Intelligence Framework placement (six domains, five stages) can be sold on its own to NIGP member agencies as a short engagement that leads into a full assessment.</div><span class="card-tag">Pipeline</span></div>
+    </div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('consulting')">← Services</button><button class="pn primary" onclick="goTab('proof')">Next · The proof →</button></div>
+  </div>
+</section>
+
+<!-- ── 03 PROOF ── -->
+<section class="panel" id="panel-proof">
+  <div class="panel-inner">
+    <div class="panel-head">
+      <h2 class="panel-title">Proven on a <em>county-wide</em> assessment.</h2>
+      <p class="panel-lead">Every item in this proposal was built and used on the Maricopa County Procurement Assessment and Modernization Review, RFP D730-LB-0000000013. Six dashboards are live on a password-gated site today.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">60<span>+</span></div><div class="stat-d">interview sessions coded, with a blind re-code and a second scorer</div></div>
+      <div class="stat"><div class="stat-n">995</div><div class="stat-d">usable findings, by department and role, no named individuals</div></div>
+      <div class="stat"><div class="stat-n">154</div><div class="stat-d">KPIs in the library, tied to recommendations, 145 verified sources</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-d">dashboards online: interviews, KPIs, spend, vendors, technology, report</div></div>
+    </div>
+    <table class="tbl">
+      <tr><th></th><th>RFP deliverable</th><th>What this practice supplied</th></tr>
+      <tr><td>1</td><td>Current State Assessment Report</td><td>Findings register behind the service-area sections; interview appendix; lifecycle technology visuals; technology environment section</td></tr>
+      <tr><td>2</td><td>Performance Dashboard and Baseline Metrics</td><td>KPI library and dashboard, Spend Analyzer, Vendor Profiles</td></tr>
+      <tr><td>3</td><td>Benchmarking Analysis</td><td>Best-practice level and County level recorded on every KPI, with verified external sources</td></tr>
+      <tr><td>4</td><td>Risk and Compliance Summary</td><td>PO without contract, influenceable spend, technology purchases below the delegation threshold</td></tr>
+      <tr><td>5</td><td>Strategic Recommendations Report</td><td>Every KPI tagged to each recommendation it answers; evidence lookup across findings, spend and KPIs</td></tr>
+      <tr><td>6</td><td>Code Modernization Recommendations</td><td>KPI citations to the ABA Model Procurement Code</td></tr>
+      <tr><td>7</td><td>Implementation Roadmap</td><td>KPI approval dates, ranking and maturity insights as roadmap inputs</td></tr>
+      <tr><td>8</td><td>Executive Presentation</td><td>Presentation and report hosted on the portal; workgroup briefing already online</td></tr>
+    </table>
+    <div class="panel-nav"><button class="pn" onclick="goTab('revenue')">← Revenue</button><button class="pn primary" onclick="goTab('framework')">Next · The framework →</button></div>
+  </div>
+</section>
+
+<!-- ── 04 FRAMEWORK ── -->
+<section class="panel" id="panel-framework">
+  <div class="panel-inner">
+    <div class="panel-head">
+      <h2 class="panel-title">Six domains, six steps, <em>one maturity position.</em></h2>
+      <p class="panel-lead">The Procurement Intelligence Framework in the current proposal is the spine of this offering. Domains are assessed in dependency order, each through the same six steps, and the result places the client on a five-stage maturity model with evidence.</p>
+    </div>
+    <div class="row-label">Domains, in dependency order</div>
+    <div class="chain">
+      <div class="link"><div class="link-n">01</div><div class="link-t">Data</div><div class="link-b">Spend ledger, data quality audit, what each source can support</div></div>
+      <div class="link"><div class="link-n">02</div><div class="link-t">Software and tools</div><div class="link-b">Platforms by lifecycle stage, integrations, record ownership</div></div>
+      <div class="link"><div class="link-n">03</div><div class="link-t">Processes</div><div class="link-b">Workflow fragmentation, duplicate entry, manual handoffs</div></div>
+      <div class="link"><div class="link-n">04</div><div class="link-t">KPIs</div><div class="link-b">Baseline vs best practice, linked to recommendations</div></div>
+      <div class="link"><div class="link-n">05</div><div class="link-t">AI readiness</div><div class="link-b">An assistant over contracts, only as good as the data under it</div></div>
+      <div class="link"><div class="link-n">06</div><div class="link-t">Supporting technology</div><div class="link-b">Integration, BI and reporting layer that sustains the rest</div></div>
+    </div>
+    <div class="row-label">Six steps, applied to every domain</div>
+    <div class="steps">
+      <span class="step"><b>1</b>Inventory</span><span class="step"><b>2</b>Cleansing</span><span class="step"><b>3</b>Analysis</span><span class="step"><b>4</b>Best practice</span><span class="step"><b>5</b>Gap</span><span class="step"><b>6</b>Strategy</span>
+    </div>
+    <div class="row-label">Maturity model</div>
+    <div class="maturity">
+      <div class="m"><b>Reactive</b>Data exists, not used</div>
+      <div class="m"><b>Aware</b>Some KPIs, right questions</div>
+      <div class="m"><b>Structured</b>Trusted data, defined KPIs</div>
+      <div class="m"><b>Strategic</b>Dashboards set priorities</div>
+      <div class="m"><b>Intelligence-led</b>AI assists decisions</div>
+    </div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('proof')">← Proof</button><button class="pn primary" onclick="goTab('services')">Next · Services (old) →</button></div>
+  </div>
+</section>
+
+<!-- ── 05 SERVICES ── -->
+<section class="panel" id="panel-services">
+  <div class="panel-inner">
+    <div class="panel-head">
+      <h2 class="panel-title">Consulting services, <em>per engagement.</em></h2>
+      <p class="panel-lead">Subcontracted into an NIGP Consulting assessment and priced per line. Each service is a framework step applied to a domain, returns a gated deliverable, and feeds named RFP deliverables.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="card-k">Inventory</div><div class="card-t">Technology interviews</div><div class="card-b">Structured sessions with IT, BI, ERP and department application owners, coded into the same findings register as every other interview.</div><span class="card-tag">Feeds deliverables 1, 2</span></div>
+      <div class="card"><div class="card-k">Inventory · Analysis</div><div class="card-t">Systems and software analysis</div><div class="card-b">Application landscape by lifecycle stage, integration map, record ownership, and what is used versus what is licensed.</div><span class="card-tag">Feeds deliverables 1, 5</span></div>
+      <div class="card"><div class="card-k">Cleansing · Analysis</div><div class="card-t">Data and database analysis</div><div class="card-b">AP, PO and P-card extracts into one ledger, a data quality audit, and a clear statement of what each source column can and cannot support.</div><span class="card-tag">Feeds deliverables 2, 4</span></div>
+      <div class="card"><div class="card-k">Best practice · Gap</div><div class="card-t">Metrics and KPI analysis</div><div class="card-b">A KPI library by activity, baseline versus best practice on every attribute, one-to-many links to recommendations, and an approval workflow.</div><span class="card-tag">Feeds deliverables 2, 3, 5</span></div>
+      <div class="card"><div class="card-k">Gap · Strategy</div><div class="card-t">Data centralisation and maturity analysis</div><div class="card-b">Where data lives, who owns it, what a common decision package needs, and the client's placement on the five-stage model per domain.</div><span class="card-tag">Feeds deliverables 3, 7</span></div>
+      <div class="card"><div class="card-k">Strategy</div><div class="card-t">Reports and presentations</div><div class="card-b">Figures, tables, appendices and visuals for the written deliverables, and the deliverables themselves hosted online for the client.</div><span class="card-tag">Feeds deliverables 1, 5, 8</span></div>
+    </div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('framework')">← Framework</button><button class="pn primary" onclick="goTab('products')">Next · Products →</button></div>
+  </div>
+</section>
+
+<!-- ── 06 PRODUCTS ── -->
+<section class="panel" id="panel-products">
+  <div class="panel-inner">
+    <div class="panel-head">
+      <h2 class="panel-title">Products: each framework step, <em>made repeatable.</em></h2>
+      <p class="panel-lead">A document type goes in, a spreadsheet and a dashboard page come out, and history is kept. All of them hang off one client portal behind one login. Status is as of October 2026.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="card-k">Inventory · Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Interview notes to data points and visuals</div><div class="card-b">Notes in; gated findings register and interactive dashboard out: sessions, departments, themes, systems.</div></div>
+      <div class="card"><div class="card-k">Cleansing · Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Spend Analysis Dashboard</div><div class="card-b">AP, PO and P-card in; contract coverage, influenceable spend, direct purchase and timeline out.</div></div>
+      <div class="card"><div class="card-k">Inventory <span class="pill pill-live">Live</span></div><div class="card-t">System Analysis Dashboard</div><div class="card-b">Systems by lifecycle stage and department; usage, gaps, and technology purchases.</div></div>
+      <div class="card"><div class="card-k">Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Supplier centralisation</div><div class="card-b">One profile per vendor across every payment channel: spend, contracts, co-op sourcing, merchant matching.</div></div>
+      <div class="card"><div class="card-k">Analysis <span class="pill pill-part">Partial</span></div><div class="card-t">Department centralisation</div><div class="card-b">One profile per department: findings, spend, systems, KPIs. Views exist inside other pages; no single page yet.</div></div>
+      <div class="card"><div class="card-k">Analysis <span class="pill pill-concept">To define</span></div><div class="card-t">Package centralisation</div><div class="card-b">Consolidation of like purchases across departments. Nearest built: contract coverage and co-op sourcing views.</div></div>
+      <div class="card"><div class="card-k">Analysis <span class="pill pill-proto">Prototype</span></div><div class="card-t">AI answering service</div><div class="card-b">Plain questions over an engagement's findings, spend and KPIs. Every figure traced to its source row; an analyst, a checker and an auditor on each answer.</div></div>
+      <div class="card"><div class="card-k">Best practice <span class="pill pill-concept">Concept</span></div><div class="card-t">AI best practice bot</div><div class="card-b">Answers "what does good look like" from the verified best-practice sources and maturity insights in the KPI library.</div></div>
+    </div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('services')">← Services (old)</button><button class="pn primary" onclick="goTab('partnership')">Next · The partnership →</button></div>
+  </div>
+</section>
+
+<!-- ── 07 PARTNERSHIP ── -->
+<section class="panel" id="panel-partnership">
+  <div class="panel-inner">
+    <div class="panel-head">
+      <h2 class="panel-title">Three ways to partner. <em>One recommended.</em></h2>
+      <p class="panel-lead">Start with B for a fixed term, with C written in as the path once the product is ready. Terms are best agreed off the first joint proposal, not in the abstract.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="card-k">Option A</div><div class="card-t">Subcontract</div><div class="card-b">Services bought per engagement at a fixed price per line.</div><div class="kv"><b>NIGP gets:</b> flexibility, no commitment.</div><div class="kv"><b>Fits when:</b> one more client is wanted as a test.</div></div>
+      <div class="card dark reco"><div class="card-k">Option B · Recommended</div><div class="card-t">Capability partner</div><div class="card-b">Services plus a standing retainer: evidence custody, the AI answering service for NIGP analysts, the method library, proposal support. Exclusive to NIGP Consulting in public procurement for a fixed term.</div><div class="kv" style="color:rgba(250,248,245,.6)"><b style="color:var(--gold)">NIGP gets:</b> a differentiator competitors cannot buy, lower cost per engagement.</div><div class="kv" style="color:rgba(250,248,245,.6)"><b style="color:var(--gold)">Fits when:</b> the portal is part of how NIGP Consulting wins work.</div></div>
+      <div class="card"><div class="card-k">Option C</div><div class="card-t">Product channel</div><div class="card-b">The portal as a co-branded NIGP product with a revenue share per client licence.</div><div class="kv"><b>NIGP gets:</b> recurring revenue after the engagement ends.</div><div class="kv"><b>Fits when:</b> two or three engagements have proved the portal.</div></div>
+    </div>
+    <div class="row-label" style="margin-top:18px">Next step: one joint pursuit</div>
+    <div class="next-row">
+      <div class="next"><b>1</b><span>Walk through the current portal together, 30 minutes</span></div>
+      <div class="next"><b>2</b><span>Name the first joint pursuit and the service lines it needs</span></div>
+      <div class="next"><b>3</b><span>Draft option B terms: scope, term, exclusivity, pricing</span></div>
+      <div class="next"><b>4</b><span>Agree what current work may be shown to future clients</span></div>
+    </div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('products')">← Products</button><span></span></div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">RoadMap<span>Venture</span></span>
+  <span class="footer-copy">© 2026 John Leonard · Austin, TX</span>
+</footer>
+
+<script>
+  (function(){
+    var order = ['synergy','consulting','revenue','proof','framework','services','products','partnership'];
+    var titles = { consulting: 'Consulting Services' };
+    function show(id, push){
+      if (order.indexOf(id) < 0) id = 'synergy';
+      document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
+      document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id === 'panel-' + id); });
+      document.querySelector('.hero h1').textContent = titles[id] || 'Procurement Intelligence';
+      var tab = document.querySelector('.tab[data-tab="' + id + '"]');
+      if (tab && tab.scrollIntoView) tab.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      if (push !== false) {
+        history.replaceState(null, '', '#' + id);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+    window.goTab = show;
+    document.getElementById('tabs').addEventListener('click', function(e){
+      var b = e.target.closest('.tab'); if (b) show(b.dataset.tab);
+    });
+    document.addEventListener('keydown', function(e){
+      var cur = order.indexOf((location.hash || '#synergy').slice(1));
+      if (e.key === 'ArrowRight' && cur < order.length - 1) show(order[cur + 1]);
+      if (e.key === 'ArrowLeft' && cur > 0) show(order[cur - 1]);
+    });
+    window.addEventListener('hashchange', function(){ show(location.hash.slice(1), false); });
+    show((location.hash || '#synergy').slice(1), false);
+  })();
+</script>
+</body>
+</html>
