@@ -126,6 +126,10 @@
   .syn-end li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-lt); }
   .syn-end p { font-size: 13px; line-height: 1.7; color: var(--ivory); border-top: 1px solid rgba(250,248,245,.25); padding-top: 14px; }
 
+  .synergy.four { grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr; }
+  .synergy.four .syn-arrow svg { width: 28px; height: 28px; }
+  .synergy.four .dlist.tree li { font-size: 12.5px; }
+
   /* stats */
   .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
   .stat { background: var(--ivory-2); padding: 14px 16px; }
@@ -189,6 +193,7 @@
     .panel-head { grid-template-columns: 1fr; gap: 10px; margin-bottom: 16px; }
     .g3, .g4 { grid-template-columns: 1fr 1fr; }
     .synergy { grid-template-columns: 1fr; gap: 14px; }
+    .synergy.four { grid-template-columns: 1fr; }
     .two-col { grid-template-columns: 1fr; gap: 20px; }
     .syn-arrow { transform: rotate(90deg); height: 44px; }
     .chain { grid-template-columns: repeat(3,1fr); }
@@ -251,11 +256,12 @@
       <button class="tab active" role="tab" data-tab="synergy"><span class="n">01</span>Project Synergy</button>
       <button class="tab" role="tab" data-tab="consulting"><span class="n">02</span>Services</button>
       <button class="tab" role="tab" data-tab="products"><span class="n">03</span>Products</button>
-      <button class="tab" role="tab" data-tab="revenue"><span class="n">04</span>Revenue</button>
-      <button class="tab" role="tab" data-tab="proof"><span class="n">05</span>Proof</button>
-      <button class="tab" role="tab" data-tab="framework"><span class="n">06</span>Framework</button>
-      <button class="tab" role="tab" data-tab="services"><span class="n">07</span>Services (old)</button>
-      <button class="tab" role="tab" data-tab="partnership"><span class="n">08</span>Partnership</button>
+      <button class="tab" role="tab" data-tab="partnership"><span class="n">04</span>Partnership</button>
+      <button class="tab" role="tab" data-tab="revenue"><span class="n">05</span>Revenue</button>
+      <button class="tab" role="tab" data-tab="proof"><span class="n">06</span>Proof</button>
+      <button class="tab" role="tab" data-tab="framework"><span class="n">07</span>Framework</button>
+      <button class="tab" role="tab" data-tab="services"><span class="n">08</span>Services (old)</button>
+      <button class="tab" role="tab" data-tab="options"><span class="n">09</span>Partnership Options</button>
     </nav>
   </div>
 </header>
@@ -390,7 +396,67 @@
         <div class="live-link"><span class="pill pill-live">Live</span><a href="https://maricopa.roadmapventure.com" target="_blank" rel="noopener"><em>See Maricopa's data as products</em>...(nigp/NIGP)</a></div>
       </div>
     </div>
-    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('consulting')">← Services</button><button class="pn primary" onclick="goTab('revenue')">Next · Revenue →</button></div>
+    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('consulting')">← Services</button><button class="pn primary" onclick="goTab('partnership')">Next · Partnership →</button></div>
+  </div>
+</section>
+
+<!-- ── 04 PARTNERSHIP ── -->
+<section class="panel" id="panel-partnership">
+  <div class="panel-inner">
+    <div class="quote">Powered by RMV, NIGP's domain knowledge works anywhere and stays current.</div>
+    <div class="synergy four">
+      <div class="syn-col">
+        <div class="syn-label">Why it works</div>
+        <ul class="dlist tree">
+          <li class="par">Unmatched industry differentiation</li>
+          <li class="kid">A living assessment, not one-and-done</li>
+          <li class="kid">Proof: Maricopa live, 500 KPIs, 95 sources</li>
+          <li class="par">NIGP stays on strategy</li>
+          <li class="kid">Consultants lead strategy, not content assembly</li>
+          <li class="kid">Executives get follow-up and transparency</li>
+        </ul>
+      </div>
+      <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
+      <div class="syn-col">
+        <div class="syn-label">What the client gets</div>
+        <ul class="dlist tree mid">
+          <li class="par">Always current</li>
+          <li class="kid">New findings load anytime, updates are instant</li>
+          <li class="kid">First dashboard in under a week</li>
+          <li class="par">Turn-key</li>
+          <li class="kid">No data lakehouse or integration cost</li>
+          <li class="kid">Choose from 500 KPIs</li>
+          <li class="kid">Maintenance-free access</li>
+        </ul>
+      </div>
+      <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
+      <div class="syn-col">
+        <div class="syn-label">How we make money</div>
+        <ul class="dlist tree mid">
+          <li class="par">Subscription access</li>
+          <li class="kid">Tiered by refresh cadence</li>
+          <li class="par">AI agent subscription</li>
+          <li class="kid">NIGP domain knowledge, anywhere</li>
+          <li class="par">New projects</li>
+          <li class="kid">Marketing Campaign Fast Track</li>
+          <li class="kid">Public-dataset teasers</li>
+          <li class="kid">Full control of Code Admin</li>
+          <li class="par">Split of revenue</li>
+          <li class="kid">RMV __% · NIGP __% (to be set)</li>
+        </ul>
+      </div>
+      <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
+      <div class="syn-col">
+        <div class="syn-label">Where it leads</div>
+        <ul class="dlist tree end">
+          <li class="par">Industry-first AI Consulting Automation</li>
+          <li class="par">Procurement Meta-Dashboard</li>
+          <li class="kid">Procurement data aggregated across governments</li>
+          <li class="kid">Industry insights, trends and benchmarking from a deep dataset</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('products')">← Products</button><button class="pn primary" onclick="goTab('revenue')">Next · Revenue →</button></div>
   </div>
 </section>
 
@@ -407,7 +473,7 @@
       <div class="card"><div class="card-k">03 · Keep the client after the report</div><div class="card-t">Annual portal licence per client</div><div class="card-b">The client's team reloads new spend extracts, new interviews and new drafts, and the portal rebuilds with history. NIGP Consulting earns a recurring licence after the engagement ends.</div><span class="card-tag">Recurring</span></div>
       <div class="card"><div class="card-k">04 · A lighter product for members</div><div class="card-t">Maturity assessment as a stand-alone offer</div><div class="card-b">The Procurement Intelligence Framework placement (six domains, five stages) can be sold on its own to NIGP member agencies as a short engagement that leads into a full assessment.</div><span class="card-tag">Pipeline</span></div>
     </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('products')">← Products</button><button class="pn primary" onclick="goTab('proof')">Next · The proof →</button></div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('partnership')">← Partnership</button><button class="pn primary" onclick="goTab('proof')">Next · The proof →</button></div>
   </div>
 </section>
 
@@ -486,12 +552,12 @@
       <div class="card"><div class="card-k">Gap · Strategy</div><div class="card-t">Data centralisation and maturity analysis</div><div class="card-b">Where data lives, who owns it, what a common decision package needs, and the client's placement on the five-stage model per domain.</div><span class="card-tag">Feeds deliverables 3, 7</span></div>
       <div class="card"><div class="card-k">Strategy</div><div class="card-t">Reports and presentations</div><div class="card-b">Figures, tables, appendices and visuals for the written deliverables, and the deliverables themselves hosted online for the client.</div><span class="card-tag">Feeds deliverables 1, 5, 8</span></div>
     </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('framework')">← Framework</button><button class="pn primary" onclick="goTab('partnership')">Next · The partnership →</button></div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('framework')">← Framework</button><button class="pn primary" onclick="goTab('options')">Next · Partnership Options →</button></div>
   </div>
 </section>
 
-<!-- ── 07 PARTNERSHIP ── -->
-<section class="panel" id="panel-partnership">
+<!-- ── 09 PARTNERSHIP OPTIONS ── -->
+<section class="panel" id="panel-options">
   <div class="panel-inner">
     <div class="panel-head">
       <h2 class="panel-title">Three ways to partner. <em>One recommended.</em></h2>
@@ -520,10 +586,10 @@
 
 <script>
   (function(){
-    var order = ['synergy','consulting','products','revenue','proof','framework','services','partnership'];
-    var titles = { consulting: 'Consulting Services', products: 'Products Delivered' };
+    var order = ['synergy','consulting','products','partnership','revenue','proof','framework','services','options'];
+    var titles = { consulting: 'Consulting Services', products: 'Products Delivered', partnership: 'Partnership' };
     var heroSide = document.getElementById('hero-side'), heroDefault = heroSide.innerHTML;
-    var sides = { products: '<strong>What this is.</strong> The new Management Consultant\'s Handbook. Bring your own format- any unstructured document or note transforms into actionable data and visuals. Customer data and your assessment strategy data are cross-referenced against 95 independent industry best-practice sources of metrics and KPIs. Products can be used both internally and resold externally, available as individuals or packages.', consulting: '<strong>What this is.</strong> An industry best practice review of procurement, with a technology focus. Select an engagement below, receive an inventory of gap analysis and definitions from professional observations. The differentiation: no longer a <em>one-and-done</em> paperweight document. Findings and strategy delivered inside tangible web-products; allowing continuous review and tracking changes into the future.' };
+    var sides = { partnership: '<strong>What this is.</strong> How RMV and NIGP do business together: why the combination is hard to copy, what the client gets, and how both sides earn.', products: '<strong>What this is.</strong> The new Management Consultant\'s Handbook. Bring your own format- any unstructured document or note transforms into actionable data and visuals. Customer data and your assessment strategy data are cross-referenced against 95 independent industry best-practice sources of metrics and KPIs. Products can be used both internally and resold externally, available as individuals or packages.', consulting: '<strong>What this is.</strong> An industry best practice review of procurement, with a technology focus. Select an engagement below, receive an inventory of gap analysis and definitions from professional observations. The differentiation: no longer a <em>one-and-done</em> paperweight document. Findings and strategy delivered inside tangible web-products; allowing continuous review and tracking changes into the future.' };
     function show(id, push){
       if (order.indexOf(id) < 0) id = 'synergy';
       document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
