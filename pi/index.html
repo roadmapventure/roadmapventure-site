@@ -79,6 +79,7 @@
   .pill-concept{ color: var(--ink-3); border-color: var(--rule); background: var(--ivory-2); }
 
   /* ── TAB 1: synergy ── */
+  /* .quote = the reserved lead-line style at the top of every tab (RFP quote, subtitle). Use it for any top-of-tab statement. */
   .quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px,1.65vw,19.5px); font-style: italic; line-height: 1.4; color: var(--ink); padding-left: 20px; border-left: 3px solid var(--gold); margin-bottom: 22px; max-width: 980px; }
   .quote small { display: block; font-family: 'DM Mono', monospace; font-style: normal; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
@@ -98,7 +99,6 @@
   .syn-item { padding: 10px 0; border-top: 1px solid var(--rule); }
   .syn-item .card-k { margin-bottom: 4px; }
   .syn-item .card-t { margin-bottom: 0; font-size: 19px; }
-  .panel-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,2.2vw,28px); font-weight: 300; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
   .syn-label .aside { font-weight: 400; font-size: .9em; }
   .syn-label em { font-style: italic; font-weight: 400; text-transform: none; letter-spacing: .06em; }
   .dlist.tree a.lnk { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--gold); }
@@ -281,7 +281,7 @@
 <!-- ── 02 SERVICES (new) ── -->
 <section class="panel" id="panel-consulting">
   <div class="panel-inner">
-    <p class="panel-sub">A GovTech approach to Procurement Focused Management Consulting</p>
+    <div class="quote">A GovTech approach to Procurement Focused Management Consulting</div>
     <div class="synergy">
       <div class="syn-col">
         <div class="syn-label">Procurement Tech Topics <span class="aside">(<em>the what</em>)</span></div>
@@ -325,9 +325,9 @@
           <li class="par">Executive Strategy</li>
           <li class="kid">Reports &amp; Presentations</li>
           <li class="kid">Organization Transformation</li>
-          <li class="par">A Living Strategy Report</li>
-          <li class="kid">Observations to Actionable Visual Data</li>
-          <li class="kid">Trending Challenges Defined &amp; Measured</li>
+          <li class="par">A Living Strategy Portal</li>
+          <li class="kid">Observations as Actionable Visual Data</li>
+          <li class="kid">Immediate Challenges Defined &amp; Measured</li>
           <li class="kid">Goals to reach Industry Best Practices</li>
           <li class="kid">Continuous Assessment and Tracking</li>
           <li class="kid"><a class="lnk" href="#products" onclick="goTab('products');return false">Your Strategy as a tangible product... →</a></li>
@@ -488,7 +488,7 @@
     var order = ['synergy','consulting','revenue','proof','framework','services','products','partnership'];
     var titles = { consulting: 'Consulting Services' };
     var heroSide = document.getElementById('hero-side'), heroDefault = heroSide.innerHTML;
-    var sides = { consulting: '<strong>What this is.</strong> An industry best practice review that is technology focused towards procurement within engagements you choose below. You receive an inventory, definitions, gap analysis, and report from professional observations. The differentiation: instead of a delivered one-and-done paperweight document, the observations and strategy are produced within tangible products for continuous use, tracking changes, and re-review into the future.' };
+    var sides = { consulting: '<strong>What this is.</strong> An industry best practice review, with a technology focus, towards procurement. Within any selected engagement below, receive an inventory of definitions, gap analysis, and report from professional observations. The differentiation: no one-and-done paperweight document... observations and strategy are produced inside tangible web-products for continuous use, tracking changes, and re-review into the future.' };
     function show(id, push){
       if (order.indexOf(id) < 0) id = 'synergy';
       document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
