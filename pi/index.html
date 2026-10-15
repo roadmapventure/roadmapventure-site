@@ -98,12 +98,13 @@
   .syn-item { padding: 10px 0; border-top: 1px solid var(--rule); }
   .syn-item .card-k { margin-bottom: 4px; }
   .syn-item .card-t { margin-bottom: 0; font-size: 19px; }
-  .panel-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,2.2vw,28px); font-weight: 300; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+  .panel-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,2.2vw,28px); font-weight: 300; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+  .syn-label .aside { font-weight: 400; font-size: .9em; }
   .syn-label em { font-style: italic; font-weight: 400; text-transform: none; letter-spacing: .06em; }
   .dlist.tree a.lnk { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--gold); }
   .dlist.tree a.lnk:hover { color: var(--ink); }
   .dlist.tree { grid-auto-rows: auto; }
-  .dlist.tree li { padding: 5px 14px; }
+  .dlist.tree li { padding: 3px 14px; }
   .dlist.tree li.par { background: var(--ivory-2); font-weight: 500; color: var(--ink); font-size: 13px; }
   .dlist.tree li.kid { padding-left: 34px; position: relative; }
   .dlist.tree li.kid::before { content: ''; position: absolute; left: 18px; top: 50%; width: 8px; height: 1px; background: var(--gold); }
@@ -225,7 +226,7 @@
 <section class="hero">
   <div class="hero-inner">
     <h1>Procurement Intelligence</h1>
-    <div class="hero-side"><strong>What this is.</strong> Consulting Services automated into actual web Products used to create visual metrics of your findings, help drive content assembly, and a new deliverable for the customer. Transforms interview notes, spend extracts, and assessment drafts into validated KPIs, Tech Diagrams, Visual Insights, and a client Web Portal.</div>
+    <div class="hero-side" id="hero-side"><strong>What this is.</strong> Consulting Services automated into actual web Products used to create visual metrics of your findings, help drive content assembly, and a new deliverable for the customer. Transforms interview notes, spend extracts, and assessment drafts into validated KPIs, Tech Diagrams, Visual Insights, and a client Web Portal.</div>
   </div>
 </section>
 
@@ -283,7 +284,7 @@
     <p class="panel-sub">A GovTech approach to Procurement Focused Management Consulting</p>
     <div class="synergy">
       <div class="syn-col">
-        <div class="syn-label">Procurement Tech Topics (<em>the what</em>)</div>
+        <div class="syn-label">Procurement Tech Topics <span class="aside">(<em>the what</em>)</span></div>
         <ul class="dlist tree">
           <li class="par">Tech</li>
           <li class="kid">Systems &amp; Software</li>
@@ -301,12 +302,12 @@
       </div>
       <div class="syn-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h11V3l9 9-9 9v-5H2z"/></svg></div>
       <div class="syn-col">
-        <div class="syn-label">Methodology (<em>the how</em>)</div>
+        <div class="syn-label">Methodology <span class="aside">(<em>the how</em>)</span></div>
         <ul class="dlist tree">
           <li class="par">Strategic Analysis</li>
-          <li class="kid">Interview Sessions</li>
+          <li class="kid">Interview Sessions and Gap Analysis</li>
           <li class="kid">Requirements Gathering</li>
-          <li class="kid">Usage Inventory</li>
+          <li class="kid">Workflow and Tech Usage Inventory</li>
           <li class="kid">Data Assessment and Cleansing</li>
           <li class="par">Strategy Definition</li>
           <li class="kid">Measurable Performance</li>
@@ -324,8 +325,10 @@
           <li class="par">Executive Strategy</li>
           <li class="kid">Reports &amp; Presentations</li>
           <li class="kid">Organization Transformation</li>
-          <li class="par">Living Strategy Report</li>
+          <li class="par">A Living Strategy Report</li>
           <li class="kid">Observations to Actionable Visual Data</li>
+          <li class="kid">Trending Challenges Defined &amp; Measured</li>
+          <li class="kid">Goals to reach Industry Best Practices</li>
           <li class="kid">Continuous Assessment and Tracking</li>
           <li class="kid"><a class="lnk" href="#products" onclick="goTab('products');return false">Your Strategy as a tangible product... →</a></li>
         </ul>
@@ -484,11 +487,14 @@
   (function(){
     var order = ['synergy','consulting','revenue','proof','framework','services','products','partnership'];
     var titles = { consulting: 'Consulting Services' };
+    var heroSide = document.getElementById('hero-side'), heroDefault = heroSide.innerHTML;
+    var sides = { consulting: '<strong>What this is.</strong> An industry best practice review that is technology focused towards procurement within engagements you choose below. You receive an inventory, definitions, gap analysis, and report from professional observations. The differentiation: instead of a delivered one-and-done paperweight document, the observations and strategy are produced within tangible products for continuous use, tracking changes, and re-review into the future.' };
     function show(id, push){
       if (order.indexOf(id) < 0) id = 'synergy';
       document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
       document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id === 'panel-' + id); });
       document.querySelector('.hero h1').textContent = titles[id] || 'Procurement Intelligence';
+      heroSide.innerHTML = sides[id] || heroDefault;
       var tab = document.querySelector('.tab[data-tab="' + id + '"]');
       if (tab && tab.scrollIntoView) tab.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
       if (push !== false) {
