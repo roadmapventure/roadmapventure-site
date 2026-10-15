@@ -223,11 +223,11 @@
     <nav class="tabs" role="tablist" id="tabs" aria-label="Sections">
       <button class="tab active" role="tab" data-tab="synergy"><span class="n">01</span>Project Synergy</button>
       <button class="tab" role="tab" data-tab="consulting"><span class="n">02</span>Services</button>
-      <button class="tab" role="tab" data-tab="revenue"><span class="n">03</span>Revenue</button>
-      <button class="tab" role="tab" data-tab="proof"><span class="n">04</span>Proof</button>
-      <button class="tab" role="tab" data-tab="framework"><span class="n">05</span>Framework</button>
-      <button class="tab" role="tab" data-tab="services"><span class="n">06</span>Services (old)</button>
-      <button class="tab" role="tab" data-tab="products"><span class="n">07</span>Products</button>
+      <button class="tab" role="tab" data-tab="products"><span class="n">03</span>Products</button>
+      <button class="tab" role="tab" data-tab="revenue"><span class="n">04</span>Revenue</button>
+      <button class="tab" role="tab" data-tab="proof"><span class="n">05</span>Proof</button>
+      <button class="tab" role="tab" data-tab="framework"><span class="n">06</span>Framework</button>
+      <button class="tab" role="tab" data-tab="services"><span class="n">07</span>Services (old)</button>
       <button class="tab" role="tab" data-tab="partnership"><span class="n">08</span>Partnership</button>
     </nav>
   </div>
@@ -345,7 +345,25 @@
         </ul>
       </div>
     </div>
-    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('synergy')">← Project Synergy</button><button class="pn primary" onclick="goTab('revenue')">Next · Revenue →</button></div>
+    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('synergy')">← Project Synergy</button><button class="pn primary" onclick="goTab('products')">Next · Products →</button></div>
+  </div>
+</section>
+
+<!-- ── 03 PRODUCTS ── -->
+<section class="panel" id="panel-products">
+  <div class="panel-inner">
+    <div class="quote">"All consulting documentation converts easily into data and dashboards"</div>
+    <div class="grid g4">
+      <div class="card"><div class="card-k">Inventory · Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Interview notes to data points and visuals</div><div class="card-b">Notes in; gated findings register and interactive dashboard out: sessions, departments, themes, systems.</div></div>
+      <div class="card"><div class="card-k">Cleansing · Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Spend Analysis Dashboard</div><div class="card-b">AP, PO and P-card in; contract coverage, influenceable spend, direct purchase and timeline out.</div></div>
+      <div class="card"><div class="card-k">Inventory <span class="pill pill-live">Live</span></div><div class="card-t">System Analysis Dashboard</div><div class="card-b">Systems by lifecycle stage and department; usage, gaps, and technology purchases.</div></div>
+      <div class="card"><div class="card-k">Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Supplier centralisation</div><div class="card-b">One profile per vendor across every payment channel: spend, contracts, co-op sourcing, merchant matching.</div></div>
+      <div class="card"><div class="card-k">Analysis <span class="pill pill-part">Partial</span></div><div class="card-t">Department centralisation</div><div class="card-b">One profile per department: findings, spend, systems, KPIs. Views exist inside other pages; no single page yet.</div></div>
+      <div class="card"><div class="card-k">Analysis <span class="pill pill-concept">To define</span></div><div class="card-t">Package centralisation</div><div class="card-b">Consolidation of like purchases across departments. Nearest built: contract coverage and co-op sourcing views.</div></div>
+      <div class="card"><div class="card-k">Analysis <span class="pill pill-proto">Prototype</span></div><div class="card-t">AI answering service</div><div class="card-b">Plain questions over an engagement's findings, spend and KPIs. Every figure traced to its source row; an analyst, a checker and an auditor on each answer.</div></div>
+      <div class="card"><div class="card-k">Best practice <span class="pill pill-concept">Concept</span></div><div class="card-t">AI best practice bot</div><div class="card-b">Answers "what does good look like" from the verified best-practice sources and maturity insights in the KPI library.</div></div>
+    </div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('consulting')">← Services</button><button class="pn primary" onclick="goTab('revenue')">Next · Revenue →</button></div>
   </div>
 </section>
 
@@ -362,7 +380,7 @@
       <div class="card"><div class="card-k">03 · Keep the client after the report</div><div class="card-t">Annual portal licence per client</div><div class="card-b">The client's team reloads new spend extracts, new interviews and new drafts, and the portal rebuilds with history. NIGP Consulting earns a recurring licence after the engagement ends.</div><span class="card-tag">Recurring</span></div>
       <div class="card"><div class="card-k">04 · A lighter product for members</div><div class="card-t">Maturity assessment as a stand-alone offer</div><div class="card-b">The Procurement Intelligence Framework placement (six domains, five stages) can be sold on its own to NIGP member agencies as a short engagement that leads into a full assessment.</div><span class="card-tag">Pipeline</span></div>
     </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('consulting')">← Services</button><button class="pn primary" onclick="goTab('proof')">Next · The proof →</button></div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('products')">← Products</button><button class="pn primary" onclick="goTab('proof')">Next · The proof →</button></div>
   </div>
 </section>
 
@@ -441,28 +459,7 @@
       <div class="card"><div class="card-k">Gap · Strategy</div><div class="card-t">Data centralisation and maturity analysis</div><div class="card-b">Where data lives, who owns it, what a common decision package needs, and the client's placement on the five-stage model per domain.</div><span class="card-tag">Feeds deliverables 3, 7</span></div>
       <div class="card"><div class="card-k">Strategy</div><div class="card-t">Reports and presentations</div><div class="card-b">Figures, tables, appendices and visuals for the written deliverables, and the deliverables themselves hosted online for the client.</div><span class="card-tag">Feeds deliverables 1, 5, 8</span></div>
     </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('framework')">← Framework</button><button class="pn primary" onclick="goTab('products')">Next · Products →</button></div>
-  </div>
-</section>
-
-<!-- ── 06 PRODUCTS ── -->
-<section class="panel" id="panel-products">
-  <div class="panel-inner">
-    <div class="panel-head">
-      <h2 class="panel-title">Products: each framework step, <em>made repeatable.</em></h2>
-      <p class="panel-lead">A document type goes in, a spreadsheet and a dashboard page come out, and history is kept. All of them hang off one client portal behind one login. Status is as of October 2026.</p>
-    </div>
-    <div class="grid g4">
-      <div class="card"><div class="card-k">Inventory · Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Interview notes to data points and visuals</div><div class="card-b">Notes in; gated findings register and interactive dashboard out: sessions, departments, themes, systems.</div></div>
-      <div class="card"><div class="card-k">Cleansing · Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Spend Analysis Dashboard</div><div class="card-b">AP, PO and P-card in; contract coverage, influenceable spend, direct purchase and timeline out.</div></div>
-      <div class="card"><div class="card-k">Inventory <span class="pill pill-live">Live</span></div><div class="card-t">System Analysis Dashboard</div><div class="card-b">Systems by lifecycle stage and department; usage, gaps, and technology purchases.</div></div>
-      <div class="card"><div class="card-k">Analysis <span class="pill pill-live">Live</span></div><div class="card-t">Supplier centralisation</div><div class="card-b">One profile per vendor across every payment channel: spend, contracts, co-op sourcing, merchant matching.</div></div>
-      <div class="card"><div class="card-k">Analysis <span class="pill pill-part">Partial</span></div><div class="card-t">Department centralisation</div><div class="card-b">One profile per department: findings, spend, systems, KPIs. Views exist inside other pages; no single page yet.</div></div>
-      <div class="card"><div class="card-k">Analysis <span class="pill pill-concept">To define</span></div><div class="card-t">Package centralisation</div><div class="card-b">Consolidation of like purchases across departments. Nearest built: contract coverage and co-op sourcing views.</div></div>
-      <div class="card"><div class="card-k">Analysis <span class="pill pill-proto">Prototype</span></div><div class="card-t">AI answering service</div><div class="card-b">Plain questions over an engagement's findings, spend and KPIs. Every figure traced to its source row; an analyst, a checker and an auditor on each answer.</div></div>
-      <div class="card"><div class="card-k">Best practice <span class="pill pill-concept">Concept</span></div><div class="card-t">AI best practice bot</div><div class="card-b">Answers "what does good look like" from the verified best-practice sources and maturity insights in the KPI library.</div></div>
-    </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('services')">← Services (old)</button><button class="pn primary" onclick="goTab('partnership')">Next · The partnership →</button></div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('framework')">← Framework</button><button class="pn primary" onclick="goTab('partnership')">Next · The partnership →</button></div>
   </div>
 </section>
 
@@ -485,7 +482,7 @@
       <div class="next"><b>3</b><span>Draft option B terms: scope, term, exclusivity, pricing</span></div>
       <div class="next"><b>4</b><span>Agree what current work may be shown to future clients</span></div>
     </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('products')">← Products</button><span></span></div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('services')">← Services (old)</button><span></span></div>
   </div>
 </section>
 
@@ -496,10 +493,10 @@
 
 <script>
   (function(){
-    var order = ['synergy','consulting','revenue','proof','framework','services','products','partnership'];
-    var titles = { consulting: 'Consulting Services' };
+    var order = ['synergy','consulting','products','revenue','proof','framework','services','partnership'];
+    var titles = { consulting: 'Consulting Services', products: 'Products Delivered' };
     var heroSide = document.getElementById('hero-side'), heroDefault = heroSide.innerHTML;
-    var sides = { consulting: '<strong>What this is.</strong> An industry best practice review of procurement, with a technology focus. Select an engagement below, receive an inventory of gap analysis and definitions from professional observations. The differentiation: no longer a <em>one-and-done</em> paperweight document. Findings and strategy delivered inside tangible web-products; allowing continuous review and tracking changes into the future.' };
+    var sides = { products: '<strong>What this is.</strong> A document type goes in, a spreadsheet and a dashboard page come out, and history is kept. All of them hang off one client portal behind one login. Status is as of October 2026.', consulting: '<strong>What this is.</strong> An industry best practice review of procurement, with a technology focus. Select an engagement below, receive an inventory of gap analysis and definitions from professional observations. The differentiation: no longer a <em>one-and-done</em> paperweight document. Findings and strategy delivered inside tangible web-products; allowing continuous review and tracking changes into the future.' };
     function show(id, push){
       if (order.indexOf(id) < 0) id = 'synergy';
       document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
