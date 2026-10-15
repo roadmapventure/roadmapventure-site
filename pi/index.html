@@ -214,6 +214,28 @@
     .next-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 22px 20px; }
   }
+
+  /* ── PRODUCTS LINEUP ── */
+  .lineup { display: grid; grid-template-columns: minmax(0,1.9fr) minmax(0,1fr); gap: 28px; align-items: start; }
+  .lineup-main { columns: 2; column-gap: 22px; }
+  .lg { margin-bottom: 12px; break-inside: avoid; }
+  .lg-h { display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); }
+  .lg-h b { font-weight: 500; color: var(--gold); }
+  .lg-h::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .tiles { display: grid; grid-template-columns: 1fr; gap: 5px; }
+  .tile { text-align: left; cursor: pointer; background: var(--ivory); border: 1px solid var(--rule); border-radius: 6px; padding: 7px 11px; display: flex; flex-direction: row; align-items: center; gap: 10px; font: inherit; color: inherit; transition: background .2s, border-color .2s; }
+  .tile:hover { background: var(--ivory-2); }
+  .tile.sel { background: var(--ivory-2); border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+  .tile:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .tile-k { display: contents; }
+  .t-n { order: 1; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; color: var(--gold); }
+  .tile-k .pill { order: 3; white-space: nowrap; }
+  .tile-t { flex: 1; min-width: 0; order: 2; font-family: 'Cormorant Garamond', serif; font-size: 16.5px; font-weight: 400; line-height: 1.12; color: var(--ink); }
+  .detail { position: sticky; top: calc(var(--nav-h) + 16px); background: var(--ivory-2); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .detail .card-t { font-size: 28px; margin-bottom: 12px; }
+  .detail .card-b { font-size: 14px; line-height: 1.7; color: var(--ink-2); }
+  .detail .d-foot { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--ink-3); }
+  @media (max-width: 1024px) { .lineup { grid-template-columns: 1fr; } .lineup-main { columns: 1; } .detail { position: static; } }
 </style>
 </head>
 <body>
@@ -354,22 +376,11 @@
 <section class="panel" id="panel-products">
   <div class="panel-inner">
     <div class="quote">All consulting assessments and documentation converts easily into data and dashboards</div>
-    <div class="grid g4">
-      <div class="card"><div class="card-k"><span><span class="num">01</span>Web Portal</span> <span class="pill pill-live">Live</span></div><div class="card-t">Procurement Intelligence Portal</div><div class="card-b">Clients' assessment docs and dashboards centralized for sharable access and Consultant's (i.e. NIGP) continuous updates even after project end.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">02</span>Dashboard</span> <span class="pill pill-live">Live</span></div><div class="card-t">Findings Analyzer</div><div class="card-b">Interview notes to data points and visuals. Notes in; gated findings register and interactive dashboard out: sessions, departments, themes, systems.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">03</span>Dashboard</span> <span class="pill pill-live">Live</span></div><div class="card-t">Spend Analyzer</div><div class="card-b">Spend Analysis Dashboard. AP, PO and P-card in; contract coverage, influenceable spend, direct purchase and timeline out.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">04</span>Dashboard</span> <span class="pill pill-live">Live</span></div><div class="card-t">Technology Inventory</div><div class="card-b">System Analysis Dashboard. Systems by lifecycle stage and department; usage, gaps, and technology purchases.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">05</span>Dashboard</span> <span class="pill pill-live">Live</span></div><div class="card-t">KPI Analyzer</div><div class="card-b">KPI's recommended by cross-referencing assessment against the KPI Library (see product below).</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">06</span>Dashboard</span> <span class="pill pill-live">Live</span></div><div class="card-t">Supplier Central</div><div class="card-b">Supplier centralisation. One profile per vendor across every payment channel: spend, contracts, co-op sourcing, merchant matching.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">07</span>Catalog</span> <span class="pill pill-live">Live</span></div><div class="card-t">KPI Library</div><div class="card-b">500 continuously refined industry procurement metrics, sourced &amp; validated from 95 organizations.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">08</span>AI Agent</span> <span class="pill pill-part">Coming Nov</span></div><div class="card-t">AI Best Practice Service</div><div class="card-b">AI natural language search across all Procurement Intellgence Products in the portal, ask cross referencing questions and get next steps advice and visuals.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">09</span>Dashboard</span> <span class="pill pill-part">Coming Nov</span></div><div class="card-t">Department Central</div><div class="card-b">One profile per department: findings, spend, systems, KPIs. Views exist inside other pages; no single page yet.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">10</span>Dashboard</span> <span class="pill pill-part">Coming Nov</span></div><div class="card-t">Supplier Survey Integration</div><div class="card-b">Survey information loaded into Supplier Central for Cross Referenceing analysis.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">11</span>Catalog</span> <span class="pill pill-part">Coming Nov</span></div><div class="card-t">Tech Questions &amp; Topics Library</div><div class="card-b">The consultants' checklist of Over 100 continuously refined Industry standard tech, data, reports, and KPI questions and topics to cover when interviewing or surveying customers for consulting analysis.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">12</span>AI Agent</span> <span class="pill pill-proto">Testing Now</span></div><div class="card-t">Sell your agent as a subscription</div><div class="card-b">Sell access to your domain knowledge - your customers can ask questions within their own AI Tools about their data and environment as if you were sitting next to them and have studied all their data.In Alpha - you can test now, contact John for access.</div></div>
-      <div class="card"><div class="card-k"><span><span class="num">13</span>License Manager</span> <span class="pill pill-concept">1 month to build</span></div><div class="card-t">NIGP Code Administrator</div><div class="card-b">Update the commodity code instantly, find data leakage across the internet, dashboard of all customers, subscription &amp; license management, latest technology.</div></div>
+        <div class="lineup">
+      <div class="lineup-main" id="lineup-main"></div>
+      <aside class="detail" id="detail" aria-live="polite"></aside>
     </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('consulting')">← Services</button><button class="pn primary" onclick="goTab('revenue')">Next · Revenue →</button></div>
+    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('consulting')">← Services</button><button class="pn primary" onclick="goTab('revenue')">Next · Revenue →</button></div>
   </div>
 </section>
 
@@ -528,6 +539,25 @@
     window.addEventListener('hashchange', function(){ show(location.hash.slice(1), false); });
     show((location.hash || '#synergy').slice(1), false);
   })();
+</script>
+<script>
+(function(){
+  var P = [{"cat": "Web Portal", "cls": "live", "st": "Live", "t": "Procurement Intelligence Portal", "b": "Clients' assessment docs and dashboards centralized for sharable access and Consultant's (i.e. NIGP) continuous updates even after project end.", "n": "01", "pk": "Core"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Findings Analyzer", "b": "Interview notes to data points and visuals. Notes in; gated findings register and interactive dashboard out: sessions, departments, themes, systems.", "n": "02", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Spend Analyzer", "b": "Spend Analysis Dashboard. AP, PO and P-card in; contract coverage, influenceable spend, direct purchase and timeline out.", "n": "03", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Technology Inventory", "b": "System Analysis Dashboard. Systems by lifecycle stage and department; usage, gaps, and technology purchases.", "n": "04", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "KPI Analyzer", "b": "KPI's recommended by cross-referencing assessment against the KPI Library (see product below).", "n": "05", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "part", "st": "Coming Nov", "t": "Supplier Survey Integration", "b": "Survey information loaded into Supplier Central for Cross Referenceing analysis.", "n": "06", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Supplier Central", "b": "Supplier centralisation. One profile per vendor across every payment channel: spend, contracts, co-op sourcing, merchant matching.", "n": "07", "pk": "Aggregators"}, {"cat": "Dashboard", "cls": "part", "st": "Coming Nov", "t": "Department Central", "b": "One profile per department: findings, spend, systems, KPIs. Views exist inside other pages; no single page yet.", "n": "08", "pk": "Aggregators"}, {"cat": "Catalog", "cls": "live", "st": "Live", "t": "KPI Library", "b": "500 continuously refined industry procurement metrics, sourced & validated from 95 organizations.", "n": "09", "pk": "Libraries"}, {"cat": "Catalog", "cls": "part", "st": "Coming Nov", "t": "Tech Questions & Topics Library", "b": "The consultants' checklist of Over 100 continuously refined Industry standard tech, data, reports, and KPI questions and topics to cover when interviewing or surveying customers for consulting analysis.", "n": "10", "pk": "Libraries"}, {"cat": "AI Agent", "cls": "part", "st": "Coming Nov", "t": "AI Search and Answer", "b": "AI natural language search across all Procurement Intellgence Products in the portal, ask cross referencing questions and get next steps advice and visuals.", "n": "11", "pk": "AI Agents"}, {"cat": "AI Agent", "cls": "proto", "st": "Testing Now", "t": "Sell your agent as a subscription", "b": "Sell access to your domain knowledge - your customers can ask questions within their own AI Tools about their data and environment as if you were sitting next to them and have studied all their data.In Alpha - you can test now, contact John for access.", "n": "12", "pk": "AI Agents"}, {"cat": "License Manager", "cls": "concept", "st": "1 month to build", "t": "NIGP Code Administrator", "b": "Update the commodity code instantly, find data leakage across the internet, dashboard of all customers, subscription & license management, latest technology.", "n": "13", "pk": "Licensing"}];
+  var PK = ['Core','Analyzers','Aggregators','Libraries','AI Agents','Licensing'];
+  var main = document.getElementById('lineup-main'), det = document.getElementById('detail');
+  var sel = 0;
+  function esc(x){ return x.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function tile(p,i){ return '<button type="button" class="tile'+(i===sel?' sel':'')+'" data-i="'+i+'"><span class="tile-k"><span class="t-n">'+p.n+'</span><span class="pill pill-'+p.cls+'">'+esc(p.st)+'</span></span><span class="tile-t">'+esc(p.t)+'</span></button>'; }
+  function render(){
+    var out = '';
+    PK.forEach(function(k){ var idx=[]; P.forEach(function(p,i){ if(p.pk===k) idx.push(i); }); if(idx.length) out += '<div class="lg"><div class="lg-h"><span>'+esc(k)+'</span><b>'+idx.length+'</b></div><div class="tiles">'+idx.map(function(i){return tile(P[i],i);}).join('')+'</div></div>'; });
+    main.innerHTML = out;
+    var p = P[sel];
+    det.innerHTML = '<div class="card-k"><span>'+p.n+' &middot; '+esc(p.cat)+'</span><span class="pill pill-'+p.cls+'">'+esc(p.st)+'</span></div><div class="card-t">'+esc(p.t)+'</div><div class="card-b">'+esc(p.b)+'</div><div class="d-foot">'+esc(p.pk)+'</div>';
+  }
+  main.addEventListener('click', function(e){ var t=e.target.closest('.tile'); if(!t) return; sel=+t.dataset.i; render(); });
+  render();
+})();
 </script>
 </body>
 </html>
