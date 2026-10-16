@@ -258,7 +258,6 @@
       <button class="tab" role="tab" data-tab="consulting"><span class="n">02</span>Services</button>
       <button class="tab" role="tab" data-tab="products"><span class="n">03</span>Products</button>
       <button class="tab" role="tab" data-tab="partnership"><span class="n">04</span>Partnership</button>
-      <button class="tab" role="tab" data-tab="framework"><span class="n">05</span>Framework</button>
     </nav>
   </div>
 </header>
@@ -348,7 +347,7 @@
           <li class="par">Strategic Analysis</li>
           <li class="kid">Interview Sessions and Gap Analysis</li>
           <li class="kid">Requirements Gathering</li>
-          <li class="kid">Workflow and Tech Usage Inventory</li>
+          <li class="kid">Workflow and Tech Usage Inventory/handoffs</li>
           <li class="kid">Data Assessment and Cleansing</li>
           <li class="par">Strategy Definition</li>
           <li class="kid">Measurable Performance</li>
@@ -410,7 +409,7 @@
           <li class="kid">Domain history and staffing is becoming scarce</li>
           <li class="par">Unmatched industry differentiation</li>
           <li class="kid">A living assessment, not one-and-done</li>
-          <li class="kid">Reinvigorated NIGP branding &amp; services</li>
+          <li class="kid">Reinvigorates NIGP with white-labeled product branding &amp; services</li>
           <li class="kid">Consultants transition to leading strategy, with repeatability- not content assembly</li>
           <li class="kid">NIGP does not have to hire a data team</li>
         </ul>
@@ -434,11 +433,13 @@
         <div class="syn-label">How our businesses grow</div>
         <ul class="dlist tree mid">
           <li class="par">New Revenue Source</li>
-          <li class="kid">Subscription access to dashboards and portal, tiered by refresh cadence</li>
+          <li class="kid">Annual subscription to dashboards and portal, tiered by refresh cadence</li>
+          <li class="kid">Recurring revenue after project ends</li>
           <li class="par">AI agent subscription</li>
           <li class="kid">NIGP domain knowledge, anywhere</li>
           <li class="par">Next project pipeline</li>
           <li class="kid">Marketing Campaign Fast Track</li>
+          <li class="kid">Maricopa partnership &amp; showcase</li>
           <li class="kid">Pre-loading of past client assessments/new client public found datasets as a marketing teaser</li>
           <li class="par">Commodity Code Server Upgrade</li>
         </ul>
@@ -448,7 +449,9 @@
         <div class="syn-label">Where it leads</div>
         <ul class="dlist tree end">
           <li class="par"><span>A new era of the <em>Consultant's Handbook</em></span></li>
+          <li class="kid">Keeps the client after the report</li>
           <li class="par">Industry-first AI Consulting Automation</li>
+          <li class="kid">Lowered cost per engagement</li>
           <li class="par"><span>Government Procurement <em>Meta</em>-Dashboard</span></li>
           <li class="kid">Procurement data aggregated across governments</li>
           <li class="kid">Increased expertise recognition: Industry insights, trends and benchmarking from the only organization with a deep dataset</li>
@@ -463,31 +466,7 @@
       <div class="m"><b>Strategic</b>Dashboards set priorities</div>
       <div class="m"><b>Intelligence-led</b>AI assists decisions</div>
     </div>
-    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('products')">← Products</button><button class="pn primary" onclick="goTab('framework')">Next · Framework →</button></div>
-  </div>
-</section>
-
-<!-- ── 04 FRAMEWORK ── -->
-<section class="panel" id="panel-framework">
-  <div class="panel-inner">
-    <div class="panel-head">
-      <h2 class="panel-title">Six domains, six steps, <em>one maturity position.</em></h2>
-      <p class="panel-lead">The Procurement Intelligence Framework in the current proposal is the spine of this offering. Domains are assessed in dependency order, each through the same six steps, and the result places the client on a five-stage maturity model with evidence.</p>
-    </div>
-    <div class="row-label">Domains, in dependency order</div>
-    <div class="chain">
-      <div class="link"><div class="link-n">01</div><div class="link-t">Data</div><div class="link-b">Spend ledger, data quality audit, what each source can support</div></div>
-      <div class="link"><div class="link-n">02</div><div class="link-t">Software and tools</div><div class="link-b">Platforms by lifecycle stage, integrations, record ownership</div></div>
-      <div class="link"><div class="link-n">03</div><div class="link-t">Processes</div><div class="link-b">Workflow fragmentation, duplicate entry, manual handoffs</div></div>
-      <div class="link"><div class="link-n">04</div><div class="link-t">KPIs</div><div class="link-b">Baseline vs best practice, linked to recommendations</div></div>
-      <div class="link"><div class="link-n">05</div><div class="link-t">AI readiness</div><div class="link-b">An assistant over contracts, only as good as the data under it</div></div>
-      <div class="link"><div class="link-n">06</div><div class="link-t">Supporting technology</div><div class="link-b">Integration, BI and reporting layer that sustains the rest</div></div>
-    </div>
-    <div class="row-label">Six steps, applied to every domain</div>
-    <div class="steps">
-      <span class="step"><b>1</b>Inventory</span><span class="step"><b>2</b>Cleansing</span><span class="step"><b>3</b>Analysis</span><span class="step"><b>4</b>Best practice</span><span class="step"><b>5</b>Gap</span><span class="step"><b>6</b>Strategy</span>
-    </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('partnership')">← Partnership</button><span></span></div>
+    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('products')">← Products</button><span></span></div>
   </div>
 </section>
 
@@ -498,7 +477,7 @@
 
 <script>
   (function(){
-    var order = ['synergy','consulting','products','partnership','framework'];
+    var order = ['synergy','consulting','products','partnership'];
     var titles = { consulting: 'Consulting Services', products: 'Products Delivered', partnership: 'Partnership' };
     var heroSide = document.getElementById('hero-side'), heroDefault = heroSide.innerHTML;
     var sides = { partnership: '<strong>What this is.</strong> How RMV and NIGP do business together: why the combination is hard to duplicate, what the client receives, and how both sides grow.', products: '<strong>What this is.</strong> The new Management Consultant\'s Handbook. Bring your own format- any unstructured document or note transforms into actionable data and visuals. Customer data and your assessment strategy data are cross-referenced against 95 independent industry best-practice sources of metrics and KPIs. Products can be used both internally and resold externally, available as individuals or packages. <em>(click a product below to display its value...)</em>', consulting: '<strong>What this is.</strong> RMV provides an industry best practice review of procurement, with a technology focus. Select an engagement below, receive an inventory of gap analysis and definitions from professional observations. The differentiation: no longer a <em>one-and-done</em> paperweight document. Findings and strategy delivered inside tangible web-products; allowing continuous review and tracking changes into the future.' };
@@ -530,7 +509,7 @@
 </script>
 <script>
 (function(){
-  var P = [{"cat": "Web Portal", "cls": "live", "st": "Live", "t": "Procurement Intelligence Portal", "b": "*The container* and central access to Clients' assessment docs, presentations, and dashboards for sharable access- including both the Clients' and Consultant's (i.e. NIGP) continuous updates even after project end.", "n": "01", "pk": "Core"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Findings Analyzer", "b": "A single interview session note or survey note transformed into 30 data points of assessment themes and related technology, transformed into visual analysis.", "n": "02", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Spend Analyzer", "b": "Auto column-finder and spreadsheet aggregation of Spend Analysis Dashboard. PO, Invoice, AP, and P-card transactional data in; contract coverage, managed spend, direct purchase, tailspend, and timeline visuals out.", "n": "03", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Technology & Workflow Inventory", "b": "Tech System Analysis Dashboard. Session notes in - Systems discovery by procurement lifecycle stage and department; usage, gaps, and inventory visuals out.", "n": "04", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "KPI Analyzer", "b": "KPIs are a tool for your clients to track, monitor, measure, and react (actionable) to your recommendations. Session notes and Assessment documents in - KPI's recommended by *the KPI Library*, including customer commitment, instruction, and systems' readiness to build.", "n": "05", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Supplier Central", "b": "One version of the truth, instant supplier CRM. One profile view per vendor across every payment or sourcing channel: spend, contracts, spreadsheets or systems, and merchant matching (de-duplication).", "n": "06", "pk": "Aggregators"}, {"cat": "Dashboard", "cls": "part", "st": "Coming Nov", "t": "Supplier Survey Integration", "b": "Survey information loaded into *Supplier Central* for Cross Referencing analysis.", "n": "07", "pk": "Aggregators"}, {"cat": "Dashboard", "cls": "part", "st": "Coming Nov", "t": "Department Central", "b": "One version of the truth, instant department CRM. One profile view per department/division across every payment or sourcing channel: spend, contracts, spreadsheets or systems, and department name matching (de-duplication).", "n": "08", "pk": "Aggregators"}, {"cat": "Catalog", "cls": "live", "st": "Live", "t": "KPI Library", "b": "500 continuously refined industry procurement metrics, sourced & validated from 95 organizations. Delivers cross referenced KPI's, including the formula to build, with industry best practice popularity.", "n": "09", "pk": "Libraries"}, {"cat": "Catalog", "cls": "part", "st": "Coming Nov", "t": "Tech Questions & Topics Library", "b": "The consultants' checklist of 100 continuously refined Industry standard tech, data, reports, and KPI questions and topics to cover when interviewing or surveying customers, with a procurement focus.", "n": "10", "pk": "Libraries"}, {"n": "11", "cat": "Catalog", "cls": "concept", "st": "1 week to build", "t": "Reusable Content Template", "b": "Shortcut your consulting service into an instant, repeatable product by organizing past deliverables as a template towards your first draft of topics and sections, all built from your session notes.", "pk": "Libraries"}, {"cat": "AI Agent", "cls": "part", "st": "Coming Nov", "t": "AI search & actionable answer", "b": "AI natural language search across all Procurement Intelligence Products in the portal. Ask cross referencing questions and receive next-steps advice and visuals.", "n": "12", "pk": "AI Agents"}, {"cat": "AI Agent", "cls": "proto", "st": "Testing Now", "t": "Your AI Agent as a Service", "b": "*AaaS*. Sell your consulting while you sleep, or take your agent with you as you move between clients. Your domain knowledge is your intellectual property and has value. Customers have immediate access to *how you think and respond*. Your customers ask questions within their own AI client/tools about their data and environment- as if you were carrying on a conversation. In Alpha testing - now available for your trial.", "n": "13", "pk": "AI Agents"}, {"cat": "License Manager", "cls": "concept", "st": "1 month to build", "t": "NIGP Code Administrator", "b": "Bring it back in-house. Update commodity-codes instantly, auto-monitor code leakage across the internet, dashboard view of all licensed customers, subscription-payment-license management, upgraded server from Windows 95 to the latest technology.", "n": "14", "pk": "Licensing"}];
+  var P = [{"cat": "Web Portal", "cls": "live", "st": "Live", "t": "Procurement Intelligence Portal", "b": "*The container*, hosted online for the client, provides central access to assessment docs, presentations, and dashboards with sharable access- including both the Clients' and Consultant's (i.e. NIGP) continuous updates even after project end.", "n": "01", "pk": "Core"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Findings Analyzer", "b": "A single interview session note or survey note transformed into 30 data points of assessment themes and related technology, transformed into visual analysis.", "n": "02", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Spend Analyzer", "b": "Auto column-finder and spreadsheet aggregation of Spend Analysis Dashboard. PO, Invoice, AP, and P-card transactional data in; contract coverage, managed spend, direct purchase, tailspend, and timeline visuals out.", "n": "03", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Technology & Workflow Inventory", "b": "Tech System Analysis Dashboard. Session notes in - Systems discovery, application landscape- by procurement lifecycle stage and department; usage, gaps, and inventory visuals out.", "n": "04", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "KPI Analyzer", "b": "KPIs are a tool for your clients to track, monitor, measure, and react (actionable) to your recommendations. Session notes and Assessment documents in - KPI's recommended by *the KPI Library*, including customer commitment, instruction, and systems' readiness to build.", "n": "05", "pk": "Analyzers"}, {"cat": "Dashboard", "cls": "live", "st": "Live", "t": "Supplier Central", "b": "One version of the truth, instant supplier CRM. One profile view per vendor across every payment or sourcing channel: spend, contracts, spreadsheets or systems, and merchant matching (de-duplication).", "n": "06", "pk": "Aggregators"}, {"cat": "Dashboard", "cls": "part", "st": "Coming Nov", "t": "Supplier Survey Integration", "b": "Survey information loaded into *Supplier Central* for Cross Referencing analysis.", "n": "07", "pk": "Aggregators"}, {"cat": "Dashboard", "cls": "part", "st": "Coming Nov", "t": "Department Central", "b": "One version of the truth, instant department CRM. One profile view per department/division across every payment or sourcing channel: spend, contracts, spreadsheets or systems, and department name matching (de-duplication).", "n": "08", "pk": "Aggregators"}, {"cat": "Catalog", "cls": "live", "st": "Live", "t": "KPI Library", "b": "500 continuously refined industry procurement metrics, sourced & validated from 95 organizations. Delivers cross referenced KPI's, including the formula to build, with industry best practice popularity.", "n": "09", "pk": "Libraries"}, {"cat": "Catalog", "cls": "part", "st": "Coming Nov", "t": "Tech Questions & Topics Library", "b": "The consultants' checklist of 100 continuously refined Industry standard tech, data, reports, and KPI questions and topics to cover when interviewing or surveying customers, with a procurement focus.", "n": "10", "pk": "Libraries"}, {"n": "11", "cat": "Catalog", "cls": "concept", "st": "1 week to build", "t": "Reusable Content Template", "b": "Shortcut your consulting service into an instant, repeatable product by organizing past deliverables as a template towards your first draft of topics and sections, all built from your session notes.", "pk": "Libraries"}, {"cat": "AI Agent", "cls": "part", "st": "Coming Nov", "t": "AI search & actionable answer", "b": "AI natural language search across all Procurement Intelligence Products in the portal. Ask cross referencing questions and receive next-steps advice and visuals.", "n": "12", "pk": "AI Agents"}, {"cat": "AI Agent", "cls": "proto", "st": "Testing Now", "t": "Your AI Agent as a Service", "b": "*AaaS*. Sell your consulting while you sleep, or take your agent with you as you move between clients. Your domain knowledge is your intellectual property and has value. Customers have immediate access to *how you think and respond*. Your customers ask questions within their own AI client/tools about their data and environment- as if you were carrying on a conversation. In Alpha testing - now available for your trial.", "n": "13", "pk": "AI Agents"}, {"cat": "License Manager", "cls": "concept", "st": "1 month to build", "t": "NIGP Code Administrator", "b": "Bring it back in-house. Update commodity-codes instantly, auto-monitor code leakage across the internet, dashboard view of all licensed customers, subscription-payment-license management, upgraded server from Windows 95 to the latest technology.", "n": "14", "pk": "Licensing"}];
   var PK = ['Core','Analyzers','Aggregators','Libraries','AI Agents','Licensing'];
   var main = document.getElementById('lineup-main'), det = document.getElementById('detail');
   var sel = 0;
