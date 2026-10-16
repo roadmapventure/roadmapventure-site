@@ -26,6 +26,8 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: smooth; }
+  @media (max-width: 1024px) { html, body { overscroll-behavior-y: none; } .tabs { overscroll-behavior-x: contain; } }
+  .tabs-more { display: none; }
   body { background: var(--ivory); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
 
   /* ── HEADER: logo + tab nav ── */
@@ -208,9 +210,12 @@
   }
   @media (max-width: 640px) {
     :root { --nav-h: 100px; }
-    .hdr { flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; padding: 0 0 0 20px; }
-    .logo { height: 44px; display: flex; align-items: center; }
-    .tabs { height: 56px; width: 100%; padding-right: 20px; }
+    .hdr { position: relative; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; padding: 0; }
+    .logo { height: 44px; display: flex; align-items: center; padding-left: 20px; }
+    .tabs { --strip: var(--ivory-2); --strip: color-mix(in srgb, var(--gold-lt) 45%, var(--ivory-2)); height: 56px; width: 100%; padding: 0 44px 0 20px; background: var(--strip); border-top: 1px solid var(--rule); }
+    .tabs-more { display: flex; align-items: center; justify-content: flex-end; position: absolute; right: 0; bottom: 0; width: 56px; height: 56px; padding-right: 14px; pointer-events: none; color: var(--gold); background: linear-gradient(to right, transparent, color-mix(in srgb, var(--gold-lt) 45%, var(--ivory-2)) 65%); transition: opacity .2s; }
+    .tabs-more svg { width: 18px; height: 18px; }
+    .tabs-more.at-end { opacity: 0; }
     .tab { padding: 0 11px; font-size: 10px; }
     .hero { padding: calc(var(--nav-h) + 18px) 20px 14px; }
     .hero h1 { font-size: 32px; }
@@ -265,6 +270,7 @@
       <button class="tab" role="tab" data-tab="partnership"><span class="n">04</span>Partnership</button>
       <button class="tab" role="tab" data-tab="about"><span class="n">05</span>About RMV</button>
     </nav>
+    <span class="tabs-more" id="tabs-more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
   </div>
 </header>
 
@@ -525,6 +531,13 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
+    (function(){
+      var strip = document.getElementById('tabs'), more = document.getElementById('tabs-more');
+      function upd(){ more.classList.toggle('at-end', strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 4); }
+      strip.addEventListener('scroll', upd, { passive: true });
+      window.addEventListener('resize', upd);
+      upd();
+    })();
     window.goTab = show;
     document.getElementById('tabs').addEventListener('click', function(e){
       var b = e.target.closest('.tab'); if (b) show(b.dataset.tab);
