@@ -236,6 +236,7 @@
   .tile:hover { background: var(--ivory-2); }
   .tile.sel { background: var(--ivory-2); border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
   .tile:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .tile-d { display: none; background: var(--ivory-2); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; font-size: 13.5px; line-height: 1.65; color: var(--ink-2); }
   .tile-k { display: contents; }
   .t-n { order: 1; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; color: var(--gold); }
   .tile-k .pill { order: 3; white-space: nowrap; }
@@ -244,7 +245,7 @@
   .detail .card-t { font-size: 28px; margin-bottom: 12px; }
   .detail .card-b { font-size: 14px; line-height: 1.7; color: var(--ink-2); }
   .detail .d-foot { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--ink-3); }
-  @media (max-width: 1024px) { .lineup { grid-template-columns: 1fr; } .lineup-main { columns: 1; } .lineup-side { position: static; } }
+  @media (max-width: 1024px) { .lineup { grid-template-columns: 1fr; } .lineup-main { columns: 1; } .lineup-side { position: static; } .detail { display: none; } .tile.sel + .tile-d { display: block; } }
 </style>
 </head>
 <body>
@@ -623,13 +624,14 @@
   var main = document.getElementById('lineup-main'), det = document.getElementById('detail');
   var sel = 0;
   function esc(x){ return x.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
-  function tile(p,i){ return '<button type="button" class="tile'+(i===sel?' sel':'')+'" data-i="'+i+'"><span class="tile-k"><span class="t-n">'+p.n+'</span><span class="pill pill-'+p.cls+'">'+esc(p.st)+'</span></span><span class="tile-t">'+esc(p.t)+'</span></button>'; }
+  function fmt(x){ return esc(x).replace(/\*(.+?)\*/g,'<em>$1</em>'); }
+  function tile(p,i){ return '<button type="button" class="tile'+(i===sel?' sel':'')+'" data-i="'+i+'"><span class="tile-k"><span class="t-n">'+p.n+'</span><span class="pill pill-'+p.cls+'">'+esc(p.st)+'</span></span><span class="tile-t">'+esc(p.t)+'</span></button><div class="tile-d">'+fmt(p.b)+'</div>'; }
   function render(){
     var out = '';
     PK.forEach(function(k){ var idx=[]; P.forEach(function(p,i){ if(p.pk===k) idx.push(i); }); if(idx.length) out += '<div class="lg"><div class="lg-h"><span>'+esc(k)+'</span><b>'+idx.length+'</b></div><div class="tiles">'+idx.map(function(i){return tile(P[i],i);}).join('')+'</div></div>'; });
     main.innerHTML = out;
     var p = P[sel];
-    det.innerHTML = '<div class="card-k"><span>'+p.n+' &middot; '+esc(p.cat)+'</span><span class="pill pill-'+p.cls+'">'+esc(p.st)+'</span></div><div class="card-t">'+esc(p.t)+'</div><div class="card-b">'+esc(p.b).replace(/\*(.+?)\*/g,'<em>$1</em>')+'</div><div class="d-foot">'+esc(p.pk)+'</div>';
+    det.innerHTML = '<div class="card-k"><span>'+p.n+' &middot; '+esc(p.cat)+'</span><span class="pill pill-'+p.cls+'">'+esc(p.st)+'</span></div><div class="card-t">'+esc(p.t)+'</div><div class="card-b">'+fmt(p.b)+'</div><div class="d-foot">'+esc(p.pk)+'</div>';
   }
   main.addEventListener('click', function(e){ var t=e.target.closest('.tile'); if(!t) return; sel=+t.dataset.i; render(); });
   render();
