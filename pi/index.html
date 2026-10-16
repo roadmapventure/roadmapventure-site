@@ -182,6 +182,39 @@
   .pn.primary { color: var(--ink); border: 1px solid var(--ink); padding: 10px 18px; }
   .pn.primary:hover { background: var(--ink); color: var(--ivory); }
 
+  /* ── SCREENSHOTS ── */
+  .shots { display: grid; grid-template-columns: 300px 1fr; gap: 28px; align-items: start; }
+  .shots-list { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .shot-item { text-align: left; background: var(--ivory); border: none; border-left: 3px solid transparent; padding: 9px 16px; cursor: pointer; font-family: inherit; display: block; width: 100%; transition: background .2s; }
+  .shot-item:hover { background: var(--ivory-2); }
+  .shot-item.sel { background: var(--ivory-2); border-left-color: var(--gold); }
+  .shot-item .n { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); margin-right: 8px; }
+  .shot-item .t { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--ink); line-height: 1.15; }
+  .shot-item .d { display: block; font-size: 12px; color: var(--ink-3); line-height: 1.45; margin-top: 3px; }
+  .shots-nav { position: relative; min-width: 0; }
+  .shots-more { display: none; }
+  .shots-view { margin: 0; }
+  .shots-frame { display: block; width: 100%; padding: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: #fff; cursor: zoom-in; box-shadow: 0 10px 28px rgba(26,24,20,.10); }
+  .shots-frame img { display: block; width: 100%; height: auto; max-height: calc(100vh - 340px); object-fit: contain; object-position: top left; background: #fff; }
+  .shots-view figcaption { display: none; font-size: 12.5px; color: var(--ink-3); line-height: 1.6; margin-top: 10px; }
+  .lightbox { position: fixed; inset: 0; z-index: 400; background: rgba(26,24,20,.88); display: flex; align-items: center; justify-content: center; padding: 3vh 3vw; cursor: zoom-out; }
+  .lightbox[hidden] { display: none; }
+  .lightbox img { max-width: 100%; max-height: 100%; border-radius: 6px; background: #fff; }
+  @media (max-width: 1024px) {
+    .shots { grid-template-columns: minmax(0,1fr); gap: 14px; }
+    .shots-list { flex-direction: row; overflow-x: auto; border-radius: 6px; scrollbar-width: none; }
+    .shots-list::-webkit-scrollbar { display: none; }
+    .shot-item { flex: 0 0 auto; width: auto; padding: 10px 14px; border-left: none; border-bottom: 3px solid transparent; }
+    .shot-item.sel { border-bottom-color: var(--gold); }
+    .shot-item .d, .shot-item .n { display: none; }
+    .shot-item .t { font-size: 16px; white-space: nowrap; }
+    .shots-frame img { max-height: none; }
+    .shots-view figcaption { display: block; }
+    .shots-more { display: flex; align-items: center; justify-content: flex-end; position: absolute; right: 1px; top: 1px; bottom: 1px; width: 56px; padding-right: 12px; pointer-events: none; color: var(--gold); border-radius: 0 6px 6px 0; background: linear-gradient(to right, transparent, var(--ivory-2) 65%); transition: opacity .2s; }
+    .shots-more svg { width: 20px; height: 20px; }
+    .shots-more.at-end { opacity: 0; }
+  }
+
   /* ── FOOTER (no links) ── */
   footer { border-top: 1px solid var(--rule); padding: 28px 56px; display: flex; align-items: center; gap: 24px; max-width: 1312px; margin: 24px auto 0; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--ink); }
@@ -268,7 +301,8 @@
       <button class="tab" role="tab" data-tab="consulting"><span class="n">02</span>Services</button>
       <button class="tab" role="tab" data-tab="products"><span class="n">03</span>Products</button>
       <button class="tab" role="tab" data-tab="partnership"><span class="n">04</span>Partnership</button>
-      <button class="tab" role="tab" data-tab="about"><span class="n">05</span>About RMV</button>
+      <button class="tab" role="tab" data-tab="screenshots"><span class="n">05</span>Screenshots</button>
+      <button class="tab" role="tab" data-tab="about"><span class="n">06</span>About RMV</button>
     </nav>
     <span class="tabs-more" id="tabs-more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
   </div>
@@ -478,11 +512,29 @@
       <div class="m"><b>Strategic</b>Dashboards set priorities</div>
       <div class="m"><b>Intelligence-led</b>AI assists decisions</div>
     </div>
-    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('products')">← Products</button><button class="pn primary" onclick="goTab('about')">Next · About RMV →</button></div>
+    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('products')">← Products</button><button class="pn primary" onclick="goTab('screenshots')">Next · Screenshots →</button></div>
   </div>
 </section>
 
-<!-- ── 05 ABOUT RMV ── -->
+<!-- ── 05 SCREENSHOTS ── -->
+<section class="panel" id="panel-screenshots">
+  <div class="panel-inner">
+    <div class="shots">
+      <div class="shots-nav">
+        <div class="shots-list" id="shots-list" role="tablist" aria-label="Dashboards"></div>
+        <span class="shots-more" id="shots-more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+      </div>
+      <figure class="shots-view">
+        <button class="shots-frame" id="shots-frame" type="button" aria-label="Enlarge screenshot"><img id="shots-img" alt="" width="1600" height="840"></button>
+        <figcaption id="shots-cap"></figcaption>
+      </figure>
+    </div>
+    <div class="panel-nav" style="border-top:none"><button class="pn" onclick="goTab('partnership')">← Partnership</button><button class="pn primary" onclick="goTab('about')">Next · About RMV →</button></div>
+  </div>
+</section>
+<div class="lightbox" id="lightbox" hidden><img id="lightbox-img" alt=""></div>
+
+<!-- ── 06 ABOUT RMV ── -->
 <section class="panel" id="panel-about">
   <div class="panel-inner">
     <div class="quote">GovTech Data &amp; Technology Consultant | Austin, Texas</div>
@@ -504,7 +556,7 @@
           <p>John has 4 U.S. PTO patent filings, 2 issued covering finance risk and location analytics.</p></div>
       </div>
     </div>
-    <div class="panel-nav"><button class="pn" onclick="goTab('partnership')">← Partnership</button><span></span></div>
+    <div class="panel-nav"><button class="pn" onclick="goTab('screenshots')">← Screenshots</button><span></span></div>
   </div>
 </section>
 
@@ -515,10 +567,10 @@
 
 <script>
   (function(){
-    var order = ['synergy','consulting','products','partnership','about'];
-    var titles = { consulting: 'Consulting Services', products: 'The Dashboard Suite', partnership: 'Partnership', about: 'About RMV' };
+    var order = ['synergy','consulting','products','partnership','screenshots','about'];
+    var titles = { consulting: 'Consulting Services', products: 'The Dashboard Suite', partnership: 'Partnership', screenshots: 'Screenshots', about: 'About RMV' };
     var heroSide = document.getElementById('hero-side'), heroDefault = heroSide.innerHTML;
-    var sides = { about: '<strong>John Leonard</strong> brings over 30 years experience in government technology, data, and operations.', partnership: '<strong>What this is.</strong> How RMV and NIGP do business together: why the combination is hard to duplicate, what the client receives, and how both sides grow.', products: '<strong>What this is.</strong> The new Management Consultant\'s Handbook. Bring your own format- any unstructured document or note transforms into actionable data and visuals. Customer data and your assessment strategy data are cross-referenced against 95 independent industry best-practice sources of metrics and KPIs. Products can be used both internally and resold externally, available as individuals or packages. <em>(click a product below to display its value...)</em>', consulting: '<strong>What this is.</strong> RMV provides an industry best practice review of procurement, with a technology focus. Select an engagement below, receive an inventory of gap analysis and definitions from professional observations. The differentiation: no longer a <em>one-and-done</em> paperweight document. Findings and strategy delivered inside tangible web-products; allowing continuous review and tracking changes into the future.' };
+    var sides = { screenshots: '<strong>What this is.</strong> Real dashboards built for the Maricopa County engagement from interview notes, spend extracts and assessment drafts. Select one to view it; click the image to enlarge.', about: '<strong>John Leonard</strong> brings over 30 years experience in government technology, data, and operations.', partnership: '<strong>What this is.</strong> How RMV and NIGP do business together: why the combination is hard to duplicate, what the client receives, and how both sides grow.', products: '<strong>What this is.</strong> The new Management Consultant\'s Handbook. Bring your own format- any unstructured document or note transforms into actionable data and visuals. Customer data and your assessment strategy data are cross-referenced against 95 independent industry best-practice sources of metrics and KPIs. Products can be used both internally and resold externally, available as individuals or packages. <em>(click a product below to display its value...)</em>', consulting: '<strong>What this is.</strong> RMV provides an industry best practice review of procurement, with a technology focus. Select an engagement below, receive an inventory of gap analysis and definitions from professional observations. The differentiation: no longer a <em>one-and-done</em> paperweight document. Findings and strategy delivered inside tangible web-products; allowing continuous review and tracking changes into the future.' };
     function show(id, push){
       if (order.indexOf(id) < 0) id = 'synergy';
       document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
@@ -570,6 +622,41 @@
   }
   main.addEventListener('click', function(e){ var t=e.target.closest('.tile'); if(!t) return; sel=+t.dataset.i; render(); });
   render();
+})();
+</script>
+<script>
+(function(){
+  var D = [
+    {t:'Interview Findings', d:'Session notes converted to counts of topics discussed and themes, i.e. <b><i>Tech Utilized by Role</i></b>', f:'shot-interviews.jpg', a:'Technology Interview Findings dashboard, systems by role heatmap'},
+    {t:'Spend Analysis', d:'Full breakdown of spend across any variable, i.e. <b><i>Percent Spend by Month</i></b>', f:'shot-spend.jpg', a:'Spend Analysis dashboard, spend by month with the monthly average'},
+    {t:'KPI Library', d:'KPIs assigned by findings in the assessment draft, i.e. <b><i>Contract KPI assignment and Readiness</i></b>', f:'shot-kpi.jpg', a:'KPI Library dashboard, contract performance KPIs'},
+    {t:'Supplier Profile', d:'Aggregated view for a supplier from multiple sources, i.e. <b><i>Supplier Payment by Month, Type, &amp; Department</i></b>', f:'shot-vendor.jpg', a:'Supplier Profile dashboard, spend by month and departments buying'},
+    {t:'Assessment Report', d:'Single point of report centralization and sharable, i.e. <b><i>Draft Report Ready, Accessible, Clickable and Searchable</i></b>', f:'shot-report.jpg', a:'Assessment Report page with section navigation'}
+  ];
+  var list = document.getElementById('shots-list'), img = document.getElementById('shots-img'), cap = document.getElementById('shots-cap');
+  var lb = document.getElementById('lightbox'), lbi = document.getElementById('lightbox-img');
+  function pick(i){
+    var x = D[i];
+    img.src = '/pi/img/' + x.f; img.alt = x.a; cap.innerHTML = x.d;
+    [].forEach.call(list.children, function(b, j){ b.classList.toggle('sel', j === i); b.setAttribute('aria-selected', j === i); });
+  }
+  D.forEach(function(x, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'shot-item'; b.setAttribute('role', 'tab');
+    b.innerHTML = '<span class="t"><span class="n">0' + (i + 1) + '</span>' + x.t + '</span><span class="d">' + x.d + '</span>';
+    b.addEventListener('click', function(){ pick(i); });
+    list.appendChild(b);
+  });
+  document.getElementById('shots-frame').addEventListener('click', function(){ lbi.src = img.src; lbi.alt = img.alt; lb.hidden = false; });
+  lb.addEventListener('click', function(){ lb.hidden = true; });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.hidden = true; });
+  var more = document.getElementById('shots-more');
+  function upd(){ more.classList.toggle('at-end', list.scrollLeft + list.clientWidth >= list.scrollWidth - 4); }
+  list.addEventListener('scroll', upd, { passive: true });
+  window.addEventListener('resize', upd);
+  if (window.ResizeObserver) new ResizeObserver(upd).observe(list);
+  upd();
+  pick(0);
 })();
 </script>
 </body>
