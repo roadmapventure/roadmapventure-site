@@ -194,8 +194,8 @@
   .shots-nav { position: relative; min-width: 0; }
   .shots-more { display: none; }
   .shots-view { margin: 0; }
-  .shots-frame { display: block; width: 100%; padding: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: #fff; cursor: zoom-in; box-shadow: 0 10px 28px rgba(26,24,20,.10); }
-  .shots-frame img { display: block; width: 100%; height: auto; max-height: calc(100vh - 340px); object-fit: contain; object-position: top left; background: #fff; }
+  .shots-frame { display: block; width: fit-content; max-width: 100%; padding: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: #fff; cursor: zoom-in; box-shadow: 0 10px 28px rgba(26,24,20,.10); }
+  .shots-frame img { display: block; width: auto; max-width: 100%; height: auto; max-height: max(calc(100vh - 340px), 34vw); }
   .shots-view figcaption { display: none; font-size: 12.5px; color: var(--ink-3); line-height: 1.6; margin-top: 10px; }
   .lightbox { position: fixed; inset: 0; z-index: 400; background: rgba(26,24,20,.88); display: flex; align-items: center; justify-content: center; padding: 3vh 3vw; cursor: zoom-out; }
   .lightbox[hidden] { display: none; }
@@ -208,7 +208,8 @@
     .shot-item.sel { border-bottom-color: var(--gold); }
     .shot-item .d, .shot-item .n { display: none; }
     .shot-item .t { font-size: 16px; white-space: nowrap; }
-    .shots-frame img { max-height: none; }
+    .shots-frame { width: 100%; }
+    .shots-frame img { width: 100%; max-height: none; }
     .shots-view figcaption { display: block; }
     .shots-more { display: flex; align-items: center; justify-content: flex-end; position: absolute; right: 1px; top: 1px; bottom: 1px; width: 56px; padding-right: 12px; pointer-events: none; color: var(--gold); border-radius: 0 6px 6px 0; background: linear-gradient(to right, transparent, var(--ivory-2) 65%); transition: opacity .2s; }
     .shots-more svg { width: 20px; height: 20px; }
